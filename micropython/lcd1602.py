@@ -3,9 +3,9 @@ import time
 
 class LCD():
     def __init__(self, addr=0x27, blen=1):
-        sda = machine.Pin(0)
-        scl = machine.Pin(1)
-        self.bus = machine.I2C(0,sda=sda, scl=scl, freq=400000)
+        sda = machine.Pin(6)
+        scl = machine.Pin(7)
+        self.bus = machine.I2C(1,sda=sda, scl=scl, freq=400000)
         #print(self.bus.scan())
         self.addr = addr
         self.blen = blen
