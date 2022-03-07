@@ -1,0 +1,91 @@
+RGB LED Strip
+======================
+
+WS2812 is a intelligent control LED light source that the control circuit and RGB chip are integrated in a package of 5050 components. 
+It internal include intelligent digital port data latch and signal reshaping amplification drive circuit. 
+Also include a precision internal oscillator and a programmable constant current control part, 
+effectively ensuring the pixel point light color height consistent.
+
+The data transfer protocol use single NZR communication mode. 
+After the pixel power-on reset, the DIN port receive data from controller, the first pixel collect initial 24bit data then sent to the internal data latch, the other data which reshaping by the internal signal reshaping amplification circuit sent to the next cascade pixel through the DO port. After transmission for each pixel，the signal to reduce 24bit. 
+pixel adopt auto reshaping transmit technology, making the pixel cascade number is not limited the signal transmission, only depend on the speed of signal transmission.
+
+
+* :ref:`cpn_ws2812`
+
+
+**Wiring**
+
+|sch_ws2812|
+
+|wiring_ws2812|
+
+1. Connect the +5V of the LED Strip to the VBUS of the Pico.
+#. Connect the GND of the LED Strip to the GND of the Pico.
+#. Connect the DIN of the LED Strip to the GP0 of Pico.
+
+.. warning::
+    One thing you need to pay attention to is current.
+
+    Although the LED Strip with any number of LEDs can be used in Pico, the power of its VBUS pin is limited.
+    Here, we will use eight LEDs, which are safe.
+    But if you want to use more LEDs, you need to add a separate power supply.
+    
+
+**Code**
+
+The libraries ``Adafruit_NeoPixel.h`` needs adding manually. 
+Add Method: Refer to :ref:`apx_add_lib`.
+
+.. :raw-code:
+
+Let's select some favorite colors and display them on the RGB LED Strip!
+
+**How it works?**
+
+Declare a Adafruit_NeoPixel type object,  it is connected to ``PIXEL_PIN``, 
+there are ``PIXEL_COUNT`` RGB LEDs on the strip.
+
+.. code-block:: arduino
+
+    #define PIXEL_PIN    0
+    #define PIXEL_COUNT 8
+
+    // Declare our NeoPixel strip object:
+    Adafruit_NeoPixel strip(PIXEL_COUNT, PIXEL_PIN, NEO_GRB + NEO_KHZ800);
+    // Argument 1 = Number of pixels in NeoPixel strip
+    // Argument 2 = Arduino pin number (most are valid)
+    // Argument 3 = Pixel type flags, add together as needed:
+    //   NEO_KHZ800  800 KHz bitstream (most NeoPixel products w/WS2812 LEDs)
+    //   NEO_KHZ400  400 KHz (classic 'v1' (not v2) FLORA pixels, WS2811 drivers)
+    //   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
+    //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
+    //   NEO_RGBW    Pixels are wired for RGBW bitstream (NeoPixel RGBW products)
+
+Initialize strip object and initialize all pixels to 'off'.
+
+Function
+    * ``strip.begin()`` : Initialize NeoPixel strip object (REQUIRED).
+    * ``strip.setPixelColor(index, color)`` : Set pixel's color (in RAM), the ``color`` must be a single 'packed' 32-bit value.
+    * ``strip.Color(red, green, blue)`` : Color as a single 'packed' 32-bit value.*
+    * ``strip.show()`` : Update strip with new contents.
+  
+**What more?**
+
+We can randomly generate colors and make a colorful flowing light.
+
+.. :raw-code:
+
+整个strip围绕色轮(范围为65535)进行彩虹循环。
+
+.. :raw-code:
+
+Function
+    * ``strip.getPixelColor(index)`` : Query the color of a previously-set pixel.
+    * ``strip.ColorHSV(pixelHue)`` : Convert hue, saturation and value into a packed 32-bit RGB color that can be passed to ``setPixelColor()`` or other RGB-compatible functions.
+    * ``strip.gamma32()`` : Provides a "truer" color before assigning to each pixel.
+
+
+
+
+

@@ -1,0 +1,46 @@
+Pumping
+=======
+
+
+小型离心泵适用于自动植物浇水的项目。
+也可以用于制作微小的智能水景。
+
+它的动力部件是一个电机，驱动方式和普通的电机一模一样。
+
+* :ref:`cpn_pump`
+* :ref:`cpn_motor`
+* :ref:`cpn_l293d`
+* :ref:`cpn_power_module`
+
+注意事项
+    #. 将水管连接到电机出口，将泵浸入水中，然后通电即可。
+    #. 需要确保水位始终高于电机。空转可能会因发热而损坏电机，并且还会产生噪音。
+    #. 如果您给植物浇水，您需要避免土壤被吸入植物的工作中，因为这会堵塞转子。
+    #. 如果无法泵水，可能管中有残余水堵塞空气流通，需先排出。
+
+
+**Wiring**
+
+|sch_pump|
+
+
+|wiring_pump|
+
+**Code**
+
+.. code-block:: python
+
+    import machine
+    import utime
+
+    motor1A = machine.Pin(14, machine.Pin.OUT)
+    motor2A = machine.Pin(15, machine.Pin.OUT)
+
+    while True:
+        motor1A.high()
+        motor2A.low()
+
+
+程序运行后，水泵将会泵水。
+如电流过大，Pico将可能与电脑断开连接，
+此时只需按下按键（让Pico的 **RUN** 引脚接受一个低电平）即可复位。
