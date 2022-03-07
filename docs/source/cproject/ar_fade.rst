@@ -1,6 +1,7 @@
-Fading LED
-==========
+.. _ar_fade:
 
+2.3 - Fading LED
+=====================
 
 So far, we have used only two output signals: high level and low level (or called 1 & 0, ON & OFF), which is called digital output.
 However, in actual use, many devices do not simply ON/OFF to work, for example, adjusting the speed of the motor, adjusting the brightness of the desk lamp, and so on.
@@ -29,43 +30,48 @@ After understanding this knowledge, let us try to achieve the effect of Fading L
 
 * :ref:`cpn_led`
 
-**Wiring**
-
+**Schematic**
 
 |sch_led|
+
+This project is the same circuit as the first project :ref:`ar_led`, but the signal type is different. The first project is to output digital high and low levels (0&1) directly from GP15 to make the LEDs light up or turn off, this project is to output PWM signal from GP15 to control the brightness of the LED.
+
+
+
+**Wiring**
+
 
 |wiring_led|
 
 .. https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf
 
-1. Here we use the GP15 pin of the Pico board.
-#. Connect one end (either end) of the 220 ohm resistor to GP15, and insert the other end into the free row of the breadboard.
-#. Insert the anode lead of the LED into the same row as the end of the 220Ω resistor, and connect the cathode lead across the middle gap of the breadboard to the same row.
-#. Connect the LED cathode to the negative power bus of the breadboard.
-#. Connect the negative power bus to the GND pin of Pico.
+.. 1. Here we use the GP15 pin of the Pico board.
+.. #. Connect one end (either end) of the 220 ohm resistor to GP15, and insert the other end into the free row of the breadboard.
+.. #. Insert the anode lead of the LED into the same row as the end of the 220Ω resistor, and connect the cathode lead across the middle gap of the breadboard to the same row.
+.. #. Connect the LED cathode to the negative power bus of the breadboard.
+.. #. Connect the negative power bus to the GND pin of Pico.
 
 .. .. note::
 ..     The color ring of the 220 ohm resistor is red, red, black, black and brown.
 
 **Code**
 
-The LED will gradually become brighter as the program runs.
 
-.. code-block:: C
+.. note::
 
-    const int ledPin = 15;    
+   * You can open the file ``2.3_fading_led.ino`` under the path of ``euler-kit/arduino/2.3_fading_led``. 
+   * Or copy this code into **Arduino IDE**.
+   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
 
-    void setup() {
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+
+.. raw:: html
     
-    }
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/86807da4-4714-4d3c-b6af-0f1b9a62223b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-    void loop() {
-        for (int value = 0 ; value <= 255; value += 5) {
-            analogWrite(ledPin, value);
-            delay(30);
-        }
-    }
 
+The LED will gradually become brighter as the program runs.
 
 **How it works?**
 

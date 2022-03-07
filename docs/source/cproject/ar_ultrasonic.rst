@@ -1,21 +1,37 @@
-Measuring Distance
-==================
+.. _ar_ultrasonic:
 
-超声波传感器的工作原理是声纳和雷达系统，用于确定与物体的距离。
+6.1 - Measuring Distance
+======================================
+
+The ultrasonic sensor module works on the principle of sonar and radar systems for determining the distance to an object.
 
 * :ref:`cpn_ultrasonic`
 
-**Wiring**
+**Schematic**
 
 |sch_ultrasonic|
+
+**Wiring**
 
 |wiring_ultrasonic|
 
 **Code**
 
-:raw-code:
+.. note::
 
-程序运行后，串口监视器将打印出超声波传感器距离前方障碍物的距离。
+   * You can open the file ``6.1_ultrasonic.ino`` under the path of ``euler-kit/arduino/6.1_ultrasonic``. 
+   * Or copy this code into **Arduino IDE**.
+   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/631a1663-ce45-4d46-b8f0-7d10f32097a9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+    
+
+Once the program is running, the Serial Monitor will print out the distance of the ultrasonic sensor from the obstacle ahead.
+
 
 **How it works?**
 
@@ -26,8 +42,8 @@ subfunction.
 
     float readSensorData(){// ...}
 
-PING is triggered by a HIGH pulse of 2 or more microseconds. (Give a
-short LOW pulse beforehand to ensure a clean HIGH pulse.)
+``PING`` is triggered by a HIGH pulse of 2 or more microseconds. (Give a
+short ``LOW`` pulse beforehand to ensure a clean ``HIGH`` pulse.)
 
 .. code-block:: arduino
 
@@ -37,7 +53,7 @@ short LOW pulse beforehand to ensure a clean HIGH pulse.)
     delayMicroseconds(10);
     digitalWrite(trigPin, LOW); 
 
-The echo pin is used to read signal from PING, a HIGH pulse whose
+The echo pin is used to read signal from PING, a ``HIGH`` pulse whose
 duration is the time (in microseconds) from the sending of the ping to
 the reception of echo of the object.
 
@@ -55,6 +71,5 @@ we divide by 2 to get the distance of the obstacle.
     float distance = microsecond / 29.00 / 2;  
 
 
-需要注意的是，超声波传感器在工作时会将程序暂停。
-这在编写复杂的项目时，可能会导致一些卡顿。
+Note that the ultrasonic sensor will pause the program when it is working, which may cause some lagging when writing complex projects.
 

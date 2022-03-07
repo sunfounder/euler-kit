@@ -1,31 +1,42 @@
-Beep
+.. _py_ac_buz:
+
+3.1 Beep
 ==================
 
 
-有源蜂鸣器是一个典型的数字输出设备，它的使用方法就像点亮LED一样简单！
+The active buzzer is a typical digital output device that is as easy to use as lighting up an LED!
 
 * :ref:`Buzzer`
 
 
 **Schematic**
 
+|sch_buzzer|
+
+When the GP15 output is high, after the 1K current limiting resistor (to protect the transistor), the S8050 (NPN transistor) will conduct, so that the buzzer will sound.
+
+The role of S8050 (NPN transistor) is to amplify the current and make the buzzer sound louder. In fact, you can also connect the buzzer directly to GP15, but you will find that the buzzer sound is smaller.
 
 **Wiring**
 
 Two types of buzzers are included in the kit. 
-We need to use active buzzer. 
-Turn them around, the sealed back (not the exposed PCB) is the one we want.
+We need to use active buzzer. Turn them around, the sealed back (not the exposed PCB) is the one we want.
 
 |img_buzzer|
 
-The buzzer needs to use a transistor when working, here we use S8050.
+The buzzer needs to use a transistor when working, here we use S8050 (NPN Transistor).
 
 
-|sch_buzzer|
-|wiring_buzzer|
+|wiring_beep|
 
 
 **Code**
+
+.. note::
+
+    * Open the ``3.1_beep.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
 
 .. code-block:: python
@@ -42,4 +53,4 @@ The buzzer needs to use a transistor when working, here we use S8050.
             utime.sleep(0.3)
         utime.sleep(1)
 
-代码运行后，你将每隔一秒听到一次鸣笛。
+After the code runs, you will hear a beep every second.

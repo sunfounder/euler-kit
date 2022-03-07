@@ -1,4 +1,6 @@
-RGB LED Strip
+.. _py_neopixel:
+
+3.3 RGB LED Strip
 ======================
 
 WS2812 is a intelligent control LED light source that the control circuit and RGB chip are integrated in a package of 5050 components. 
@@ -13,16 +15,19 @@ pixel adopt auto reshaping transmit technology, making the pixel cascade number 
 
 * :ref:`cpn_ws2812`
 
-
-**Wiring**
+**Schematic**
 
 |sch_ws2812|
 
+
+**Wiring**
+
+
 |wiring_ws2812|
 
-1. Connect the +5V of the LED Strip to the VBUS of the Pico.
-#. Connect the GND of the LED Strip to the GND of the Pico.
-#. Connect the DIN of the LED Strip to the GP0 of Pico.
+.. 1. Connect the +5V of the LED Strip to the VBUS of the Pico.
+.. #. Connect the GND of the LED Strip to the GND of the Pico.
+.. #. Connect the DIN of the LED Strip to the GP0 of Pico.
 
 .. warning::
     One thing you need to pay attention to is current.
@@ -34,76 +39,13 @@ pixel adopt auto reshaping transmit technology, making the pixel cascade number 
 
 **Code**
 
-The following is the library of ws2812 packaged by Sunfounder. You need to save it in Pico and name it as **ws2812.py** for use as a library.
+.. note::
 
+    * Open the ``3.3_rgb_led_strip.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
 
-.. code-block:: python
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
-    import array, time
-    import rp2
-    from rp2 import PIO, StateMachine, asm_pio
-
-    @asm_pio(sideset_init=PIO.OUT_LOW, out_shiftdir=PIO.SHIFT_LEFT, autopull=True, pull_thresh=24)
-    def ws2812():
-        T1 = 2
-        T2 = 5
-        T3 = 3
-        label("bitloop")
-        out(x, 1).side(0)[T3 - 1]
-        jmp(not_x, "do_zero").side(1)[T1 - 1]
-        jmp("bitloop").side(1)[T2 - 1]
-        label("do_zero")
-        nop().side(0)[T2 - 1]
-
-    class WS2812():
-        
-        def __init__(self, pin, num):
-            # Configure the number of WS2812 LEDs.
-            self.led_nums = num
-            self.pin = pin
-            self.sm = StateMachine(0, ws2812, freq=8000000, sideset_base=self.pin)
-            # Start the StateMachine, it will wait for data on its FIFO.
-            self.sm.active(1)
-            
-            self.buf = array.array("I", [0 for _ in range(self.led_nums)])
-
-        def write(self):
-            self.sm.put(self.buf, 8)
-
-        def write_all(self, value):
-            for i in range(self.led_nums):
-                self.__setitem__(i, value)
-            self.write()
-
-        def list_to_hex(self, color):
-            if isinstance(color, list) and len(color) == 3:
-                c = (color[0] << 8) + (color[1] << 16) + (color[2])
-                return c
-            elif isinstance(color, int):
-                value = (color & 0xFF0000)>>8 | (color & 0x00FF00)<<8 | (color & 0x0000FF)
-                return value
-            else:
-                raise ValueError("Color must be 24-bit  RGB hex or list of 3 8-bit RGB")
-
-        def hex_to_list(self, color):
-            if isinstance(color, list) and len(color) == 3:
-                return color
-            elif isinstance(color, int):
-                r = color >> 8 & 0xFF
-                g = color >> 16 & 0xFF
-                b = color >> 0 & 0xFF
-                return [r, g, b]
-            else:
-                raise ValueError("Color must be 24-bit  RGB hex or list of 3 8-bit RGB")
-
-        def __getitem__(self, i):
-            return self.hex_to_list(self.buf[i])
-
-        def __setitem__(self, i, value):
-            value = self.list_to_hex(value)
-            self.buf[i] = value
-
-Then, create a new file, and call the stored ws2812 library here.
+    * Here you need to use the library called ``ws2812.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
 
 
 .. code-block:: python
@@ -169,6 +111,12 @@ You can also directly use the following statement to make all LEDs light up the 
 **What more?**
 
 We can randomly generate colors and make a colorful flowing light.
+
+.. note::
+
+    * Open the ``3.3_rgb_led_strip_2.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
 .. code-block:: python
 

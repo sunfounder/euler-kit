@@ -1,5 +1,7 @@
-Thonny Python IDE
-=======================
+.. _thonny_ide:
+
+1.3 Install and Introduce Thonny IDE
+=======================================
 
 Before you can start to program Pico with MicroPython, you need an integrated development environment (IDE), here we recommend Thonny. Thonny comes with Python 3.7 built in, just one simple installer is needed and you're ready to learn programming.
 
@@ -10,7 +12,7 @@ You can download it by visiting the Thonny website: https://thonny.org/. Once op
 
 |mps_download_thonny|
 
-Introducing Thonny IDE
+Thonny IDE Introduction
 ----------------------------------
 
 * Ref: `realpython <https://realpython.com/micropython/>`_
@@ -37,11 +39,11 @@ Introducing Thonny IDE
     * **G**: Take a big step, which means jumping to the next line or block of code.  
     * **H**: Take a small step means expressing each component in depth.  
     * **I**: Exit out of the debugger.  
-* **J**：Click it to return from debug mode to play mode.
-* **K**：Use the stop icon to stop running code. 
-* **L**：Script Area, where you can write your Python code.
-* **M**：Python Shell, where you can type a single command, and when you press the Enter key, the single command will run and provide information about the running program. This is also known as REPL, which means "Read, Evaluate, Print, and Loop."
-* **N**：Interpreter, where the current version of Python used to run your program is displayed, can be changed manually to another version by clicking on it.
+* **J**: Click it to return from debug mode to play mode.
+* **K**: Use the stop icon to stop running code. 
+* **L**: Script Area, where you can write your Python code.
+* **M**: Python Shell, where you can type a single command, and when you press the Enter key, the single command will run and provide information about the running program. This is also known as REPL, which means "Read, Evaluate, Print, and Loop."
+* **N**: Interpreter, where the current version of Python used to run your program is displayed, can be changed manually to another version by clicking on it.
 
 .. note::
 

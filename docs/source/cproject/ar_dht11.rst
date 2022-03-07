@@ -1,53 +1,62 @@
-Temperature - Humidity
-=========================
+.. _ar_dht11:
 
 
-湿度和温度是从物理量本身到实际人们的生活密切相关的。
-人的环境温度和湿度会直接影响人的体温调节功能和热传导效果。
-它会进一步影响思维活动和精神状态，从而影响我们学习和工作的效率。
+6.2 - Temperature - Humidity
+=======================================
 
-温度是国际单位制中的7个基本物理量之一，用来衡量物体的冷热程度。
-摄氏度是目前世界上使用较为广泛的一种温标，用符号“℃”表示。
-它是18世纪瑞典天文学家Anders Celsius提出来的。
-它定义了在标准大气压下，冰水混合物的温度为0℃，水的沸点为100℃，其间分为100等份，每一份为1℃。
-自从国际单位制中开尔文标准化后，它随后被重新定义为开尔文标度上的等效固定点，因此1摄氏度的温度增量与1摄氏度的增量相同1 开尔文，尽管它们的不同之处在于恰好 273.15 的附加偏移。
-美国通常使用华氏温标，水在华氏温度下结冰32 °F并沸腾于在海平面大气压下为212 °F。
+Humidity and temperature are closely related from the physical quantity itself to the actual people's life.
+The temperature and humidity of human environment will directly affect the thermoregulatory function and heat transfer effect of human body.
+It will further affect the thinking activity and mental state, thus affecting the efficiency of our study and work.
 
-湿度是空气中存在的水蒸气的浓度。
-生活中常用的空气相对湿度，用%RH表示。相对湿度与温度密切相关。
-对于一定体积的密封气体，温度越高，相对湿度越低，温度越低，相对湿度越高。
+Temperature is one of the seven basic physical quantities in the International System of Units, which is used to measure the degree of hot and cold of an object.
+Celsius is one of the more widely used temperature scales in the world, expressed by the symbol "℃".
+
+Humidity is the concentration of water vapor present in the air.
+The relative humidity of air is commonly used in life and is expressed in %RH. Relative humidity is closely related to temperature.
+For a certain volume of sealed gas, the higher the temperature, the lower the relative humidity, and the lower the temperature, the higher the relative humidity.
 
 |img_Dht11|
 
-这个套件中提供了一款基本的数字温度和湿度传感器 —— DHT11。
-它使用电容式湿度传感器和热敏电阻来测量周围的空气，并在数据引脚上吐出数字信号（不需要模拟输入引脚）。
+A basic digital temperature and humidity sensor, the **DHT11**, is provided in this kit.
+It uses a capacitive humidity sensor and thermistor to measure the surrounding air and outputs a digital signal on the data pins (no analog input pins are required).
 
 * :ref:`cpn_dht11`
 
 
-**Wiring**
+**Schematic**
 
 |sch_dht11|
 
+**Wiring**
 
 |wiring_dht11|
 
 **Code**
 
-:raw-code:
+.. note::
 
-代码运行后，你将看到持续串口显示器持续打印出温度和湿度，随着程序运行稳定，这两个值会愈发的准确。
+    * You can open the file ``6.2_dht11.ino`` under the path of ``euler-kit/arduino/6.2_dht11``. 
+    * Or copy this code into **Arduino IDE**.
+    
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/b9e96e99-59d4-48ca-b41f-c03577acfb8f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After the code is run, you will see the Serial Monitor continuously print out the temperature and humidity, and as the program runs steadily, these two values will become more and more accurate.
 
 **How it works?**
 
-初始化DHT11对象。这个设备只需要一个数字输入即可使用。
+Initialize the DHT11 object. This device requires only a digital input to be used.
 
 .. code-block:: arduino
 
     int pinDHT11 = 16;
     SimpleDHT11 dht11(pinDHT11);
 
-读取当前的温度和湿度，这些数据会被储存到变量 ``temperature`` 和 ``humidity`` 中。 ``err`` 则是用于数据的有效性判断。
+Reads the current temperature and humidity, which are stored in the variables ``temperature`` and ``humidity``. ``err`` is used to determine the validity of the data.
 
 .. code-block:: arduino
 
@@ -55,7 +64,7 @@ Temperature - Humidity
     byte humidity = 0;
     int err = dht11.read(&temperature, &humidity, NULL);
 
-过滤无效数据。
+Filter invalid data.
 
 .. code-block:: arduino
 
@@ -68,7 +77,7 @@ Temperature - Humidity
         return;
     }    
 
-打印温度和湿度。
+Print temperature and humidity.
 
 .. code-block:: arduino
 
@@ -77,7 +86,7 @@ Temperature - Humidity
     Serial.print((int)humidity); 
     Serial.println(" H");
 
-最后，DHT11 sampling rate is 1HZ, 在loop中需要一个 ``delay(1500)``。
+Finally, the DHT11 sampling rate is 1HZ, a ``delay(1500)`` is needed in the loop.
 
 .. code-block:: arduino
 

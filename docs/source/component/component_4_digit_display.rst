@@ -81,3 +81,12 @@ To help you get to know how 7-segment displays(Common Cathode) display Numbers, 
     *   - F	
         - 01110001	
         - 0x71
+
+
+**Example**
+
+* :ref:`py_74hc_4dig` (For MicroPython User)
+* :ref:`py_passage_counter` (For MicroPython User)
+* :ref:`py_10_second` (For MicroPython User)
+* :ref:`py_traffic_light` (For MicroPython User)
+* :ref:`ar_74hc_4dig` (For Arduino User)

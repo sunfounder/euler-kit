@@ -1,52 +1,68 @@
-Control Another Circuit
-=======================
+.. _py_relay:
 
-在日常生活中我们按开关就可以对台灯进行点亮或者关闭，
-但是，如果想用Pico控制台灯，让台灯能在十分钟后自动关闭，该如何做呢？
+2.16 Control Another Circuit
+=================================
 
-一个继电器就能帮你完成这个设想。
+In our daily life, we can press the switch to light up or turn off the lamp.
+But what if you want to control the lamp with Pico so that it can turn off automatically after ten minutes?
 
-继电器实际上是一种特殊的开关，它受一方电路控制（通常是低压电路），用于控制另一方电路（通常是高压电路）。
-这使得我们改造家用电器，使其受程序控制，成为智能设备，甚至接入互联网成为切实可行。
+A relay can help you accomplish this idea.
+
+A relay is actually a special kind of switch that is controlled by one side of the circuit (usually a low-voltage circuit) and used to control the other side of the circuit (usually a high-voltage circuit).
+This makes it practical to modify our home appliances to be controlled by a program, to become smart devices, or even to access the Internet.
 
 .. warning::
-    改造电器伴随着巨大的危险，切勿轻易尝试，请在专业人士的指导下进行。
+    Modification of electrical appliances comes with great danger, do not try it lightly, please do it under the guidance of professionals.
 
 * :ref:`cpn_relay`
 
-在这里我们仅把使用面包板电源模块供电的简单电路作为例子，展示如何使用relay来控制它。
+Here we only use a simple circuit powered by a breadboard power module as an example to show how to control it using relay.
 
 * :ref:`cpn_power_module`
 
+
 **Wiring**
 
-首先，搭建一个低压电路，用于控制继电器。
-驱动继电器需要较大的电流，因此需要使用三极管，在这里，我们使用S8050。
+First, build a low-voltage circuit for controlling a relay.
+Driving the relay requires a high current, so a transistor is needed, and here we use the S8050.
 
 |sch_relay_1|
 
 |wiring_relay_1|
 
-此处还使用了一个二极管保护电路，其阴极，即有银色色带的一端，接向电源，阳极接向三极管。
-这是因为继电器内部拥有线圈，断开电源时线圈产生高于电源电压数倍的自感应电动势，
-该二极管会在此时传导电流，线圈和二极管瞬间形成由线圈中存储的能量供电的电路，
-从而避免过高的电压将损坏电路上的三极管等器件。
+
+
+A diode (continuity diode) is used here to protect the circuit. The cathode is the end with the silver ribbon connected to the power supply, and the anode is connected to the transistor.
+
+When the voltage input changes from High (5V) to Low (0V), the transistor changes from saturation (amplification, saturation, and cutoff) to cutoff, and there is suddenly no way for current to flow through the coil. 
+
+At this point, if this freewheeling diode does not exist, the coil will produce a self-induced electric potential at both ends that is several times higher than the supply voltage, and this voltage plus the voltage from the transistor power supply is enough to burn it.  
+
+After adding the diode, the coil and the diode instantly form a new circuit powered by the energy stored in the coil to discharge, thus avoiding the excessive voltage will damage devices such as transistors on the circuit.
 
 * :ref:`cpn_diode`    
 * `Flyback Diode - Wikipedia <https://en.wikipedia.org/wiki/Flyback_diode>`_
 
-此时程序已经可以运行了，运行后会听到 "tik tok" 的声音，这是继电器内部的接触器线圈吸合与断开的声音。
+At this point the program is ready to run, and after running you will hear the "tik tok" sound, which is the sound of the contactor coil inside the relay sucking and breaking.
 
-接着我们将受控电路的两端分别接入继电器的3引脚和6引脚。
-（以前文所说的由面包板电源模块供电的简单电路为例。）
+Then we connect the two ends of the load circuit to pins 3 and 6 of the relay respectively.
+
+..(Take the simple circuit powered by the breadboard power module described in the previous article as an example.)
 
 |sch_relay_2|
 
 |wiring_relay_2|
 
-此时，继电器将可以控制受控电路的通断了。
+At this point, the relay will be able to control the load circuit on and off.
 
 **Code**
+
+.. note::
+
+    * Open the ``2.16_control_another_circuit.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+
 
 .. code-block:: python
 
@@ -60,13 +76,13 @@ Control Another Circuit
         relay.value(0)
         utime.sleep(2)
 
-代码运行后，relay将会每隔两秒切换受控电路的工作状态。
-你可以手动注释掉其中一行，进一步明确继电器电路和受控电路之间的对应关系。
+When the code is run, the relay will switch the operating state of the controlled circuit every two seconds.
+You can manually comment out one of the lines to further clarify the correspondence between the relay circuit and the load circuit.
 
 
 **What More?**
 
-继电器的3引脚是常开端，仅在接触器线圈工作时接通；4引脚是常闭端，在接触器线圈为通电时接通。
-1与6引脚联通，是受控电路的公共端。
+Pin 3 of the relay is normally open and only turns on when the contactor coil is operating; pin 4 is normally closed and turns on when the contactor coil is energized.
+Pin 1 is connected to pin 6 and is the common terminal of the load circuit.
 
-将受控电路的一端从3引脚切换至4引脚，你将能得到恰好相反的工作状态。
+By switching one end of the load circuit from pin 3 to pin 4, you will be able to get exactly the opposite operating state.

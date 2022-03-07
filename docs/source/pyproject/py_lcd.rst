@@ -1,6 +1,6 @@
 .. _py_lcd:
 
-Liquid Crystal Display
+3.4 Liquid Crystal Display
 ===============================
 
 LCD1602 is a character type liquid crystal display, which can display 32 (16*2) characters at the same time.
@@ -20,123 +20,29 @@ Therefore, LCD1602 with an I2C bus is developed to solve the problem.
 Here we will use the I2C0 interface to control the LCD1602 and display text.
 
 
-**Wiring**
+**Schematic**
 
 |sch_lcd|
 
+**Wiring**
+
 |wiring_lcd|
 
-1. Connect VCC of LCD to VBUS of Pico.
-#. Connect the GND of LCD to the GND of Pico.
-#. Connect SDA of LCD to GP0 of Pico, which is GP6(I2C1 SDA).
-#. Connect SCL of LCD to GP1 of Pico, which is GP7(I2C1 SCL).
+.. 1. Connect VCC of LCD to VBUS of Pico.
+.. #. Connect the GND of LCD to the GND of Pico.
+.. #. Connect SDA of LCD to GP0 of Pico, which is GP6(I2C1 SDA).
+.. #. Connect SCL of LCD to GP1 of Pico, which is GP7(I2C1 SCL).
 
 **Code**
 
-The following is the library of lcd1602 packaged by Sunfounder.
+.. note::
 
-You need to save it in Pico, name it **lcd1602.py** and use it as a library.
+    * Open the ``3.4_liquid_crystal_display.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
 
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
-.. code-block:: python
+    * Here you need to use the library called ``lcd1602.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
 
-    import machine
-    import time
-
-    class LCD():
-        def __init__(self, addr=0x27, blen=1):
-            sda = machine.Pin(0)
-            scl = machine.Pin(1)
-            self.bus = machine.I2C(0,sda=sda, scl=scl, freq=400000)
-            #print(self.bus.scan())
-            self.addr = addr
-            self.blen = blen
-            self.send_command(0x33) # Must initialize to 8-line mode at first
-            time.sleep(0.005)
-            self.send_command(0x32) # Then initialize to 4-line mode
-            time.sleep(0.005)
-            self.send_command(0x28) # 2 Lines & 5*7 dots
-            time.sleep(0.005)
-            self.send_command(0x0C) # Enable display without cursor
-            time.sleep(0.005)
-            self.send_command(0x01) # Clear Screen
-            self.bus.writeto(self.addr, bytearray([0x08]))
-        
-        def write_word(self, data):
-            temp = data
-            if self.blen == 1:
-                temp |= 0x08
-            else:
-                temp &= 0xF7
-            self.bus.writeto(self.addr, bytearray([temp]))
-        
-        def send_command(self, cmd):
-            # Send bit7-4 firstly
-            buf = cmd & 0xF0
-            buf |= 0x04               # RS = 0, RW = 0, EN = 1
-            self.write_word(buf)
-            time.sleep(0.002)
-            buf &= 0xFB               # Make EN = 0
-            self.write_word(buf)
-
-            # Send bit3-0 secondly
-            buf = (cmd & 0x0F) << 4
-            buf |= 0x04               # RS = 0, RW = 0, EN = 1
-            self.write_word(buf)
-            time.sleep(0.002)
-            buf &= 0xFB               # Make EN = 0
-            self.write_word(buf)
-        
-        def send_data(self, data):
-            # Send bit7-4 firstly
-            buf = data & 0xF0
-            buf |= 0x05               # RS = 1, RW = 0, EN = 1
-            self.write_word(buf)
-            time.sleep(0.002)
-            buf &= 0xFB               # Make EN = 0
-            self.write_word(buf)
-
-            # Send bit3-0 secondly
-            buf = (data & 0x0F) << 4
-            buf |= 0x05               # RS = 1, RW = 0, EN = 1
-            self.write_word(buf)
-            time.sleep(0.002)
-            buf &= 0xFB               # Make EN = 0
-            self.write_word(buf)
-        
-        def clear(self):
-            self.send_command(0x01) # Clear Screen
-            
-        def openlight(self):  # Enable the backlight
-            self.bus.writeto(self.addr,bytearray([0x08]))
-            # self.bus.close()
-        
-        def write(self, x, y, str):
-            if x < 0:
-                x = 0
-            if x > 15:
-                x = 15
-            if y < 0:
-                y = 0
-            if y > 1:
-                y = 1
-
-            # Move cursor
-            addr = 0x80 + 0x40 * y + x
-            self.send_command(addr)
-
-            for chr in str:
-                self.send_data(ord(chr))
-        
-        def message(self, text):
-            #print("message: %s"%text)
-            for char in text:
-                if char == '\n':
-                    self.send_command(0xC0) # next line
-                else:
-                    self.send_data(ord(char))
-
-Then, create a new file, and call the lcd1602 library stored before in this file.
 
 .. code-block:: python
 
@@ -184,35 +90,3 @@ If you call this statement multiple times, lcd will superimpose the texts. This 
 
     lcd.clear()
 
-
-
-.. **What more?**
-
-.. We can combine thermistor and I2C LCD1602 to make a room temperature meter.
-
-.. .. image:: img/wiring_lcd_2.png
-
-.. .. code-block:: python
-
-..     from lcd1602 import LCD
-..     import machine
-..     import utime
-..     import math
-
-..     thermistor = machine.ADC(28)  
-..     lcd = LCD()
-
-..     while True:
-..         temperature_value = thermistor.read_u16()
-..         Vr = 3.3 * float(temperature_value) / 65535
-..         Rt = 10000 * Vr / (3.3 - Vr)
-..         temp = 1/(((math.log(Rt / 10000)) / 3950) + (1 / (273.15+25)))
-..         Cel = temp - 273.15
-..         #Fah = Cel * 1.8 + 32
-..         #print ('Celsius: %.2f C  Fahrenheit: %.2f F' % (Cel, Fah))
-..         #utime.sleep_ms(200)
-        
-..         string = " Temperature is \n    " + str('{:.2f}'.format(Cel))+ " C"
-..         lcd.message(string)
-..         utime.sleep(1)
-..         lcd.clear()

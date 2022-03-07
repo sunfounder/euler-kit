@@ -7,7 +7,7 @@ The kit contains various types of components, such as displays, sounds, drivers,
 we have prepared many interesting and practical projects for you, and collected a lot of authoritative related information, 
 just turn on your computer and you can complete programming learning in one stop.
 
-In addition, we provide 2 programming languages: MicroPython and Arduino (C/C++). You can view different tutorials according to your needs。
+In addition, we offer 3 programming languages. microPython, C/C++ (Arduino) and a block-based language (Piper Make). Each programming language has targeted and interesting projects to help you get started quickly, so you can choose according to your needs.
 
 If you want to learn another projects which we don’t have, please feel free to send Email and we will update to our online tutorials as soon as possible, any suggestions are welcomed.
 
@@ -16,20 +16,22 @@ Here is the Email: cs@sunfounder.com.
 
 **Source Code**
 
-* :download:`SunFounder Euler Kit Example <https://github.com/sunfounder/Euler/archive/refs/heads/docs.zip>`
+* :download:`SunFounder Euler Kit Example <https://github.com/sunfounder/euler-kit/archive/refs/heads/main.zip>`
 
 **Content**
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
-   introduction_to_raspberry_pi_pico
-   component/what_is_included_in_this_kit
-   basic_circuit/bc_basic_circuit
-   pyproject/for_micropython_user
-   cproject/for_arduino_user
-   espproject/for_esp8266_user
-   faq
+    introduction_to_raspberry_pi_pico
+    component/what_is_included_in_this_kit
+    bc_basic_circuit
+    pyproject/for_micropython_user
+    espproject/for_esp8266_user
+    cproject/for_arduino_user
+    piperproject/for_piper
+    appendix
+    faq
 
 
 Copyright Notice
@@ -37,5 +39,3 @@ Copyright Notice
 
 All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
 
-
-   

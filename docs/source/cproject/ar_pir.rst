@@ -1,5 +1,7 @@
-Detect Human Movement
-=====================
+.. _ar_pir:
+
+2.10 - Detect Human Movement
+=========================================
 
 Passive infrared sensor (PIR sensor) is a common sensor that can measure infrared (IR) light emitted by objects in its field of view.
 Simply put, it will receive infrared radiation emitted from the body, thereby detecting the movement of people and other animals.
@@ -7,17 +9,36 @@ More specifically, it tells the main control board that someone has entered your
 
 :ref:`PIR Motion Sensor`
 
-**Wiring**
+**Schematic**
 
 |sch_pir|
+
+When the PIR module detects someone passing by, GP14 will be high, otherwise it will be low.
+
+
+
+**Wiring**
 
 |wiring_pir|
 
 **Code**
 
-.. :raw-code:
+.. note::
 
-程序运行后，如果PIR sensor检测到附近有人，Shell会打印出 "Somebody here!" 
+   * You can open the file ``2.10_detect_human_movement.ino`` under the path of ``euler-kit/arduino/2.10_detect_human_movement``. 
+   * Or copy this code into **Arduino IDE**.
+   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/bb3ff9f1-127d-4279-84b9-cba28b9667e8/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+    
+
+After the program runs, if the PIR module detects someone nearby, the Serial Monitor will print out "Somebody here!" 
+
 
 **What more?**
 

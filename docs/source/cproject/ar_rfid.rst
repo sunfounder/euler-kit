@@ -1,5 +1,8 @@
-Radio Frequency Identification
-==============================
+.. _ar_rfid:
+
+
+6.5 - Radio Frequency Identification
+================================================
 
 Radio Frequency Identification (RFID) refers to technologies that involve using wireless communication between an object (or tag) and an interrogating device (or reader) to automatically track and identify such objects. The tag transmission range is limited to several meters from the reader. A clear line of sight between the reader and tag is not necessarily required.
 
@@ -10,26 +13,60 @@ Thus, they may have increased processing, transmission capabilities and range.
 
 * :ref:`cpn_mfrc522`
 
-
-**Wiring**
+**Schematic**
 
 |sch_rfid|
+
+
+**Wiring**
 
 |wiring_rfid|
 
 **Code**
 
+.. note::
 
-The libraries ``MFRC522.h`` needs adding manually. 
-Add Method: Refer to :ref:`apx_add_lib`.
+   * You can open the file ``6.5_rfid_write.ino`` under the path of ``euler-kit/arduino/6.5_rfid_write``. 
+   * Or copy this code into **Arduino IDE**.
 
-主函数分为两个。 一个是 ``write`` ，运行后你将可以在串口monitor中输入message，以 ``#`` 结束，随后将卡片(或者key)靠近MFRC522模块，将message写入卡片中。
+   Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 
-:raw-code:
+Here you need to use the library called ``MFRC522``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_ar`.
 
-另一个是 ``read`` ，运行后，你将能读取到卡片(或者key)中储存的message。
 
-:raw-code:
+The main function is divided into two:
+
+* ``6.5_rfid_write.ino``: Used to write information to the card (or key).
+* ``6.5_rfid_read.ino``: used to read the information in the card (or key)
+
+.. note::
+
+   * You can open the file ``6.5_rfid_write.ino`` under the path of ``euler-kit/arduino/6.5_rfid_write``. 
+   * Or copy this code into **Arduino IDE**.
+   
+   Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+After running you will be able to enter message in the serial monitor, ending with ``#``, and then write the message to the card by placing the card (or key) close to the MFRC522 module.
+
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/b4f9156a-711a-442c-8271-329847e808dc/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+
+.. note::
+
+   * You can open the file ``6.5_rfid_read.ino`` under the path of ``euler-kit/arduino/6.5_rfid_read``. 
+   * Or copy this code into **Arduino IDE**.
+   
+   Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+After running, you will be able to read the message stored in the card (or key).
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/df57b5cb-9162-4b4b-b28a-7f02363885c9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
 
 **How it works?**
 
@@ -44,18 +81,18 @@ Add Method: Refer to :ref:`apx_add_lib`.
 
 First, instantiate ``MFRC522()`` class.
 
-为了简单使用， ``MFRC522`` 的库被进一步封装出以下函数。
+For simplicity of use, the ``MFRC522`` library is further encapsulated with the following functions.
 
-* ``void simple_mfrc522_init()`` : 启动SPI通信，初始化mfrc522模块。
-* ``void simple_mfrc522_get_card()`` : 暂停程序，直到检测到卡片(或者key)，打印卡片UID和PICC type。
-* ``void simple_mfrc522_write(String text)`` : 为卡片(或者key)写入字符串。
-* ``void simple_mfrc522_write(byte* buffer)`` : 为卡片(或者key)写入信息，这些信息通常来自串口。
-* ``void simple_mfrc522_write(byte section, String text)`` : 为特定扇区写入字符串。section设为0，写入1-2扇区；section设为1，写入3-4扇区。
-* ``void simple_mfrc522_write(byte section, byte* buffer)`` : 为特定扇区写入信息，这些信息通常来自串口。section设为0，写入1-2扇区；section设为1，写入3-4扇区。
-* ``String simple_mfrc522_read()`` : 读取卡片(或者key)中的信息，返回字符串。
-* ``String simple_mfrc522_read(byte section)`` : 读取特定扇区中的信息，返回字符串。section设为0，写入1-2扇区；section设为1，写入3-4扇区。
+* ``void simple_mfrc522_init()`` : Starts SPI communication and initializes the mfrc522 module.
+* ``void simple_mfrc522_get_card()`` : Suspends the program until the card (or key) is detected, prints the card UID and PICC type.
+* ``void simple_mfrc522_write(String text)`` : Write a string for the card (or key).
+* ``void simple_mfrc522_write(byte* buffer)`` : Writes information for the card (or key), which usually comes from the serial port.
+* ``void simple_mfrc522_write(byte section, String text)`` : Writes a string for a specific sector. ``section`` is set to 0 to write sectors 1-2; ``section`` is set to 1 to write sectors 3-4.
+* ``void simple_mfrc522_write(byte section, byte* buffer)`` : Writes information for a specific sector, usually from the serial port. ``section`` set to 0, writes 1-2 sectors; ``section`` set to 1, writes 3-4 sectors.
+* ``String simple_mfrc522_read()`` : Reads the information in the card (or key), returns a string.
+* ``String simple_mfrc522_read(byte section)`` : Reads the information in a specific sector, returns a string. ``section`` is set to 0, writes 1-2 sectors; ``section`` is set to 1, writes 3-4 sectors.
 
 
-在 **white** 示例中，用到了 ``Serial.readBytesUntil()`` 函数，这是一个常用的串口输入方法。
+In the ``6.5_rfid_write.ino`` example, the ``Serial.readBytesUntil()`` function is used, which is a common serial input method.
 
 * `Serial.readBytesUntil <https://www.arduino.cc/reference/en/language/functions/communication/serial/readbytesuntil/>`_

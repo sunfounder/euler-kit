@@ -5,23 +5,20 @@ the basic syntax of MicroPython and a dozen interesting and practical projects t
 
 We recommend that you read the chapters in order.
 
-Chapter 1 : Get Started
+**1. Get Started**
 
 .. toctree::
     :maxdepth: 1
 
-    python_start/getting_started_with_micropython
+    python_start/introduction_micropython
+    python_start/setup_pico
     python_start/thonny_python_ide
-    python_start/your_first_micropython_program
+    python_start/download_add
+    python_start/quick_guide_thonny
 
-Chapter 2 : Basic Syntax
 
-.. toctree::
-    :maxdepth: 1
 
-    syntax/micropython_basic_syntax
-    
-Chapter 3 : Output & Input
+**2. Output & Input**
 
 .. toctree::
     :maxdepth: 1
@@ -31,6 +28,9 @@ Chapter 3 : Output & Input
     py_fade
     py_rgb
     py_button
+    py_tilt
+    py_slide
+    py_micro
     py_reed
     py_pir
     py_pot
@@ -40,7 +40,7 @@ Chapter 3 : Output & Input
     py_transistor
     py_relay
 
-Chapter 4 : Sound & Display & Movement
+**3. Sound & Display & Movement**
 
 .. toctree::
     :maxdepth: 1
@@ -53,7 +53,7 @@ Chapter 4 : Sound & Display & Movement
     py_pump
     py_servo
 
-Chapter 5 : Controller
+**4. Controller**
 
 .. toctree::
     :maxdepth: 1
@@ -62,7 +62,7 @@ Chapter 5 : Controller
     py_keypad
     py_mpr121
 
-Chapter 6 : Microchip
+**5. Microchip**
 
 .. toctree::
     :maxdepth: 1
@@ -72,7 +72,7 @@ Chapter 6 : Microchip
     py_74hc595_4dig
     py_74hc595_matrix
 
-Chapter 7 : Advanced
+**6. Advanced**
 
 .. toctree::
     :maxdepth: 1
@@ -83,11 +83,22 @@ Chapter 7 : Advanced
     py_irremote
     py_rfid
 
-Chapter 8 : Funny Project
+**7. Funny Project**
 
 .. toctree::
     :maxdepth: 1
 
     py_light_theremin
     py_room_temp_meter
+    py_alarm_siren_lamp
+    py_passager_counter
+    py_game_10_second
+    py_traffic_light
+    py_game_guess_number
+    py_rfid_music_player
+    py_fruit_piano
+    py_reversing_aid
+    py_somatosensory_controller
+    py_digital_bubble_level
+
 

@@ -3,6 +3,8 @@
 LED Matrix
 ==========
 
+|img_led_matrix|
+
 Generally, LED dot matrix can be categorized into two types: common
 cathode (CC) and common anode (CA). They look much alike, but internally
 the difference lies. You can tell by test. A CA one is used in this kit.
@@ -44,3 +46,10 @@ Pin numbering corresponding to the above rows and columns:
 
 In addition, two 74HC595 chips are used here. One is to control the rows
 of the LED dot matrix while the other, the columns.
+
+
+**Example**
+
+* :ref:`py_74hc_788bs` (For MicroPython User)
+* :ref:`py_bubble_level` (For MicroPython User)
+* :ref:`ar_74hc_788bs` (For Arduino User)

@@ -1,6 +1,6 @@
 .. _ar_button:
 
-Reading Button Value
+2.5 - Reading Button Value
 ==============================================
 
 From the name of GPIO (General-purpose input/output), we can see that these pins have both input and output functions. 
@@ -8,40 +8,63 @@ In the previous lessons, we used the output function, in this chapter we will us
 
 * :ref:`cpn_button`
 
-**Wiring**
+**Schematic**
 
 |sch_button|
 
+One side of the button pin is connected to 3.3v, and the other side pin is connected to GP14, so when the button is pressed, GP14 will be high. However, when the button is not pressed, GP14 is in a suspended state and may be high or low. In order to get a stable low level when the button is not pressed, GP14 needs to be reconnected to GND through a 10K pull-down resistor.
+
+
+
+**Wiring**
 
 |wiring_button|
 
+.. Let's follow the direction of the circuit to build the circuit!
 
-Let's follow the direction of the circuit to build the circuit!
+.. 1. Connect the 3V3 pin of Pico to the positive power bus of the breadboard.
+.. #. Insert the button into the breadboard and straddle the central dividing line.
 
-1. Connect the 3V3 pin of Pico to the positive power bus of the breadboard.
-#. Insert the button into the breadboard and straddle the central dividing line.
+.. note::
+    We can think of the four-legged button as an H-shaped button. Its left (right) two feet are connected, which means that after it straddles the central dividing line, it will connect the two half rows of the same row number together. (For example, in my circuit, E23 and F23 have been connected, as are E25 and F25).
 
-    .. note::
-        We can think of the four-legged button as an H-shaped button. Its left (right) two feet are connected, which means that after it straddles the central dividing line, it will connect the two half rows of the same row number together. (For example, in my circuit, E23 and F23 have been connected, as are E25 and F25).
+    Before the button is pressed, the left and right sides are independent of each other, and current cannot flow from one side to the other.
 
-        Before the button is pressed, the left and right sides are independent of each other, and current cannot flow from one side to the other.
+.. #. Use a jumper wire to connect one of the button pins to the positive bus (mine is the pin on the upper right).
+.. #. Connect the other pin (upper left or lower left) to GP14 with a jumper wire.
+.. #. Use a 10K resistor to connect the pin on the upper left corner of the button and the negative bus.
 
-#. Use a jumper wire to connect one of the button pins to the positive bus (mine is the pin on the upper right).
-#. Connect the other pin (upper left or lower left) to GP14 with a jumper wire.
-#. Use a 10K resistor to connect the pin on the upper left corner of the button and the negative bus.
+..     .. .. note::
+..     ..     The color ring of the 10kΩ resistor is brown, black, black, red, brown.
 
-    .. .. note::
-    ..     The color ring of the 10kΩ resistor is brown, black, black, red, brown.
+..     ..     Buttons require pull-up resistors or pull-down resistors. If there is no pull-up or pull-down resistor, the main controller may receive a ‘noisy’ signal which can trigger even when you’re not pushing the button.
 
-    ..     Buttons require pull-up resistors or pull-down resistors. If there is no pull-up or pull-down resistor, the main controller may receive a ‘noisy’ signal which can trigger even when you’re not pushing the button.
-
-#. Connect the negative power bus of the breadboard to Pico's GND.
+.. #. Connect the negative power bus of the breadboard to Pico's GND.
 
 **Code**
 
-When the button is pressed, the current will flow from 3V3 through the button to GP14, in other words, GP14 will read a high-level signal ‘1’; otherwise, it will read a low-level signal ‘0’.
+.. note::
 
-:raw-code:
+   * You can open the file ``2.5_reading_button_value.ino`` under the path of ``euler-kit/arduino/2.5_reading_button_value``. 
+   * Or copy this code into **Arduino IDE**.
+   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/6fcb7cac-e866-4a2d-8162-8e0c6fd17660/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+
+
+After the code runs, Click the magnifying glass icon in the upper right corner of the Arduino IDE (Serial Monitor).
+
+|ars_serial_monitor|
+
+
+Now, when you press the button, the Serial Monitor will print "You pressed the button!".
+
+|ars_baud_rate|
 
 
 **How it works?**
@@ -50,7 +73,7 @@ To enable Serial Monitor, you need to start serial communication in ``setup()`` 
 
 .. code-block:: arduino
 
-    Serial.begin(9600);
+    Serial.begin(115200);
 
     
 * `Serial <https://www.arduino.cc/reference/en/language/functions/communication/serial/>`_
@@ -77,7 +100,7 @@ print "You pressed the button!" on the Serial monitor.
 .. code-block:: arduino
 
     if (buttonState == HIGH) {
-        Serial.println("You pressed the button!")
+        Serial.println("You pressed the button!");
     }
 
 
@@ -87,72 +110,12 @@ Next is the wiring and code when the button in the pull-up working mode, please 
 
 |wiring_button_pullup|
 
-1. Connect the 3V3 pin of Pico to the positive power bus of the breadboard.
-#. Insert the button into the breadboard and straddle the central dividing line.
-#. Use a jumper wire to connect one of the button pins to the **negative** bus (mine is the pin on the upper right).
-#. Connect the other pin (upper left or lower left) to GP14 with a jumper wire.
-#. Use a 10K resistor to connect the pin on the upper left corner of the button and the **positive** bus.
-#. Connect the negative power bus of the breadboard to Pico's GND.
+.. 1. Connect the 3V3 pin of Pico to the positive power bus of the breadboard.
+.. #. Insert the button into the breadboard and straddle the central dividing line.
+.. #. Use a jumper wire to connect one of the button pins to the **negative** bus (mine is the pin on the upper right).
+.. #. Connect the other pin (upper left or lower left) to GP14 with a jumper wire.
+.. #. Use a 10K resistor to connect the pin on the upper left corner of the button and the **positive** bus.
+.. #. Connect the negative power bus of the breadboard to Pico's GND.
 
-
-:raw-code:
-    
-
-Some Switches
--------------
-
-There are some components in this kit that work on the same principle as buttons. 
-These components can use the same code as the button. Their wiring is as follows:
-
-**Tilt Switch**
-
-|wiring_tilt|
-
-1. Connect the 3V3 pin of Pico to the positive power bus of the breadboard.
-#. Insert the tilt switch into the breadboard.
-#. Use a jumper wire to connect one end of tilt switch pin to the positive bus.
-#. Connect the other pin to GP14 with a jumper wire.
-#. Use a 10K resistor to connect the second pin (which connected to GP14) and the negative bus.
-#. Connect the negative power bus of the breadboard to Pico's GND.
-
-When you put a flat breadboard, the circuit will be closed. When you tilt the breadboard, the circuit is open.
-
-* :ref:`cpn_tilt`
-
-**Slide Switch**
-
-
-|wiring_slide|
-
-1. Connect the 3V3 pin of Pico to the positive power bus of the breadboard.
-#. Insert the slide switch into the breadboard.
-#. Use a jumper wire to connect one end of slide switch pin to the negative bus.
-#. Connect the middle pin to GP14 with a jumper wire.
-#. Use a jumper wire to connect last end of slide switch pin to the positive bus
-#. Use a 10K resistor to connect the middle pin of the slide switch and the negative bus.
-#. Use a 104 capacitor to connect the middle pin of the slide switch and the negative bus to realize debounce that may arise from your toggle of switch.
-#. Connect the negative power bus of the breadboard to Pico's GND.
-
-When you toggle the slide switch, the circuit will switch between closed and open.
-
-* :ref:`cpn_slide`
-
-* :ref:`cpn_cap`
-
-
-**Limit Switch**
-
-|wiring_limit_sw|
-
-1. Connect the 3V3 pin of Pico to the positive power bus of the breadboard.
-#. Insert the limit switch into the breadboard.
-#. Use a jumper wire to connect NC pin of limit switch pin to the negative bus.
-#. Connect the C pin to GP14 with a jumper wire.
-#. Use a jumper wire to connect NO pin of limit switch pin to the positive bus
-#. Use a 10K resistor to connect the C pin of the limit switch and the negative bus.
-#. Use a 104 capacitor to connect the C pin of the limit switch and the negative bus to realize debounce that may arise from your toggle of switch.
-#. Connect the negative power bus of the breadboard to Pico's GND.
-
-When you press the switch, the circuit will be closed. 
-
-* :ref:`cpn_limit_sw`
+The only difference you will see with the pull-down mode is that the 10K resistor is connected to 3.3V and the button is connected to GND, so that when the button is pressed, GP14 will get a low level, which is the opposite of the value obtained in pull-down mode.
+So just change this code to ``if (buttonState == LOW)``.

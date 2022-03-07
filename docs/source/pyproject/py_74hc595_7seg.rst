@@ -1,12 +1,12 @@
-.. _py_7seg:
+.. _py_74hc_7seg:
 
-Number Display
+5.2 Number Display
 =======================
 
-LED Segment Display can be seen everywhere in life.
+7 Segment Display can be seen everywhere in life.
 For example, on an air conditioner, it can be used to display temperature; on a traffic indicator, it can be used to display a timer.
 
-The LED Segment Display is essentially a device packaged by 8 LEDs, of which 7 strip-shaped LEDs form an "8" shape, and there is a slightly smaller dotted LED as a decimal point. These LEDs are marked as a, b, c, d, e, f, g, and dp. They have their own anode pins and share cathodes. Their pin locations are shown in the figure below.
+The 7 Segment Display is essentially a device packaged by 8 LEDs, of which 7 strip-shaped LEDs form an "8" shape, and there is a slightly smaller dotted LED as a decimal point. These LEDs are marked as a, b, c, d, e, f, g, and dp. They have their own anode pins and share cathodes. Their pin locations are shown in the figure below.
 
 |img_7seg_cathode|
 
@@ -16,47 +16,57 @@ This means that it needs to be controlled by 8 digital signals at the same time 
 
 **Schematic**
 
+|sch_74hc_7seg|
+
+Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only difference is that Q0-Q7 are connected to the a ~ g pins of the 7 Segment Display.
+
+.. list-table:: Wiring
+    :widths: 15 25
+    :header-rows: 1
+
+    *   - 74HC595
+        - LED Segment Display
+    *   - Q0
+        - a
+    *   - Q1
+        - b
+    *   - Q2
+        - c
+    *   - Q3
+        - d
+    *   - Q4
+        - e
+    *   - Q5
+        - f
+    *   - Q6
+        - g
+    *   - Q7
+        - dp
+
 **Wiring**
 
-|sch_74hc_7seg|
+.. 1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
+.. #. Insert 74HC595 across the middle gap into the breadboard.
+.. #. Connect the GP0 pin of Pico to the DS pin (pin 14) of 74HC595 with a jumper wire.
+.. #. Connect the GP1 pin of Pico to the STcp pin (12-pin) of 74HC595.
+.. #. Connect the GP2 pin of Pico to the SHcp pin (pin 11) of 74HC595.
+.. #. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
+.. #. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
+.. #. Insert the LED Segment Display into the breadboard, and connect a 220Ω resistor in series with the GND pin to the negative power bus.
+.. #. Follow the table below to connect the 74hc595 and LED Segment Display.
 
 |wiring_74hc_7seg|
 
-1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
-#. Insert 74HC595 across the middle gap into the breadboard.
-#. Connect the GP0 pin of Pico to the DS pin (pin 14) of 74HC595 with a jumper wire.
-#. Connect the GP1 pin of Pico to the STcp pin (12-pin) of 74HC595.
-#. Connect the GP2 pin of Pico to the SHcp pin (pin 11) of 74HC595.
-#. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
-#. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
-#. Insert the LED Segment Display into the breadboard, and connect a 220Ω resistor in series with the GND pin to the negative power bus.
-#. Follow the table below to connect the 74hc595 and LED Segment Display.
-
-    .. list-table:: Wiring
-        :widths: 15 25
-        :header-rows: 1
-
-        *   - 74HC595
-            - LED Segment Display
-        *   - Q0
-            - a
-        *   - Q1
-            - b
-        *   - Q2
-            - c
-        *   - Q3
-            - d
-        *   - Q4
-            - e
-        *   - Q5
-            - f
-        *   - Q6
-            - g
-        *   - Q7
-            - dp
 
 
 **Code**
+
+.. note::
+
+    * Open the ``5.2_number_display.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+
 
 .. code-block:: python
 
@@ -97,6 +107,9 @@ When the program is running, you will be able to see the LED Segment Display dis
 It outputs the last bit of the binary number to Q0, and the output of the first bit to Q7. In other words, writing the binary number "00000001" will make Q0 output high level and Q1~Q7 output low level.
 
 Suppose that the 7-segment Display display the number "1", we need to write a high level for b, c, and write a low level for a, d, e, f, g, and dg.
+
+|img_1_segment|
+
 That is, the binary number "00000110" needs to be written. For readability, we will use hexadecimal notation as "0x06".
 
 * `Hexadecimal <https://en.wikipedia.org/wiki/Hexadecimal>`_

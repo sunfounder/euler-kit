@@ -1,6 +1,6 @@
 .. _cpn_dht11:
 
-Humiture Sensor Module
+DHT11 Humiture Sensor
 =============================
 
 The digital temperature and humidity sensor DHT11 is a composite sensor that contains a calibrated digital signal output of temperature and humidity. 
@@ -17,7 +17,7 @@ Then the host receives the answer signal and begins to receive 40-bit humiture d
 |img_Dht11|
 
 **Features**
-    #. A humiture sensor module to test temperature and humidity, which uses the sensor DHT11.
+
     #. Humidity measurement range: 20 - 90%RH
     #. Temperature measurement range: 0 - 60℃
     #. Output digital signals indicating temperature and humidity
@@ -27,3 +27,8 @@ Then the host receives the answer signal and begins to receive 40-bit humiture d
 
 
 * `DHT11 Datasheet <http://wiki.sunfounder.cc/images/c/c7/DHT11_datasheet.pdf>`_
+
+**Example**
+
+* :ref:`py_dht11` (For MicroPython User)
+* :ref:`ar_dht11` (For Arduino User)

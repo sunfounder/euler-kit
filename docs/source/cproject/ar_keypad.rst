@@ -1,31 +1,54 @@
-4x4 Keypad
+.. _ar_keypad:
+
+4.2 - 4x4 Keypad
 ========================
 
-Keypad是块或与数字，符号，或字母的布置设置的按钮垫。
-键盘可以在主要需要数字输入的设备上找到，
-例如计算器、电视遥控器、按钮电话、自动售货机、自动取款机、
-销售点设备、 密码锁和数字门锁。
-许多设备的排列都遵循E.161标准。
+The 4x4 keyboard, also known as the matrix keyboard, is a matrix of 16 keys excluded in a single panel.
 
+The keypad can be found on devices that mainly require digital input, such as calculators, TV remote controls, push-button phones, vending machines, ATMs, combination locks, and digital door locks.
+
+In this project, we will learn how to determine which key is pressed and get the related key value.
 
 * :ref:`cpn_keypad`
 * `E.161 - Wikipedia <https://en.wikipedia.org/wiki/E.161>`_
 
-
-**Wiring**
+**Schematic**
 
 |sch_keypad|
 
+4 pull-down resistors are connected to each of the columns of the matrix keyboard, so that G6 ~ G9 get a stable low level when the keys are not pressed.
+
+The rows of the keyboard (G2 ~ G5) are programmed to go high; if one of G6 ~ G9 is read high, then we know which key is pressed.
+
+For example, if G6 is read high, then numeric key 1 is pressed; this is because the control pins of numeric key 1 are G2 and G6, when numeric key 1 is pressed, G2 and G6 will be connected together and G6 is also high.
+
+
+**Wiring**
+
 |wiring_keypad|
+
+To make the wiring easier, in the above diagram, the column row of the matrix keyboard and the 10K resistors are inserted into the holes where G6 ~ G9 are located at the same time.
+
 
 **Code**
 
-The libraries ``Keypad.h`` needs adding manually. 
-Add Method: Refer to :ref:`apx_add_lib`.
 
-:raw-code:
+.. note::
 
-程序运行后，串口监视器会打印出你在Keypad上按下的按键。
+    * You can open the file ``4.2_4x4_keypad.ino`` under the path of ``euler-kit/arduino/4.2_4x4_keypad``. 
+    * Or copy this code into **Arduino IDE**.
+    
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+    Here you need to use the library called ``Keypad``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_ar`.
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/6c776dfc-cb74-49d7-8906-f1382e0e7b7b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+
+After the program runs, the Shell will print out the keys you pressed on the Keypad.
+
 
 **How it works**
 

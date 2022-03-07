@@ -1,39 +1,55 @@
-Custom Tone
+.. _ar_pa_buz:
+
+
+3.2 - Custom Tone
 ==========================================
 
 
 We have used active buzzer in the previous project, this time we will use passive buzzer.
 
-Like the active buzzer, the passive buzzer also uses the phenomenon of electromagnetic induction to work. 
-The difference is that a passive buzzer does not have oscillating source, so it will not beep if DC signals are used.
+Like the active buzzer, the passive buzzer also uses the phenomenon of electromagnetic induction to work. The difference is that a passive buzzer does not have oscillating source, so it will not beep if DC signals are used.
 But this allows the passive buzzer to adjust its own oscillation frequency and can emit different notes such as "doh, re, mi, fa, sol, la, ti".
 
 Let the passive buzzer emit a melody!
 
 * :ref:`Buzzer`
 
+**Schematic**
+
+|sch_buzzer|
+
+When the GP15 output is high, after the 1K current limiting resistor (to protect the transistor), the S8050 (NPN transistor) will conduct, so that the buzzer will sound.
+
+The role of S8050 (NPN transistor) is to amplify the current and make the buzzer sound louder. In fact, you can also connect the buzzer directly to GP15, but you will find that the buzzer sound is smaller.
+
+
 **Wiring**
 
 |img_buzzer|
 
-Two buzzers are included in the kit, we use the one with exposed PCB behind.
+Two buzzers are included in the kit, we use a passive buzzer (one with an exposed PCB on the back).
 
-The buzzer needs a transistor to work, and here we use S8050.
-
-|sch_buzzer|
+The buzzer needs a transistor to work, here we use S8050.
 
 |wiring_buzzer|
 
-1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
-#. Connect the positive pin of the buzzer to the positive power bus.
-#. Connect the cathode pin of the buzzer to the **collector** lead of the transistor.
-#. Connect the **base** lead of the transistor to the GP15 pin through a 1kΩ resistor.
-#. Connect the **emitter** lead of the transistor to the negative power bus.
-
-
 **Code**
 
-.. :raw-code:
+
+.. note::
+
+   * You can open the file ``3.2_custom_tone.ino`` under the path of ``euler-kit/arduino/3.2_custom_tone``. 
+   * Or copy this code into **Arduino IDE**.
+   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/69c55e56-9eeb-46bb-b3a8-b354c500cc17/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
 
 
 **How it works?**
@@ -44,9 +60,9 @@ Therefore, we use the ``tone()`` function to generate the PWM signal to make the
 
 This function has three parameters:
 
-* **pin**, the GPIO pin that controls the buzzer.
-* **frequency**, the pitch of the buzzer is determined by the frequency, the higher the frequency, the higher the pitch.
-* **Duration**, the duration of the tone.
+  * **pin**, the GPIO pin that controls the buzzer.
+  * **frequency**, the pitch of the buzzer is determined by the frequency, the higher the frequency, the higher the pitch.
+  * **Duration**, the duration of the tone.
 
 
 * `tone <https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/>`_
@@ -57,5 +73,15 @@ We can simulate the specific tone according to the fundamental frequency of the 
 
 * `Piano key frequencies - Wikipedia <https://en.wikipedia.org/wiki/Piano_key_frequencies>`_
 
+.. note::
 
-.. :raw-code:
+   * You can open the file ``3.2_custom_tone_2.ino`` under the path of ``euler-kit/arduino/3.2_custom_tone_2``. 
+   * Or copy this code into **Arduino IDE**.
+   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/f934c785-7204-4972-aae5-01edde3c79cc/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>

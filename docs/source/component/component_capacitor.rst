@@ -24,5 +24,3 @@ There are 103 or 104 label on the ceramic capacitors, which represent the capaci
 **Unit Conversion**
     1F=10^3mF=10^6uF=10^9nF=10^12pF
 
-|img_103_capacitor|
-

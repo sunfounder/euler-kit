@@ -1,4 +1,7 @@
-Colorful Light
+.. _ar_rgb:
+
+
+2.4 - Colorful Light
 ==============================================
 
 As we know, light can be superimposed. For example, mix blue light and green light give cyan light, red light and green light give yellow light.
@@ -15,27 +18,31 @@ Since the electric signal is provided for each anode pin, the light of the corre
 
 * :ref:`cpn_rgb`
 
+
+**Schematic**
+
+|sch_rgb|
+
+The PWM pins GP13, GP14 and GP15 control the Red, Green and Blue pins of the RGB LED respectively, and connect the common cathode pin to GND. This allows the RGB LED to display a specific color by superimposing light on these pins with different PWM values.
+
+
+
 **Wiring**
 
 |img_rgb_pin|
 
-Put the RGB LED flat on the table, we can see that it has 4 leads of different lengths.
-Find the longest one (GND) and turn it sideways to the left.
-Now, the order of the four leads is Red, GND, Green, Blue from left to right.
+An RGB LED has 4 pins: the longest pin is the common cathode pin, which is usually connected to GND, the left pin next to the longest pin is Red, and the 2 pins on the right are Green and Blue.
 
-
-
-|sch_rgb|
 
 |wiring_rgb|
 
-1. Connect the GND pin of the Pico to the negative power bus of the breadboard.
-#. Insert the RGB LED into the breadboard so that its four pins are in different rows.
-#. Connect the red lead to the GP13 pin via a 330Ω resistor. When using the same power supply intensity, the Red LED will be brighter than the other two, and a slightly larger resistor needs to be used to reduce its brightness.
-#. Connect the Green lead to the GP14 pin via a 220Ω resistor.
-#. Connect the Blue lead to the GP15 pin via a 220Ω resistor.
-#. Connect the GND lead to the negative power bus.
-#. Connect the negative power bus to Pico's GND.
+.. 1. Connect the GND pin of the Pico to the negative power bus of the breadboard.
+.. #. Insert the RGB LED into the breadboard so that its four pins are in different rows.
+.. #. Connect the red lead to the GP13 pin via a 330Ω resistor. When using the same power supply intensity, the Red LED will be brighter than the other two, and a slightly larger resistor needs to be used to reduce its brightness.
+.. #. Connect the Green lead to the GP14 pin via a 220Ω resistor.
+.. #. Connect the Blue lead to the GP15 pin via a 220Ω resistor.
+.. #. Connect the GND lead to the negative power bus.
+.. #. Connect the negative power bus to Pico's GND.
 
 .. .. note::
 ..     * The color ring of the 220Ω resistor is red, red, black, black and brown.
@@ -45,11 +52,25 @@ Now, the order of the four leads is Red, GND, Green, Blue from left to right.
 
 Here, we can choose our favorite color in drawing software (such as paint) and display it with RGB LED.
 
-:raw-code:
+.. note::
+
+   * You can open the file ``2.4_colorful_light.ino`` under the path of ``euler-kit/arduino/2.4_colorful_light``. 
+   * Or copy this code into **Arduino IDE**.
+   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/c869191c-026c-4aac-8396-09eaf6ee2204/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+
 
 |img_take_color|
 
-Write the RGB value into color_set(), you will be able to see the RGB light up the colors you want.
+Write the RGB value into ``color_set()``, you will be able to see the RGB light up the colors you want.
 
 
 **How it works?**

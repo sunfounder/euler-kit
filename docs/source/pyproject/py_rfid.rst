@@ -1,5 +1,8 @@
-Radio Frequency Identification
-==============================
+.. _py_rfid:
+
+
+6.5 Radio Frequency Identification
+================================================
 
 Radio Frequency Identification (RFID) refers to technologies that involve using wireless communication between an object (or tag) and an interrogating device (or reader) to automatically track and identify such objects. The tag transmission range is limited to several meters from the reader. A clear line of sight between the reader and tag is not necessarily required.
 
@@ -10,17 +13,30 @@ Thus, they may have increased processing, transmission capabilities and range.
 
 * :ref:`cpn_mfrc522`
 
-**Wiring**
+
+**Schematic**
 
 |sch_rfid|
+
+**Wiring**
+
+
 
 |wiring_rfid|
 
 **Code**
 
-你需要将  ``mfrc522`` 文件夹存入pico，里面的文件与RFID的使用关系密切。
+Here you need to use the libraries in ``mfrc522`` folder, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
 
-主函数分为两个。 一个是 ``write`` ，运行后你将可以在Shell中输入message，随后将卡片(或者key)靠近MFRC522模块，将message写入卡片中。
+The main function is divided into two:
+
+* ``6.5_rfid_write.py``: Used to write information to the card (or key).
+* ``6.5_rfid_read.py``: used to read the information in the card (or key)
+
+
+Open the ``6.5_rfid_write.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+After running you will be able to type message in the shell and then put the card (or key) close to the MFRC522 module to write the message in.
 
 .. code-block:: python
 
@@ -36,7 +52,9 @@ Thus, they may have increased processing, transmission capabilities and range.
 
     write()
 
-另一个是 ``read`` ，运行后，你将能读取到卡片(或者key)中储存的message。
+Open the ``6.5_rfid_read.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+After running, you will be able to read the message stored in the card (or key).
 
 .. code-block:: python
 

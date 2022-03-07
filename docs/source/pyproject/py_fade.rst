@@ -1,5 +1,7 @@
-Fading LED
-==========
+.. _py_fade:
+
+2.3 Fading LED
+========================
 
 
 So far, we have used only two output signals: high level and low level (or called 1 & 0, ON & OFF), which is called digital output.
@@ -31,26 +33,37 @@ After understanding this knowledge, let us try to achieve the effect of Fading L
 
 
 
-**Wiring**
+**Schematic**
 
 |sch_led|
 
+This project is the same circuit as the first project :ref:`py_led`, but the signal type is different. The first project is to output digital high and low levels (0&1) directly from GP15 to make the LEDs light up or turn off, this project is to output PWM signal from GP15 to control the brightness of the LED.
+
+
+
+**Wiring**
+
 |wiring_led|
 
-.. https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf
 
-1. Here we use the GP15 pin of the Pico board.
-#. Connect one end (either end) of the 220 ohm resistor to GP15, and insert the other end into the free row of the breadboard.
-#. Insert the anode lead of the LED into the same row as the end of the 220Ω resistor, and connect the cathode lead across the middle gap of the breadboard to the same row.
-#. Connect the LED cathode to the negative power bus of the breadboard.
-#. Connect the negative power bus to the GND pin of Pico.
+.. 1. Here we use the GP15 pin of the Pico board.
+.. #. Connect one end (either end) of the 220 ohm resistor to GP15, and insert the other end into the free row of the breadboard.
+.. #. Insert the anode lead of the LED into the same row as the end of the 220Ω resistor, and connect the cathode lead across the middle gap of the breadboard to the same row.
+.. #. Connect the LED cathode to the negative power bus of the breadboard.
+.. #. Connect the negative power bus to the GND pin of Pico.
 
 .. .. note::
 ..     The color ring of the 220 ohm resistor is red, red, black, black and brown.
 
 **Code**
 
-The LED will gradually become brighter as the program runs.
+
+.. note::
+
+    * Open the ``2.3_fading_led.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+
 
 .. code-block:: python
 
@@ -64,6 +77,9 @@ The LED will gradually become brighter as the program runs.
         led.duty_u16(brightness)
         utime.sleep_ms(10)
     led.duty_u16(0)
+
+
+The LED will gradually become brighter as the code runs.
 
 **How it works?**
 

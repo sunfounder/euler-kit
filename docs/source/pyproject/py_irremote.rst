@@ -1,9 +1,11 @@
+.. _py_irremote:
 
-IR Remote Control
+
+6.4 IR Remote Control
 ================================
 
-在消费电子产品中，遥控器可用于操作电视机、DVD播放机等设备。
-在某些情况下，遥控器允许人们操作他们无法触及的设备，例如中央空调。
+In consumer electronics, remote controls are used to operate devices such as televisions and DVD players.
+In some cases, remote controls allow people to operate devices that are out of their reach, such as central air conditioners.
 
 IR Receiver is a component with photocell that is tuned to receive to infrared light. 
 It is almost always used for remote control detection - every TV and DVD player has one of these in the front to receive for the IR signal from the clicker. 
@@ -12,18 +14,26 @@ Inside the remote control is a matching IR LED, which emits IR pulses to tell th
 * :ref:`cpn_irrecv`
 
 
-**Wiring**
+**Schematic**
 
 |sch_irrecv|
+
+**Wiring**
+
 
 |wiring_irrecv|
 
 
 **Code**
 
-你需要将  ``ir_rx`` 文件夹存入pico，里面的文件与IR接收器的使用关系密切。
+.. note::
 
-然后，运行主程序。
+    * Open the ``6.4_ir_remote_control.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+
+    * Here you need to use the libraries in ``ir_rx`` folder, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
+
 
 .. code-block:: python
 
@@ -96,12 +106,12 @@ Inside the remote control is a matching IR LED, which emits IR pulses to tell th
         ir.close()
 
 
-初次时候的遥控器背面有个塑料片，需取下以通电
-程序运行后，当你按下遥控器，Shell将打印出你按下的按键。
+The new remote control has a plastic piece at the end to isolate the battery inside. You need to pull out this plastic piece to power up the remote when you are using it.
+Once the program is running, when you press the remote control, the Shell will print out the key you pressed.
 
 **How it works?**
 
-这个程序看着略显复杂，但其实只需以下几行就实现了红外接收器的基本功能了。
+This program looks slightly complicated, but it actually does the basic functions of the IR receiver with just a few lines.
 
 .. code-block:: python
 
@@ -120,15 +130,15 @@ Inside the remote control is a matching IR LED, which emits IR pulses to tell th
 
     ir = NEC_8(pin_ir, callback)  # Instantiate receiver
 
-这里会实例化一个 ``ir`` 对象，该对象会随时读取红外接收器获取到的信号。
+Here an ``ir`` object is instantiated, which reads the signals acquired by the IR receiver at any time.
 
-并将结果记录到 callback 函数的 ``data`` 中。
+The result will be recorded in ``data`` of the callback function.
 
 * `Callback Function - Wikipedia <https://en.wikipedia.org/wiki/Callback_(computer_programming)>`_
 
-如果IR接收器接收到重复值（如按着某个按键不松开），那么，data < 0，这些数据需要被过滤。
+If the IR receiver receives duplicate values (e.g. pressing a key and not releasing it), then data < 0 and this data needs to be filtered.
 
-否则 data 将会是可以用的数值，但是却是一些难以言喻的编码， ``decodeKeyValue(data)`` 函数便是用于解码的。
+Otherwise data would be a usable value, but some unspeakable code, and the ``decodeKeyValue(data)`` function is used to decode it.
 
 .. code-block:: python
 
@@ -177,17 +187,17 @@ Inside the remote control is a matching IR LED, which emits IR pulses to tell th
             return "MODE" 
         return "ERROR"
 
-如果我们按下按键 **1** ，红外接收器输出的是 ``0x0C`` 这样的数值，需要解码后才能对应上具体的按键。
+If we press key **1**, the IR receiver outputs a value like ``0x0C``, which needs to be decoded to correspond to the specific key.
 
-接下来是一些 debug 方面的功能。它们很重要，但是却与需要实现的效果无关，我们只管放在程序中即可。
+Next are some debug functions. They are important, but not related to the effect we need to achieve, so we just put them in the program.
 
 .. code-block:: python
 
     from ir_rx.print_error import print_error
 
-    ir.error_function(print_error)  # Show debug information
+    ir.error_function(print_error) # Show debug information
 
-最后，我们用一个空循环作为主程序。并使用 try-except 来让程序退出时，终结 ``ir`` 对象。
+Finally, we use an empty loop as the main program. And use try-except to make the program exit with the ``ir`` object terminated.
 
 .. code-block:: python
 

@@ -3,6 +3,8 @@
 Joystick
 =======================
 
+|img_joystick_pic|
+
 The basic idea of a joystick is to translate the movement of a stick into electronic information that a computer can process.
 
 In order to communicate a full range of motion to the computer, 
@@ -18,3 +20,9 @@ The joystick also has a digital input that is actuated when the joystick is pres
 
 
 *  `Joystick - Wikipedia <https://en.wikipedia.org/wiki/Analog_stick>`_
+
+
+**Example**
+
+* :ref:`py_joystick` (For MicroPython User)
+* :ref:`ar_joystick` (For Arduino User)

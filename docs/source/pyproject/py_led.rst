@@ -1,14 +1,19 @@
-Hello, LED! 
+.. _py_led:
+
+2.1 Hello, LED! 
 =======================================
 
-就像打印“Hello, world!” 是学习编程的第一步，用程序驱动LED是学习物理编程的传统入门。
+Just as printing "Hello, world!" is the first step in learning to program, using a program to drive an LED is the traditional introduction to learning physical programming.
 
 * :ref:`cpn_led`
 
-
-**Wiring**
+**Schematic**
 
 |sch_led|
+
+The principle of this circuit is simple and the current direction is shown in the figure. When GP15 outputs high level(3.3v), the LED will light up after the 220ohm current limiting resistor. When GP15 outputs low level (0v), the LED will turn off.
+
+**Wiring**
 
 |wiring_led|
 
@@ -17,15 +22,15 @@ Let us follow the direction of the current to build the circuit!
 1. Here we use the electrical signal from the GP15 pin of the Pico board to make the LED work, and the circuit starts from here.
 #. The current needs to pass through a 220 ohm resistor (used to protect the LED). Insert one end (either end) of the resistor into the same row as the Pico GP15 pin (row 20 in my circuit), and insert the other end into the free row of the breadboard (row 24 in my circuit).
 
-    .. .. note::
-    ..     The color ring of the 220 ohm resistor is red, red, black, black and brown.
+    .. note::
+        The color ring of the 220 ohm resistor is red, red, black, black and brown.
 
 #. Pick up the LED, you will see that one of its leads is longer than the other. Insert the longer lead into the same row as the end of the resistor, and connect the shorter lead across the middle gap of the breadboard to the same row.
     
-    .. .. note::
-    ..     The longer lead is known as the anode, and represents the positive side of the circuit; the shorter lead is the cathode, and represents the negative side. 
+    .. note::
+        The longer lead is known as the anode, and represents the positive side of the circuit; the shorter lead is the cathode, and represents the negative side. 
 
-    ..     The anode needs to be connected to the GPIO pin through a resistor; the cathode needs to be connected to the GND pin.
+        The anode needs to be connected to the GPIO pin through a resistor; the cathode needs to be connected to the GND pin.
 
 #. Insert the male-to-male (M2M) jumper wire into the same row as the LED short pin, and then connect it to the negative power bus of the breadboard.
 #. Use a jumper to connect the negative power bus to the GND pin of Pico.
@@ -33,9 +38,11 @@ Let us follow the direction of the current to build the circuit!
 
 **Code**
 
-打开示例 ``3.1_hello_led.py`` ，或者 copy this code into Thonny and click "Run Current Script" or simply press F5 to run it to make the LED blink!
+.. note::
 
-Don't forget to left click on the bottom right corner and switch the python version name to MicroPython (Raspberry Pi Pico).
+    * Open the ``2.1_hello_led.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
 .. code-block:: python
 
@@ -48,6 +55,9 @@ Don't forget to left click on the bottom right corner and switch the python vers
         utime.sleep(2)
         led.value(0)
         utime.sleep(2)
+
+After the code runs, you will see the LED blinking.
+
 
 **How it works?**
 
@@ -168,6 +178,12 @@ In this article, we used MicroPython's ``machine`` and ``utime`` libraries, we c
 * `utime <https://docs.micropython.org/en/latest/library/utime.html>`_
 
 The following is also an example of making the LED blink, please try to read the API file to understand it!
+
+.. note::
+
+    * Open the ``2.1_hello_led_2.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
 .. code-block:: python
 

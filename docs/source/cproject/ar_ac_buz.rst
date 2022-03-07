@@ -1,31 +1,46 @@
-Beep
+.. _ar_ac_buz:
+
+3.1 - Beep
 ==================
-
-
-有源蜂鸣器是一个典型的数字输出设备，它的使用方法就像点亮LED一样简单！
+The active buzzer is a typical digital output device that is as easy to use as lighting up an LED!
 
 * :ref:`Buzzer`
 
 
-**Wiring**
-
-Two types of buzzers are included in the kit. 
-We need to use active buzzer. 
-Turn them around, the sealed back (not the exposed PCB) is the one we want.
-
-|img_buzzer|
-
-The buzzer needs to use a transistor when working, here we use S8050.
-
+**Schematic**
 
 |sch_buzzer|
 
-|wiring_buzzer|
+When the GP15 output is high, after the 1K current limiting resistor (to protect the transistor), the S8050 (NPN transistor) will conduct, so that the buzzer will sound.
+
+The role of S8050 (NPN transistor) is to amplify the current and make the buzzer sound louder. In fact, you can also connect the buzzer directly to GP15, but you will find that the buzzer sound is smaller.
+
+**Wiring**
+
+Two types of buzzers are included in the kit. 
+We need to use active buzzer. Turn them around, the sealed back (not the exposed PCB) is the one we want.
+
+|img_buzzer|
+
+The buzzer needs to use a transistor when working, here we use S8050 (NPN Transistor).
+
+
+|wiring_beep|
 
 
 **Code**
 
 
-.. :raw-code:
+.. note::
 
-代码运行后，你将每隔一秒听到一次鸣笛。
+   * You can open the file ``3.1_beep.ino`` under the path of ``euler-kit/arduino/3.1_beep``. 
+   * Or copy this code into **Arduino IDE**.
+   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/62bf2c5d-9890-4f3a-b02a-119c2f6b0bf1/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After the code runs, you will hear a beep every second.

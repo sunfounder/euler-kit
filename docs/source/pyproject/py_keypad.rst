@@ -1,25 +1,43 @@
-4x4 Keypad
+.. _py_keypad:
+
+4.2 4x4 Keypad
 ========================
 
-Keypad是块或与数字，符号，或字母的布置设置的按钮垫。
-键盘可以在主要需要数字输入的设备上找到，
-例如计算器、电视遥控器、按钮电话、自动售货机、自动取款机、
-销售点设备、 密码锁和数字门锁。
-许多设备的排列都遵循E.161标准。
+The 4x4 keyboard, also known as the matrix keyboard, is a matrix of 16 keys excluded in a single panel.
 
+The keypad can be found on devices that mainly require digital input, such as calculators, TV remote controls, push-button phones, vending machines, ATMs, combination locks, and digital door locks.
+
+In this project, we will learn how to determine which key is pressed and get the related key value.
 
 * :ref:`cpn_keypad`
 * `E.161 - Wikipedia <https://en.wikipedia.org/wiki/E.161>`_
 
+**Schematic**
+
+|sch_keypad|
+
+4 pull-down resistors are connected to each of the columns of the matrix keyboard, so that G6 ~ G9 get a stable low level when the keys are not pressed.
+
+The rows of the keyboard (G2 ~ G5) are programmed to go high; if one of G6 ~ G9 is read high, then we know which key is pressed.
+
+For example, if G6 is read high, then numeric key 1 is pressed; this is because the control pins of numeric key 1 are G2 and G6, when numeric key 1 is pressed, G2 and G6 will be connected together and G6 is also high.
 
 
 **Wiring**
 
-|sch_keypad|
-
 |wiring_keypad|
 
+To make the wiring easier, in the above diagram, the column row of the matrix keyboard and the 10K resistors are inserted into the holes where G6 ~ G9 are located at the same time.
+
+
 **Code**
+
+.. note::
+
+    * Open the ``4.2_4x4_keypad.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+
 
 .. code-block:: python
 
@@ -63,7 +81,7 @@ Keypad是块或与数字，符号，或字母的布置设置的按钮垫。
             print(current_key)
         time.sleep(0.1)
 
-程序运行后，Shell会打印出你在Keypad上按下的按键。
+After the program runs, the Shell will print out the keys you pressed on the Keypad.
 
 **How it works**
 
@@ -128,7 +146,7 @@ to an array ``last_key`` to facilitate the next round of conditional judgment.
         else:
             return key
 
-This function assigns a high level to each row in turn, and when the button in the column is pressed, 
+This function assigns a high level to each row in turn, and when the button is pressed, 
 the column in which the key is located gets a high level. 
 After the two-layer loop is judged, the value of the button whose state is 1 is stored in the array ``key`` .
 
@@ -137,14 +155,14 @@ If you press the key \'3\':
 |img_keypad_pressed|
 
 
-row[0] is written in high level, and col[2] gets high level.
+``row[0]`` is written in high level, and ``col[2]`` gets high level.
 
-col[0]、col[1]、col[3] get low level.
+``col[0]``, ``col[1]``, ``col[3]`` get low level.
 
-There are four states:0, 0, 1, 0; and we write \'3\' into pressed_keys.
+There are four states:0, 0, 1, 0; and we write \'3\' into ``pressed_keys``.
 
-When row[1] , row[2] , row[3] are written into high level,
-col[0] ~ col[4] get low level.
+When ``row[1]`` , ``row[2]`` , ``row[3]`` are written into high level,
+``col[0]`` ~ ``col[4]`` get low level.
 
 The loop stopped, there returns key = \'3\'.
 

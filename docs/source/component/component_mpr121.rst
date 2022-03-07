@@ -5,18 +5,48 @@ MPR121
 
 |img_mpr121|
 
-Add lots of touch sensors to your next project with this easy-to-use 12-channel capacitive touch sensor breakout board, starring the MPR121. 
-This chip can handle up to 12 individual touch pads.
 
-The MPR121 has support for only I2C, which can be implemented with nearly any microcontroller. 
-You can select one of 4 addresses with the ADDR pin, for a total of 48 capacitive touch pads on one I2C 2-wire bus. 
-Using this chip is a lot easier than doing the capacitive sensing with analog inputs: it handles all the filtering for you and can be configured for more/less sensitivity.
+* **3.3V**: Power supply
+* **IRQ**: Open Collector Interrupt Output Pin, active low
+* **SCL**: I2C Clock
+* **SDA**: I2C Data
+* **ADD**: I2C Address Select Input Pin. Connect the ADDR pin to the VSS, VDD, SDA or SCL line, the resulting I2C addresses are 0x5A, 0x5B, 0x5C and 0x5D respectively
+* **GND**: Ground
+* **0~11**: Electrode 0~11, electrode is a touch sensor. Typically, electrodes can just be some piece of metal, or a wire. But some times depending on the length of our wire, or the material the electrode is on, it can make triggering the sensor difficult. For this reason, the MPR121 allows you to configure what is needed to trigger and untrigger an electrode.
 
-When the MPR121 senses a change, it pulls an interrupt pin LOW. The control board going to check that pin to see if it is LOW during the loop. 
-To do this, this sensor also needs access to another digital pin.
+**MPR121 OVERVIEW**
 
-**Electrodes**
+The MPR121 is the second generation capacitive touch sensor controller after
+the initial release of the MPR03x series devices. The MPR121 features
+increased internal intelligence, some of the major additions include an
+increased electrode count, a hardware configurable I2C address, an
+expanded filtering system with debounce, and completely independent
+electrodes with auto-configuration built in. The device also features a 13th
+simulated sensing channel dedicated for near proximity detection using the
+multiplexed sensing inputs.
 
-Electrode is a touch sensor. Typically, electrodes can just be some piece of metal, or a wire. 
-But some times depending on the length of our wire, or the material the electrode is on, it can make triggering the sensor difficult. 
-For this reason, the MPR121 allows you to configure what is needed to trigger and untrigger an electrode.
+* `MPR121 Datasheet <https://cdn-shop.adafruit.com/datasheets/MPR121.pdf>`_
+
+**Features**
+
+* Low power operation
+    • 1.71 V to 3.6 V supply operation
+    • 29 μA supply current at 16 ms sampling interval period
+    • 3 μA Stop mode current
+* 12 capacitance sensing inputs
+    • 8 inputs are multifunctional for LED driver and GPIO
+* Complete touch detection
+    • Auto-configuration for each sensing input
+    • Auto-calibration for each sensing input
+    • Touch/release threshold and debounce for touch detection
+* I2C interface, with Interrupt output
+* 3 mm x 3 mm x 0.65 mm 20 lead QFN package
+* -40°C to +85°C operating temperature range
+
+
+
+**Example**
+
+* :ref:`py_mpr121` (For MicroPython User)
+* :ref:`py_fruit_piano` (For MicroPython User)
+* :ref:`ar_mpr121` (For Arduino User)

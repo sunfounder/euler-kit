@@ -1,52 +1,64 @@
-Sunfounder Controller Piano
-===========================
+1.6 Electronic Piano
+============================================
 
 
+In this project, we use the button widget on the SunFounder Controller as the piano keys and connect a passive buzzer to the Pico to simulate an electronic piano.
 
-我们在APP上搭建一个钢琴和音乐盒吧！
 
-**APP Page**
+#. Build the circuit.
 
-|sc_app_piano|
+    |wiring_app_piano|
 
-G区域的按钮用于播放音乐盒储存的音效，H区域则用于调整音乐播放的速度。
 
-下方区域的7个按键则对应CDEFGAB七个音。
+#. Create a new controller, note that **Single Stick** is selected.
 
-按下相应的按键，将会从蜂鸣器发出相应的声音（或旋律）。
+    |sc_app_create_piano|
 
-**Wiring**
+#. Add a **Button** widget to the **G** area, and click the **Set** button in the upper right corner to change the name.
 
-|wiring_app_piano|
+    |sc_app_set_button|
 
-**Code**
+#. Add a **Slider** widget to the **H** area and set its name, maximum, minimum and initial value.
+
+    |sc_app_set_bpmn|
+
+#. Add a **Button** widget in **NOPSMQR** area and change their names to **note C** ~ **note B** respectively.
+
+    |sc_app_piano_button|
+
+
+#. After saving, the effect of the remote control is shown below.
+
+
+    |sc_app_piano|
+
+#. Run ``1.6_ws_piano.py``.
+
+    .. note::
+
+        * Open the ``1.6_ws_piano.py`` file under the path of ``euler-kit/esp8266`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+        * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+
+#. Each time you rerun the code, you need to connect your device's Wi-Fi to ``my_esp8266``, then turn on SunFounder Controller and reconnect.
+#. Now, click the **Run/Stop** button in the upper right corner. 
+
+    * If you press the Button widget in **G** area, the buzzer will play a melody.
+    * You can use the **Slider** widget in the **H** area to adjust the speed of this melody. 
+    * If you press the button in NOPSMQR area separately, the passive buzzer will sound different notes, and the LED will light up and fade out when you press each button.
+
+
+**How it works?**
 
 .. code-block:: python
-
-    from ws import WS_Server
-    import json
-    import time
-    import _thread
-
-
-    NAME = 'my_esp8266'
-
-    # Client Mode
-    # WIFI_MODE = "sta"
-    # SSID = "MakerStarsHall"
-    # PASSWORD = "sunfounder"
-
-    # AP Mode
-    WIFI_MODE = "ap"
-    SSID = ""
-    PASSWORD = "12345678"
-
-    ws = WS_Server(name=NAME, mode=WIFI_MODE, ssid=SSID, password=PASSWORD)
-    ws.start()
 
     led = machine.PWM(machine.Pin(15))
     led.freq(1000)
     buzzer = machine.PWM(machine.Pin(14))
+
+Define the connection pins for the LED and buzzer, and the frequency of the LED.
+
+.. code-block:: python
 
     #note 
     note = [262,294,330,349,392,440,494,523]
@@ -58,21 +70,34 @@ G区域的按钮用于播放音乐盒储存的音效，H区域则用于调整音
     NOTE_B3 = 247
     melody =[NOTE_C4,NOTE_G3,NOTE_G3,NOTE_A3,NOTE_G3,NOTE_B3,NOTE_C4]
 
+Define the frequency of CDEFGAB and a melody here.
+
+.. code-block:: python
+
     def light_led():
         global brightness
         brightness = 65535
         led.duty_u16(brightness)
 
-    def interval_mapping(x, in_min, in_max, out_min, out_max):
-        return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
+The ``light_led()`` function is used to let the LED display the maximum brightness(65535).
 
+.. code-block:: python
+    
     def tone(pin,frequency):
         pin.freq(frequency)
         pin.duty_u16(30000)
         light_led()
-        
+
+The ``tone()`` function can generate a square wave of the specified frequency (and 50% duty cycle) on a pin, also let the LED light up.
+
+.. code-block:: python
+
     def noTone(pin):
         pin.duty_u16(0)
+
+The ``notone()`` function is used to stop the generation of a square wave triggered by ``tone()``.
+
+.. code-block:: python
 
     def music_box(duration):
         for n in melody:
@@ -81,7 +106,10 @@ G区域的按钮用于播放音乐盒储存的音效，H区域则用于调整音
             noTone(buzzer)
             time.sleep_ms(duration)
         noTone(buzzer)
-            
+
+The ``music_box()`` function is to make the passive buzzer play the melody in the ``melody[]`` array with a specific beat.
+
+.. code-block:: python
 
     def on_receive(data):
     
@@ -121,16 +149,10 @@ G区域的按钮用于播放音乐盒储存的音效，H区域则用于调整音
         
     ws.on_receive = on_receive
 
-    gap = 500
-    bpm_flag = False
-    brightness = 0
+Here, the ``on_receive()`` function can be divided into 3 parts.
 
-    def main():
-        print("start")
-        while True:
-            ws.loop()
-
-    main()
-
+* **fade led**: Make the LED light up and then turn off after an intermediate brightness.
+* **music box**: When the button widget in the G area is pressed, the buzzer plays the melody in the ``melody[]`` array in 1/4 beats.
+* **piano**: When the buttons in NOPSMQR area are pressed separately, the passive buzzer will play different notes.
 
 

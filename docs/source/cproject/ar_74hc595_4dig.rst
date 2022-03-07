@@ -1,4 +1,6 @@
-Time Counter
+.. _ar_74hc_4dig:
+
+5.3 - Time Counter
 ================================
 
 
@@ -18,23 +20,40 @@ effect and the principle of visual residue, we can see four characters
 at the same time.
 
 
-**Wiring**
-
+**Schematic**
 
 |sch_4dig|
+
+Here the wiring principle is basically the same as :ref:`ar_74hc_led`, the only difference is that Q0-Q7 are connected to the a ~ g pins of the 4-digit 7-segment display.
+
+Then G10 ~ G13 will select which 7-segment display to work.
+
+**Wiring**
+
 
 |wiring_4dig|
 
 **Code**
 
-:raw-code:
+.. note::
 
-程序运行后，你将能看到四位数码管变成了一个计数器，每秒数字增加1。
+   * You can open the file ``5.3_time_counter.ino`` under the path of ``euler-kit/arduino/5.3_time_counter``. 
+   * Or copy this code into **Arduino IDE**.
+   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/0e97386e-417e-4f53-a026-5f37e36deba4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After the program is run, you will see the 4-digit 7-segment display become a counter and the number increases by 1 per second.
+
 
 **How it works?**
 
-为每一个七段数码管写入信号的方式与 :ref:`ar_7seg` 是一样的，使用 ``shiftOut()`` 函数。
-四位数码管的核心要点，就是有选择性的激活各个七段数码管。与之相关的代码如下：
+Writing signals to each 7-segment display is done in the same way as :ref:`ar_74hc_7seg`, using the ``hc595_shift()`` function.
+The core point of the 4-digit 7-segment display is to selectively activate each 7-segment display. The code associated with this is as follows.
 
 .. code-block:: arduino
 
@@ -69,16 +88,18 @@ at the same time.
         digitalWrite(placePin[digit],LOW);
     }
 
-在这里，用了4个引脚(GP10，GP11，GP12，GP13)来单独控制四位数码管的各个位。
-当这些引脚状态为 ``LOW`` 时，相应的数码管激活；状态为 ``HIGH`` 时，则相反。
+Here, four pins (GP10, GP11, GP12, GP13) are used to control each bit of the  4-digit 7-segment display individually.
+When the status of these pins is ``LOW``, the corresponding 7-segment display is active; when the status is ``HIGH``, the 7-segment display does not work.
 
-在这里 ``pickDigit(digit)`` 函数的作用就是unable所有四个数码管后，单独启用特定的某个数码管。
-随后，用 ``hc595_shift()`` 为数码管写入对应的 8 bits code即可。
 
-四位数码管需要持续性的轮流激活各个数码管，从而让我们能看到它显示四位数字，这就意味着主程序中不能轻易添加会影响时序的代码。
-然而我们又需要在这个这个示例中添加计时功能，如果增加一个 ``delay(1000)``，
-我们就会识破它四个数码管同时工作的假象，暴露出一次只有一个数码管发光的事实。
-那么，使用 ``millis()`` 函数，就是一个绝佳的方法。
+Here the ``pickDigit(digit)`` function is used to unable all 7-segment displays and then enable a particular digit individually.
+After that, ``hc595_shift()`` is used to write the corresponding 8 bits code for the 7-segment display.
+
+The 4-digit 7-segment display needs to be continuously activated in turn so that we can see it display four digits, which means that the main program cannot easily add code that would affect the timing.
+
+However, we need to add a timing function to this example, if we add a ``delay (1000)``, we will be able to detect the illusion of its four 7-segment displays working at the same time, exposing the fact that only one 7-segment display at a time to light.
+
+Then, using the ``millis()`` function is an excellent way to do this.
 
 .. code-block:: arduino
 
@@ -92,11 +113,11 @@ at the same time.
         unsigned int count = (millis()-timerStart)/1000;
     }
 
-``millis()`` 函数可以获取开始运行当前程序以来经过的毫秒数，
-我们把首次获取的时间值记录为 ``timerStart`` ，
-随后在需要获取时间时，重新调用 ``millis()`` 函数，
-把值减去  ``timerStart`` ，就能得到程序运行了多久。
+The ``millis()`` function gets the number of milliseconds that have passed since the current program was started. We record the first time value as ``timerStart``; 
 
-最后，把这个时间值转化并输出到四位数码管就可以了。
+then when we need to get the time again, we call the ``millis()`` function again and subtract ``timerStart`` from the value to get how long the program has been running.
+
+Finally, convert this time value and let the 4-digit 7-segment display to display it.
+
 
 * `millis() <https://www.arduino.cc/reference/en/language/functions/time/millis/>`_

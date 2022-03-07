@@ -1,6 +1,6 @@
 .. _ar_lcd:
 
-Liquid Crystal Display
+3.4 - Liquid Crystal Display
 ===============================
 
 LCD1602 is a character type liquid crystal display, which can display 32 (16*2) characters at the same time.
@@ -19,25 +19,37 @@ Therefore, LCD1602 with an I2C bus is developed to solve the problem.
 
 Here we will use the I2C0 interface to control the LCD1602 and display text.
 
-
-**Wiring**
+**Schematic**
 
 |sch_lcd|
 
+**Wiring**
+
 |wiring_lcd|
 
-1. Connect VCC of LCD to VBUS of Pico.
-#. Connect the GND of LCD to the GND of Pico.
-#. Connect SDA of LCD to GP0 of Pico, which is GP6(I2C1 SDA).
-#. Connect SCL of LCD to GP1 of Pico, which is GP7(I2C1 SCL).
+.. 1. Connect VCC of LCD to VBUS of Pico.
+.. #. Connect the GND of LCD to the GND of Pico.
+.. #. Connect SDA of LCD to GP0 of Pico, which is GP6(I2C1 SDA).
+.. #. Connect SCL of LCD to GP1 of Pico, which is GP7(I2C1 SCL).
 
 **Code**
 
-The libraries ``Wire.h`` and ``LiquidCrystal_I2C.h`` are used in these codes, 
-``Wire.h`` is built in Arduino, but ``LiquidCrystal_I2C.h`` needs adding manually. 
-Add Method: Refer to :ref:`apx_add_lib`.
+.. note::
 
-:raw-code:
+    * You can open the file ``3.4_liquid_crystal_display.ino`` under the path of ``euler-kit/arduino/3.4_liquid_crystal_display``. 
+    * Or copy this code into **Arduino IDE**.
+    
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+    
+    The libraries ``Wire`` and ``LiquidCrystal_I2C`` are used here, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_ar`.
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/1f464967-5937-473a-8a0d-8e4577c85e7d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+
+After the program runs, you will be able to see two lines of text appear on the LCD in turn, and then disappear.
+
 
 **How it works?**
 
@@ -53,14 +65,11 @@ By calling the library ``LiquidCrystal_I2C.h``, you can easily drive the LCD.
 
     LiquidCrystal_I2C(uint8_t lcd_Addr,uint8_t lcd_cols,uint8_t lcd_rows)
 
-Creates a new instance of the LiquidCrystal_I2C class that represents a
-particular LCD attached to your Arduino board.
+Creates a new instance of the ``LiquidCrystal_I2`` C class that represents a particular LCD attached to your Arduino board.
 
-**lcd_AddR**: The address of the LCD defaults to 0x27.
-
-**lcd_cols**: The LCD1602 has 16 columns.
-
-**lcd_rows**: The LCD1602 has 2 rows.
+ **lcd_AddR**: The address of the LCD defaults to 0x27.
+ **lcd_cols**: The LCD1602 has 16 columns.
+ **lcd_rows**: The LCD1602 has 2 rows.
 
 
 .. code-block:: arduino
@@ -123,7 +132,17 @@ Prints text to the LCD.
 
 Upload the codes to the Pico, the content that you input in the serial monitor will be printed on the LCD.
 
-:raw-code:
+.. note::
+
+   * You can open the file ``3.4_liquid_crystal_display_2.ino`` under the path of ``euler-kit/arduino/3.4_liquid_crystal_display_2``. 
+   * Or copy this code into **Arduino IDE**.
+   
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+    
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/631e0380-d594-4a8b-9bac-eb0688079b97/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 In addition to reading data from the electronic components, the Pico 
 can read the data input in the serial port monitor, and you can

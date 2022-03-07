@@ -3,37 +3,42 @@
 Diode
 =================
 
+|img_diode|
 
-Diode是一种具有两个电极的电子元器件。它只允许电流由单一方向流过，这通常称之为“Rectifying”功能。
-因此，二极管可以想成电子版的逆止阀。
+A diode is an electronic component with two electrodes. It allows current to flow in only one direction, which is often called the "Rectifying" function.
+Thus, a diode can be thought of as an electronic version of a check valve.
 
 
 The two terminals of a diode are polarized, with the positive end called anode and the negative end called cathode. 
 The cathode is usually made of silver or has a color band. 
 Controlling the direction of current flow is one of the key features of diodes — the current in a diode flows from anode to cathode. The behavior of a diode is similar to the behavior of a check valve. One of the most important characteristics of a diode is the non-linear current voltage. If higher voltage is connected to the anode, then current flows from anode to cathode, and the process is known as forward bias. However, if the higher voltage is connected to the cathode, then the diode does not conduct electricity, and the process is called reverse bias.
 
-由于二极管具有单向导电的特性，几乎所有复杂一些的电子电路中都会使用到它。它是诞生最早的半导体器件之一，其应用也非常广泛。
+Because of its unidirectional conductivity, the diode is used in almost all electronic circuits of some complexity. It was one of the first semiconductor devices to be created, and its applications are widespread.
 
-然而实际上二极管并不会表现出如此完美的开与关的方向性，而是较为复杂的非线性电子特征——这是由特定类型的二极管技术决定的。
+However in reality diodes do not exhibit such perfect on and off directionality, but rather more complex non-linear electronic characteristics - which are determined by the specific type of diode technology.
 
-晶体二极管是一个由p型半导体和n型半导体形成的p-n结，在其界面处两侧形成了空间电荷层，并且建有自建电场，当不存在外加电压时，因为p-n结两边载流子浓度差引起的扩散电流和自建电场引起的漂移电流相等而处于电平衡状态。 当产生正向电压偏置时，外界电场与自建电场的互相抑消作用使载流子的扩散电流增加引起了正向电流（也就是导电的原因）。 当产生反向电压偏置时，外界电场与自建电场进一步加强，形成在一定反向电压范围中与反向偏置电压值无关的反向饱和电流I0（这也就是不导电的原因）。
-当外加的反向电压高到一定程度时，p-n结空间电荷层中的电场强度达到临界值产生载流子的倍增过程，产生大量电子空穴对，产生了数值很大的反向击穿电流，称为二极管的击穿现象。
+A diode is a p-n junction formed by a p-type semiconductor and an n-type semiconductor, with a space charge layer formed on both sides at its interface and a self-built electric field, which is in electrical equilibrium when no applied voltage is present because the diffusion current due to the difference in carrier concentration between the two sides of the p-n junction and the drift current due to the self-built electric field are equal. When the forward voltage bias is generated, the mutual suppression of the external electric field and the self-built electric field increases the diffusion current of the carriers causing the forward current (that is, the reason for the conductivity). When the reverse voltage bias is generated, the external electric field and the self-built electric field are further strengthened to form a reverse saturation current I0 in a certain reverse voltage range independent of the value of the reverse bias voltage (which is the reason for non-conductivity).
+When the applied reverse voltage is high to a certain extent, the electric field strength in the p-n junction space charge layer reaches a critical value to produce a multiplication process of carriers, generating a large number of electron-hole pairs, resulting in a large value of the reverse breakdown current, called the diode breakdown phenomenon.
 
-1、正向性
-外加正向电压时，在正向特性的起始部分，正向电压很小，不足以克服p-n结内电场的阻挡作用，正向电流几乎为零，这一段称为死区。
-这个不能使二极管导通的正向电压称为死区电压。当正向电压大于死区电压以后，p-n结内电场被克服，二极管正向导通，电流随电压增大而迅速上升。
-在正常使用的电流范围内，导通时二极管的端电压几乎维持不变，这个电压称为二极管的正向电压。
+**1. Forward Characteristic**
 
-2、反向性
-外加反向电压，且不超过一定范围时，通过二极管的电流是少数载流子漂移运动所形成反向电流。
-由于反向电流很小，二极管处于截止状态。这个反向电流又称为反向饱和电流或漏电流，二极管的反向饱和电流受温度影响很大。
+When the external forward voltage is applied, in the beginning of the forward characteristic, the forward voltage is very small, not enough to overcome the blocking effect of the electric field in the p-n junction, the forward current is almost zero, this section is called the dead zone.
+This forward voltage that does not allow the diode to conduct is called the deadband voltage. When the forward voltage is greater than the deadband voltage, p-n junction electric field is overcome, the diode forward conduction, the current increases with the voltage and rises rapidly.
+In the normal use of the current range, the terminal voltage of the diode during conduction remains almost constant, this voltage is called the forward voltage of the diode.
 
-3、击穿
-外加反向电压超过某一数值时，反向电流会突然增大，这种现象称为电击穿。
-引起电击穿的临界电压称为二极管反向击穿电压。电击穿时二极管失去单向导电性。
-因而使用时应避免二极管外加的反向电压过高。
+**2. Reverse Characteristic**
 
-早期的二极管包含 "Cat's Whisker" Crystals 以及 Vacuum tubes (also called "Thermionic Valves")。现今最普遍的二极管大多是使用半导体材料如硅或锗。
+When the applied reverse voltage, and does not exceed a certain range, the current through the diode is a few carriers drifting movement formed by the reverse current.
+As the reverse current is very small, the diode is in the cutoff state. This reverse current is also known as reverse saturation current or leakage current, and is greatly influenced by temperature.
+
+**3. Breakdown**
+
+When the applied reverse voltage exceeds a certain value, the reverse current will suddenly increase, a phenomenon known as electrical breakdown.
+The critical voltage that causes electrical breakdown is called the reverse breakdown voltage, the diode will loses its unidirectional conductivity at the time of electrical breakdown.
+Therefore, the use of the diode should be avoided when the applied reverse voltage is too high.
+
+
+Early diodes consisted of "Cat's Whisker" Crystals and Vacuum tubes (also called "Thermionic Valves"). Most of today's most common diodes use semiconductor materials such as silicon or germanium.
 
 * `P–N junction - Wikipedia <https://en.wikipedia.org/wiki/P-n_junction>`_
  

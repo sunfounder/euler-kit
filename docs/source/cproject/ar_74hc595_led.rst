@@ -1,4 +1,6 @@
-Microchip - 74HC595
+.. _ar_74hc_led:
+
+5.1 -  Microchip - 74HC595
 ===========================
 
 Integrated circuit (integrated circuit) is a kind of miniature electronic device or component, which is represented by the letter "IC" in the circuit.
@@ -14,34 +16,49 @@ Specifically, it can replace 8 pins for digital signal output by writing an 8-bi
 
 * :ref:`74HC595`
 
-
-**Wiring**
-
-The 74HC595 is a 16-pin IC with a semi-circular notch on one side (usually the left side of the label). With the notch facing upwards, its pins are shown in the diagram below.
-
-|img_74jc595_1|
-
-Refer to the figure below to build the circuit.
-
+**Schematic**
 
 |sch_74hc_led|
 
+* When MR (pin10) is high level and OE (pin13) is low level, data is input in the rising edge of SHcp and goes to the memory register through the rising edge of SHcp. 
+* If the two clocks are connected together, the shift register is always one pulse earlier than the memory register. 
+* There is a serial shift input pin (Ds), a serial output pin (Q) and an asynchronous reset button (low level) in the memory register. 
+* The memory register outputs a Bus with a parallel 8-bit and in three states. 
+* When OE is enabled (low level), the data in memory register is output to the bus(Q0 ~ Q7).
+
+
+**Wiring**
+
+
 |wiring_74hc_led|
 
-1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
-#. Insert 74HC595 across the middle gap into the breadboard.
-#. Connect the GP0 pin of Pico to the DS pin (pin 14) of 74HC595 with a jumper wire.
-#. Connect the GP1 pin of Pico to the STcp pin (12-pin) of 74HC595.
-#. Connect the GP2 pin of Pico to the SHcp pin (pin 11) of 74HC595.
-#. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
-#. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
-#. Insert 8 LEDs on the breadboard, and their anode leads are respectively connected to the Q0~Q1 pins (15, 1, 2, 3, 4, 5, 6, 7) of 74HC595.
-#. Connect the cathode leads of the LEDs with a 220Ω resistor in series to the negative power bus.
+.. 1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
+.. #. Insert 74HC595 across the middle gap into the breadboard.
+.. #. Connect the GP0 pin of Pico to the DS pin (pin 14) of 74HC595 with a jumper wire.
+.. #. Connect the GP1 pin of Pico to the STcp pin (12-pin) of 74HC595.
+.. #. Connect the GP2 pin of Pico to the SHcp pin (pin 11) of 74HC595.
+.. #. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
+.. #. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
+.. #. Insert 8 LEDs on the breadboard, and their anode leads are respectively connected to the Q0~Q1 pins (15, 1, 2, 3, 4, 5, 6, 7) of 74HC595.
+.. #. Connect the cathode leads of the LEDs with a 220Ω resistor in series to the negative power bus.
 
 
 **Code**
 
-.. :raw-code:
+
+.. note::
+
+   * You can open the file ``5.1_microchip_74hc595.ino`` under the path of ``euler-kit/arduino/5.1_microchip_74hc595``. 
+   * Or copy this code into **Arduino IDE**.
+   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/71854882-0c1b-4d09-b3e7-5ef7272f7293/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+
 
 When the program is running, you can see the LEDs turning on one after another.
 
@@ -51,7 +68,7 @@ Declare an array, store several 8 bit binary numbers that are used to change the
 
 .. code-block:: arduino
 
-    int datArray[] = {B00000000, B00000001, B00000011, B00000111, B00001111, B00011111, B00111111, B01111111, B11111111};
+    int datArray[] = {0b00000000, 0b00000001, 0b00000011, 0b00000111, 0b00001111, 0b00011111, 0b00111111, 0b01111111, 0b11111111};
 
 Set ``STcp`` to low level first and then high level. It will generate a rising edge pulse of ``STcp``.
 

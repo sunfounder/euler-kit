@@ -25,3 +25,10 @@ board space (smaller size), and reduce cost.
 
 
 * `MFRC522 Data sheet <https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf>`_
+
+
+**Example**
+
+* :ref:`py_rfid` (For MicroPython User)
+* :ref:`py_music_player` (For MicroPython User)
+* :ref:`ar_rfid` (For Arduino User)

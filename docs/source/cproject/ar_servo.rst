@@ -1,5 +1,7 @@
-Swinging Servo
-===================
+.. _ar_servo:
+
+3.7 - Swinging Servo
+=======================
 
 In this kit, in addition to LED and passive buzzer, there is also a device controlled by PWM signal, Servo.
 
@@ -9,24 +11,37 @@ Now, try to make the servo sway!
 
 * :ref:`cpn_servo`
 
-**Wiring**
+**Schematic**
 
 |sch_servo|
 
+**Wiring**
+
 |wiring_servo|
 
-1. Press the Servo Arm into the Servo output shaft. If necessary, fix it with screws.
-#. Connect **VBUS** (not 3V3) and GND of Pico to the power bus of the breadboard.
-#. Connect the red lead of the servo to the positive power bus with a jumper.
-#. Connect the yellow lead of the servo to the GP15 pin with a jumper wire.
-#. Connect the brawn lead of the servo to the negative power bus with a jumper wire.
-
+* Orange wire is signal and connected to GP15.
+* Red wire is VCC and connected to VBUS(5V).
+* Brown wire is GND and connected to GND.
 
 **Code**
 
+
+.. note::
+
+   * You can open the file ``3.7_swinging_servo.ino`` under the path of ``euler-kit/arduino/3.7_swinging_servo``. 
+   * Or copy this code into **Arduino IDE**.
+   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+    
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/d52a67be-be6b-4cbf-b411-810160f56928/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+
 When the program is running, we can see the Servo Arm swinging back and forth from 0° to 180°. 
 
-:raw-code:
 
 **How it works?**
 

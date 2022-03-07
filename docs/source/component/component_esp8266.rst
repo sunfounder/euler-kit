@@ -19,3 +19,7 @@ attracted many hackers to explore the module,
 the chip, and the software on it, as well as to translate the Chinese documentation.
 
 * `ESP8266 - Espressif <https://www.espressif.com/en/products/socs/esp8266>`_
+
+**Example**
+
+* :ref:`esp_in` 

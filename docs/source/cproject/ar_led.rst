@@ -1,15 +1,22 @@
-Hello, LED! 
+.. _ar_led:
+
+
+
+2.1 - Hello, LED! 
 =======================================
 
-就像打印“Hello, world!” 是学习编程的第一步，用程序驱动LED是学习物理编程的传统入门。
+Just as printing “Hello, world!” is the first step in learning to program, using a program to drive an LED is the traditional introduction to learning physical programming.
 
 * :ref:`cpn_led`
 
 
-**Wiring**
-
+**Schematic**
 
 |sch_led|
+
+The principle of this circuit is simple and the current direction is shown in the figure. When GP15 outputs high level(3.3v), the LED will light up after the 220ohm current limiting resistor. When GP15 outputs low level (0v), the LED will turn off.
+
+**Wiring**
 
 |wiring_led|
 
@@ -24,27 +31,38 @@ Let us follow the direction of the current to build the circuit!
 
 **Code**
 
-打开示例 ``3.1_hello_led.ino`` ，或者 copy this code into Arduino IDE and click "upload" to run it to make the LED blink!
+.. note::
 
-Don't forget to switch the Board to Raspberry Pi Pico under the Tools menu.
+   * You can open the file ``2.1_hello_led.ino`` under the path of ``euler-kit/arduino/2.1_hello_led``. 
+   * Or copy this code into **Arduino IDE**.
+   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
 
-.. code-block:: C
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 
-    const int ledPin = 15;
 
-    // the setup function runs once when you press reset or power the board
-    void setup() {
-    // initialize digital pin as an output.
-        pinMode(ledPin, OUTPUT);
-    }
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/898b8ba7-9bdf-468d-9181-ca8535e8dca6/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-    // the loop function runs over and over again forever
-    void loop() {
-        digitalWrite(ledPin, HIGH);   // turn the LED on (HIGH is the voltage level)
-        delay(1000);                       // wait for a second
-        digitalWrite(ledPin, LOW);    // turn the LED off by making the voltage LOW
-        delay(1000);                       // wait for a second
-    }
+.. .. code-block:: C
+
+..     const int ledPin = 15;
+
+..     // the setup function runs once when you press reset or power the board
+..     void setup() {
+..     // initialize digital pin as an output.
+..         pinMode(ledPin, OUTPUT);
+..     }
+
+..     // the loop function runs over and over again forever
+..     void loop() {
+..         digitalWrite(ledPin, HIGH);   // turn the LED on (HIGH is the voltage level)
+..         delay(1000);                       // wait for a second
+..         digitalWrite(ledPin, LOW);    // turn the LED off by making the voltage LOW
+..         delay(1000);                       // wait for a second
+..     }
+
+After the code runs, you will see the LED blinking.
 
 **How it works?**
 

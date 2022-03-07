@@ -1,70 +1,41 @@
-Plant Monitor
-=============
+1.7 Plant Monitor
+================================
 
 |sc_img_plant_monitor|
 
-|sc_app_plant_monitor|
-
-这是一个智能灌溉系统，它会检测当前环境的温度和湿度，打印到APP里。
-当你按下APP上的pump按钮，它将会为植物补充水分。待水量抵达water level sensor的位置后自动停止泵水。
-
-.. note:: 由于水泵长时间运行会产生较大电流，导致pico死机。此时请将pico的run引脚接入低电平后约一秒后释放，以此复位pico。
+This is a smart watering system, it will detect the current temperature and humidity of the environment and show them on the SunFounder Controller.
+When you press the pump button on the APP, it will replenish water for the plants. When it reaches a certain position (detected by water level sensor), it will stop pumping automatically.
 
 
+#. Build the circuit.
 
+    |wiring_app_plant_monitor|
 
-**Wiring**
+#. Create a new controller, add the following widgets and change their names.
 
-|wiring_app_plant_monitor|
+    |sc_app_plant_monitor|
 
+#. Run ``1.7_ws_plant_monitor.py``.
 
+    .. note::
 
-**Code**
+        * Open the ``1.7_ws_plant_monitor.py`` file under the path of ``euler-kit/esp8266``.
+        * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
-.. note:: 将示例名改为 ``main.py`` ,可以使该示例在开机后自动运行。
+#. Each time you rerun the code, you need to connect your device's Wi-Fi to ``my_esp8266``, then turn on SunFounder Controller and reconnect.
+#. After clicking the **Run/Stop** button in the upper right corner. You will see the current temperature, humidity and water level value on the SunFounder controller. When you press the pump button on the APP, it will replenish water for the plants.
+
+.. note::
+
+    * If the motor is still spinning after you click the Stop button, you need to reset the **RUN** pin on the Pico with a wire to GND at this time, and then unplug this wire to run the code again.
+    * This is because the motor is operating with too much current, which may cause the Pico to disconnect from the computer. 
+
+    |wiring_run_reset|
+
+**How it works?**
+
 
 .. code-block:: python
-
-    from ws import WS_Server
-    import json
-    import time
-
-    from machine import Pin, I2C
-    from dht import DHT11
-
-
-    # dht 11
-    pin = Pin(16, Pin.OUT, Pin.PULL_DOWN)
-    sensor = DHT11(pin)
-
-    # water sensor
-    water_sensor = machine.ADC(28)
-
-    # pump
-    motor1A = machine.Pin(14, machine.Pin.OUT)
-    motor2A = machine.Pin(15, machine.Pin.OUT)
-
-
-    # ESP8266
-    NAME = 'my_esp8266'
-
-    # Client Mode
-    # WIFI_MODE = "sta"
-    # SSID = "MakerStarsHall"
-    # PASSWORD = "sunfounder"
-
-    # AP Mode
-    WIFI_MODE = "ap"
-    SSID = ""
-    PASSWORD = "12345678"
-
-    ws = WS_Server(name=NAME, mode=WIFI_MODE, ssid=SSID, password=PASSWORD)
-    ws.start()
-
-
-
-    def interval_mapping(x, in_min, in_max, out_min, out_max):
-        return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
     def on_receive(data):
         
@@ -92,10 +63,26 @@ Plant Monitor
 
     ws.on_receive = on_receive
 
-    def main():
-        print("start")
-        while True:
+Here, the ``on_receive()`` function can be divided into 3 parts.
 
-            ws.loop()
+* **start pumping**: When the button in area **G** is pressed, let the pump start working.
+* **show dht11 message**: Show the temperature and humidity on the widgets in area C and area B respectively.
+* **show water level sensor message**: The water level message is displayed on the widget in area **P**. When the water level message is greater than 10000, let the pump stop working.
 
-    main()
+
+**What's more?**
+
+If you want Pico to run this ``1.7_ws_plant_monitor.py`` file automatically after booting, refer to the following steps.
+
+#. Open the ``1.7_ws_plant_monitor.py`` file under the path of ``euler-kit/esp8266``, then click **File** -> **Save as**.
+
+    |sc_save_plant_as|
+
+#. Select **Raspberry Pi Pico**.
+
+    |mps_sec_pico|
+
+#. Set it name to ``main.py``, this way the Raspberry Pi Pico will run this code automatically.
+
+    |sc_save_main|
+

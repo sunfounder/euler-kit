@@ -1,5 +1,7 @@
-Detect Human Movement
-=====================
+.. _py_pir:
+
+2.10 Detect Human Movement
+========================================
 
 Passive infrared sensor (PIR sensor) is a common sensor that can measure infrared (IR) light emitted by objects in its field of view.
 Simply put, it will receive infrared radiation emitted from the body, thereby detecting the movement of people and other animals.
@@ -7,13 +9,24 @@ More specifically, it tells the main control board that someone has entered your
 
 :ref:`PIR Motion Sensor`
 
-**Wiring**
+
+**Schematic**
 
 |sch_pir|
+
+When the PIR module detects someone passing by, GP14 will be high, otherwise it will be low.
+
+**Wiring**
 
 |wiring_pir|
 
 **Code**
+
+.. note::
+
+    * Open the ``2.10_detect_human_movement.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
 .. code-block:: python
 
@@ -27,13 +40,18 @@ More specifically, it tells the main control board that someone has entered your
 
     pir_sensor.irq(trigger=machine.Pin.IRQ_RISING, handler=motion_detected)
 
-程序运行后，如果PIR sensor检测到附近有人，Shell会打印出 "Somebody here!" 
+After the program runs, if the PIR module detects someone nearby, the Shell will print out "Somebody here!" 
 
 **What more?**
 
 PIR is a very sensitive sensor. In order to adapt it to the environment of use, it needs to be adjusted. Let the side with the 2 potentiometers facing you, turn both potentiometers counterclockwise to the end and insert the jumper cap on the pin with L and the middle pin.
 
-Copy the following code into Thonny and run it, let us analyze its adjustment method along with the experimental results.
+
+.. note::
+
+    * Open the ``2.10_pir_adjustment.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
 .. code-block:: python
 
@@ -61,6 +79,8 @@ Copy the following code into Thonny and run it, let us analyze its adjustment me
         print("the duration of work is " + str(intervals2) + "ms")
 
     pir_sensor.irq(trigger=machine.Pin.IRQ_RISING, handler=pir_in_high_level) 
+
+Let us analyze its adjustment method along with the experimental results.
 
 |img_pir_back|
 

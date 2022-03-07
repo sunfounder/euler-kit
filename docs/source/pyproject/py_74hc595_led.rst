@@ -1,4 +1,6 @@
-Microchip - 74HC595
+.. _py_74hc_led:
+
+5.1 Microchip - 74HC595
 ===========================
 
 Integrated circuit (integrated circuit) is a kind of miniature electronic device or component, which is represented by the letter "IC" in the circuit.
@@ -14,31 +16,44 @@ Specifically, it can replace 8 pins for digital signal output by writing an 8-bi
 
 * :ref:`74HC595`
 
-
-**Wiring**
-
-The 74HC595 is a 16-pin IC with a semi-circular notch on one side (usually the left side of the label). With the notch facing upwards, its pins are shown in the diagram below.
-
-|img_74jc595_1|
-
-Refer to the figure below to build the circuit.
+**Schematic**
 
 |sch_74hc_led|
 
+* When MR (pin10) is high level and OE (pin13) is low level, data is input in the rising edge of SHcp and goes to the memory register through the rising edge of SHcp. 
+* If the two clocks are connected together, the shift register is always one pulse earlier than the memory register. 
+* There is a serial shift input pin (Ds), a serial output pin (Q) and an asynchronous reset button (low level) in the memory register. 
+* The memory register outputs a Bus with a parallel 8-bit and in three states. 
+* When OE is enabled (low level), the data in memory register is output to the bus(Q0 ~ Q7).
+
+**Wiring**
+
+.. The 74HC595 is a 16-pin IC with a semi-circular notch on one side (usually the left side of the label). With the notch facing upwards, its pins are shown in the diagram below.
+
+
+.. Refer to the figure below to build the circuit.
+
+
 |wiring_74hc_led|
 
-1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
-#. Insert 74HC595 across the middle gap into the breadboard.
-#. Connect the GP0 pin of Pico to the DS pin (pin 14) of 74HC595 with a jumper wire.
-#. Connect the GP1 pin of Pico to the STcp pin (12-pin) of 74HC595.
-#. Connect the GP2 pin of Pico to the SHcp pin (pin 11) of 74HC595.
-#. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
-#. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
-#. Insert 8 LEDs on the breadboard, and their anode leads are respectively connected to the Q0~Q1 pins (15, 1, 2, 3, 4, 5, 6, 7) of 74HC595.
-#. Connect the cathode leads of the LEDs with a 220Ω resistor in series to the negative power bus.
+.. 1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
+.. #. Insert 74HC595 across the middle gap into the breadboard.
+.. #. Connect the GP0 pin of Pico to the DS pin (pin 14) of 74HC595 with a jumper wire.
+.. #. Connect the GP1 pin of Pico to the STcp pin (12-pin) of 74HC595.
+.. #. Connect the GP2 pin of Pico to the SHcp pin (pin 11) of 74HC595.
+.. #. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
+.. #. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
+.. #. Insert 8 LEDs on the breadboard, and their anode leads are respectively connected to the Q0~Q1 pins (15, 1, 2, 3, 4, 5, 6, 7) of 74HC595.
+.. #. Connect the cathode leads of the LEDs with a 220Ω resistor in series to the negative power bus.
 
 
 **Code**
+
+.. note::
+
+    * Open the ``5.1_microchip_74hc595.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
 .. code-block:: python
 

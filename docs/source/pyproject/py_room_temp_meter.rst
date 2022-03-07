@@ -1,16 +1,30 @@
-Room Temperature Meter
-======================
+.. _py_room_temp:
+
+7.2 Room Temperature Meter
+======================================
 
 We can combine thermistor and I2C LCD1602 to make a room temperature meter.
+
+This project is very simple, it is based on :ref:`py_temp` with I2C LCD1602 to display the temperature.
+
+
+**Schematic**
+
+|sch_room_temp|
 
 
 **Wiring**
 
-|sch_room_temp|
-
 |wiring_room_temp|
 
 **Code**
+
+.. note::
+
+    * Open the ``7.2_room_temperature_meter.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+
 
 .. code-block:: python
 

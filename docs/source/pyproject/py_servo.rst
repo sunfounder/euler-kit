@@ -1,4 +1,6 @@
-Swinging Servo
+.. _py_servo:
+
+3.7 Swinging Servo
 ===================
 
 In this kit, in addition to LED and passive buzzer, there is also a device controlled by PWM signal, Servo.
@@ -9,24 +11,35 @@ Now, try to make the servo sway!
 
 * :ref:`cpn_servo`
 
-**Wiring**
+**Schematic**
 
 |sch_servo|
 
+**Wiring**
+
 |wiring_servo|
 
-1. Press the Servo Arm into the Servo output shaft. If necessary, fix it with screws.
-#. Connect **VBUS** (not 3V3) and GND of Pico to the power bus of the breadboard.
-#. Connect the red lead of the servo to the positive power bus with a jumper.
-#. Connect the yellow lead of the servo to the GP15 pin with a jumper wire.
-#. Connect the brawn lead of the servo to the negative power bus with a jumper wire.
+* Orange wire is signal and connected to GP15.
+* Red wire is VCC and connected to VBUS(5V).
+* Brown wire is GND and connected to GND.
+
+
+.. 1. Press the Servo Arm into the Servo output shaft. If necessary, fix it with screws.
+.. #. Connect **VBUS** (not 3V3) and GND of Pico to the power bus of the breadboard.
+.. #. Connect the red lead of the servo to the positive power bus with a jumper.
+.. #. Connect the yellow lead of the servo to the GP15 pin with a jumper wire.
+.. #. Connect the brawn lead of the servo to the negative power bus with a jumper wire.
 
 
 **Code**
 
-When the program is running, we can see the Servo Arm swinging back and forth from 0° to 180°. 
+.. note::
 
-.. The program will always run because of the ``while True`` loop, we need to press the Stop key to end the program.
+    * Open the ``3.7_swinging_servo.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+
+
 
 .. code-block:: python
 
@@ -52,14 +65,19 @@ When the program is running, we can see the Servo Arm swinging back and forth fr
             servo_write(servo,angle)
             utime.sleep_ms(20)
 
+
+When the program is running, we can see the Servo Arm swinging back and forth from 0° to 180°. 
+
+The program will always run because of the ``while True`` loop, we need to press the Stop button to end the program.
+
 **How it works?**
 
 We defined the ``servo_write()`` function to make the servo run.
 
 This function has two parameters:
 
-* pin, the GPIO pin that controls the servo.
-* Angle, the angle of the shaft output.
+* ``pin``, the GPIO pin that controls the servo.
+* ``Angle``, the angle of the shaft output.
 
 In this function, ``interval_mapping()`` is called to map the angle range 0 ~ 180 to the pulse width range 0.5 ~ 2.5ms.
 
@@ -71,10 +89,10 @@ Why is it 0.5~2.5? This is determined by the working mode of the Servo.
 
 :ref:`Servo`
 
-Next, convert the pulse width from period to duty. Since duty_u16() cannot have decimals when used (the value cannot be a float type), we used ``int()`` to force the duty to be converted to an int type.
+Next, convert the pulse width from period to duty. Since ``duty_u16()`` cannot have decimals when used (the value cannot be a float type), we used ``int()`` to force the duty to be converted to an int type.
 
 .. code-block:: python
 
     duty=int(interval_mapping(pulse_width, 0, 20, 0,65535))
 
-Finally, write the duty value into duty_u16().
+Finally, write the duty value into ``duty_u16()``.

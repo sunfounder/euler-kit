@@ -1,35 +1,48 @@
-Electrode Keyboard
-====================
+.. _ar_mpr121:
 
-当您想在项目中添加大量触摸开关时，MPR121 是一个不错的选择。它的电极可以用导体进行延伸，
-如果把电极连接到香蕉上，就可以把香蕉变成一个触摸开关。
+4.3 - Electrode Keyboard
+================================
+
+The MPR121 is a good choice when you want to add a large number of touch switches to your project. It has electrodes that can be extended with conductors.
+If you connect the electrodes to a banana, you can turn the banana into a touch switch.
 
 * :ref:`cpn_mpr121`
 
-**Wiring**
 
+**Schematic**
 
 |sch_mpr121|
 
+**Wiring**
 
 |wiring_mpr121|
 
 **Code**
 
-The libraries ``Adafruit_MPR121.h`` needs adding manually. 
-Add Method: Refer to :ref:`apx_add_lib`.
 
-:raw-code:
+.. note::
 
-After the program runs, 你可以用手触碰MPR121上的十二个电极，这些电极的触摸状态将记录在 12 位布尔类型的数组中，该数组将打印在串行监视器上。
-如果触摸第一个和第十一个电极，则打印 ``100000000010``。
+    * You can open the file ``4.3_electrode_keyboard.ino`` under the path of ``euler-kit/arduino/4.3_electrode_keyboard``. 
+    * Or copy this code into **Arduino IDE**.
+    
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 
-你可以将电极延申，连接其他导体如水果、导线、金属箔等，这会使你有更多的方式来触发这些电极。
+    Here you need to use two libraries ``Adafruit_MPR121`` and ``Adafruit_BusIO``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_ar`.
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/f31048b7-0f98-4d49-8c2e-26b3908e98cb/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+
+After the program runs, you can touch the twelve electrodes on the MPR121 module by hand and the touch status of these electrodes will be recorded in a 12-bit Boolean type array that will be printed on the serial monitor.
+If the first and eleventh electrodes are touched, ``100000000010`` is printed.
+
+You can extend the electrodes by connecting other conductors such as fruit, wire, foil, etc. This will give you more ways to trigger these electrodes.
 
 **How it works?**
 
-初始化MPR121对象。此时该模块的电极们的状态会被记录为初始值。
-如延长电极，需要重新运行示例来重置初始值。
+Initialize the ``MPR121`` object. At this point the state of the module's electrodes will be recorded as initial values.
+If you extend the electrodes, you need to rerun the example to reset the initial values.
 
 .. code-block:: arduino
 
@@ -47,14 +60,14 @@ After the program runs, 你可以用手触碰MPR121上的十二个电极，这�
         Serial.println("MPR121 found!");
     }
 
-获取当前电极的值，它会获取一个12位的二进制的数值。如果触摸第一个和第十一个电极，则获取到 ``100000000010``。
+Gets the value of the current electrode, it will get a 12-bit binary value. If you touch the first and the eleventh electrode, it gets ``100000000010``.
 
 .. code-block:: arduino
 
     // Get the currently touched pads
     currtouched = cap.touched();
 
-判断电极状态是否发生变化。
+Determine if the electrode state has changed.
 
 .. code-block:: arduino
 
@@ -66,7 +79,7 @@ After the program runs, 你可以用手触碰MPR121上的十二个电极，这�
         lasttouched = currtouched;
     }
 
-如果检测到电极状态改变，则将 ``currtouched`` 的数值按位逐一存入 ``touchStates[12]`` 数组中。最后将数组打印。
+If a change in electrode state is detected, the values of ``currtouched`` are stored in the ``touchStates[12]`` array bit by bit. Finally, the array is printed.
 
 .. code-block:: arduino
 

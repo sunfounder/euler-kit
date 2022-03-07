@@ -28,3 +28,10 @@ measurement cycle over 60ms in order to prevent signal collisions of
 trigger signal and the echo signal.
 
 |img_ultrasonic_timing|
+
+**Example**
+
+* :ref:`py_ultrasonic` (For MicroPython User)
+* :ref:`py_reversing_aid` (For MicroPython User)
+* :ref:`ar_ultrasonic` (For Arduino User)
+* :ref:`per_reversing_system` (For Piper Make User)

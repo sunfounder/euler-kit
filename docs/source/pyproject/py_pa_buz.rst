@@ -1,4 +1,6 @@
-Custom Tone
+.. _py_pa_buz:
+
+3.2 Custom Tone
 ==========================================
 
 
@@ -11,6 +13,14 @@ Let the passive buzzer emit a melody!
 
 * :ref:`Buzzer`
 
+**Schematic**
+
+|sch_buzzer|
+
+When the GP15 output is high, after the 1K current limiting resistor (to protect the transistor), the S8050 (NPN transistor) will conduct, so that the buzzer will sound.
+
+The role of S8050 (NPN transistor) is to amplify the current and make the buzzer sound louder. In fact, you can also connect the buzzer directly to GP15, but you will find that the buzzer sound is smaller.
+
 
 **Wiring**
 
@@ -20,18 +30,22 @@ Two buzzers are included in the kit, we use a passive buzzer (one with an expose
 
 The buzzer needs a transistor to work, here we use S8050.
 
-|sch_buzzer|
-
 |wiring_buzzer|
 
-1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
-#. Connect the positive pin of the buzzer to the positive power bus.
-#. Connect the cathode pin of the buzzer to the **collector** lead of the transistor.
-#. Connect the **base** lead of the transistor to the GP15 pin through a 1kΩ resistor.
-#. Connect the **emitter** lead of the transistor to the negative power bus.
+.. 1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
+.. #. Connect the positive pin of the buzzer to the positive power bus.
+.. #. Connect the cathode pin of the buzzer to the **collector** lead of the transistor.
+.. #. Connect the **base** lead of the transistor to the GP15 pin through a 1kΩ resistor.
+.. #. Connect the **emitter** lead of the transistor to the negative power bus.
 
 
 **Code**
+
+.. note::
+
+    * Open the ``3.2_custom_tone.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
 .. code-block:: python
 
@@ -67,11 +81,21 @@ This function has three parameters:
 
 We use the ``duty_u16()`` function to set the duty cycle to 30000(about 50%). It can be other numbers, and it only needs to generate a discontinuous electrical signal to oscillate.
 
+
+
 **What more?**
 
 We can simulate the specific tone according to the fundamental frequency of the piano, so as to play a complete piece of music.
 
 * `Piano key frequencies - Wikipedia <https://en.wikipedia.org/wiki/Piano_key_frequencies>`_
+
+
+
+.. note::
+
+    * Open the ``3.2_custom_tone_2.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
 
 .. code-block:: python

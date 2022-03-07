@@ -6,21 +6,16 @@ uploading code to Raspberry Pi with Arduino IDE and a dozen interesting and prac
 We recommend that you read the chapters in order.
 
 
-Chapter 1 : Get Started
+**1. Get Started**
 
 .. toctree::
     :maxdepth: 1
 
-    getting_started_with_arduino
+    arduino_start/install_introduce
+    arduino_start/setuo_pico_ar
+    arduino_start/download_add_ar
 
-Chapter 2 : Add Libraries
-
-.. toctree::
-    :maxdepth: 1
-
-    appendx_add_libraries
-    
-Chapter 3 : Output & Input
+**2. Output & input**
 
 .. toctree::
     :maxdepth: 1
@@ -30,6 +25,9 @@ Chapter 3 : Output & Input
     ar_fade
     ar_rgb
     ar_button
+    ar_tilt
+    ar_slide
+    ar_micro
     ar_reed
     ar_pir
     ar_pot
@@ -39,7 +37,7 @@ Chapter 3 : Output & Input
     ar_transistor
     ar_relay
 
-Chapter 4 : Sound & Display & Movement
+**3. Sound & Display & Movement**
 
 .. toctree::
     :maxdepth: 1
@@ -49,10 +47,11 @@ Chapter 4 : Sound & Display & Movement
     ar_neopixel
     ar_lcd
     ar_motor
-    ar_servo
     ar_pump
+    ar_servo
 
-Chapter 5 : Controller
+
+**4. Controller**
 
 .. toctree::
     :maxdepth: 1
@@ -61,7 +60,7 @@ Chapter 5 : Controller
     ar_keypad
     ar_mpr121
 
-Chapter 6 : Microchip
+**5. Microchip**
 
 .. toctree::
     :maxdepth: 1
@@ -71,7 +70,7 @@ Chapter 6 : Microchip
     ar_74hc595_4dig
     ar_74hc595_matrix
 
-Chapter 7 : Advanced
+**6. Advanced**
 
 .. toctree::
     :maxdepth: 1
@@ -82,10 +81,8 @@ Chapter 7 : Advanced
     ar_irremote
     ar_rfid
 
-Chapter 8 : Funny Project
+**7. Funny Project**
 
 .. toctree::
     :maxdepth: 1
-
-    ar_light_teremin
 

@@ -1,44 +1,48 @@
-Display the Level
-=================
+.. _ar_led_bar:
+
+2.2 - Display the Level
+=============================
 
 
-让我们来使用LED Bar Graph！ 这是一个常见的硬件显示器，可用来显示电量或者音量等级。它由一系列排成一排的LED组成。
+The first project is simply to make the LED blink. In this project let's use the LED Bar Graph, which is made up of 10 LEDs packaged into a plastic case, generally used to display power or volume levels.
 
-|img_led_bar|
+|img_led_bar_pin|
+
+* :ref:`cpn_led_bar`
+
+**Schematic**
+
+|sch_ledbar|
+
+The LED Bar Graph contains 10 LEDs, each of which is individually controllable. Here, the anode of each of the 10 LEDs is connected to GP6~GP15, and the cathode is connected to a 220ohm resistor, and then to GND.
 
 
 **Wiring**
-
-|sch_ledbar|
 
 |wiring_ledbar|
 
 **Code**
 
-.. code-block:: C
+.. note::
 
-    void setup() {
-        for(int i=6;i<=15;i++)
-        {
-            pinMode(i,OUTPUT);
-        }
-    }
+   * You can open the file ``2.2_display_the_level.ino`` under the path of ``euler-kit/arduino/2.2_display_the_level``. 
+   * Or copy this code into **Arduino IDE**.
+   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
 
-    void loop() {
-        for(int i=6;i<=15;i++)
-        {
-            digitalWrite(i,HIGH);
-            delay(500);
-            digitalWrite(i,LOW);
-            delay(500);    
-        }
-    }
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 
-When the program is running, you 会看到LED Bar Graph上的灯依次闪烁。
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/ae60e723-430e-4a58-ac39-566b9d1828e8/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+    
+
+When the program is running, you will see the LEDs on the LED Bar Graph light up and then turn off in sequence.
 
 **How it works?**
 
-LED Bar上的十个LED各自需要用一个引脚来控制，这也意味着我们定义这十个引脚。
+Each of the ten LEDs on the LED Bar needs to be controlled by a pin, which means that we define these ten pins.
+
 The codes in ``setup()`` use the for loop to initialize pins 6~15 to output mode in turn.
 
 .. code-block:: C

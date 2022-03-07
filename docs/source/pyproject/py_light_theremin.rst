@@ -1,3 +1,5 @@
+.. _py_light_theremin:
+
 7.1 Light Theremin
 =========================
 

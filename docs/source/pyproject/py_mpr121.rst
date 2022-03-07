@@ -1,25 +1,33 @@
-Electrode Keyboard
-====================
+.. _py_mpr121:
 
-当您想在项目中添加大量触摸开关时，MPR121 是一个不错的选择。它的电极可以用导体进行延伸，
-如果把电极连接到香蕉上，就可以把香蕉变成一个触摸开关。
+4.3 Electrode Keyboard
+================================
+
+The MPR121 is a good choice when you want to add a large number of touch switches to your project. It has electrodes that can be extended with conductors.
+If you connect the electrodes to a banana, you can turn the banana into a touch switch.
 
 * :ref:`cpn_mpr121`
 
 
-**Wiring**
-
+**Schematic**
 
 |sch_mpr121|
+
+
+**Wiring**
 
 |wiring_mpr121|
 
 **Code**
 
+.. note::
 
-你需要先把 ``mpr121.py`` 存入pico作为库使用。 
+    * Open the ``4.3_electrode_keyboard.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
 
-然后，运行主程序。
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+
+    * Here you need to use the library called ``mpr121.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
+
 
 .. code-block:: python
 
@@ -37,20 +45,19 @@ Electrode Keyboard
             print(value)
         time.sleep_ms(100)
 
-After the program runs, 你可以用手触碰MPR121上的十二个电极，被触碰的电极将会被打印出来。
+After the program runs, you can touch the twelve electrodes on the MPR121 with your hand and the touched electrodes will be printed out.
 
-你可以将电极延申，连接其他导体如水果、导线、金属箔等，这会使你有更多的方式来触发这些电极。
+You can extend the electrodes to connect other conductors such as fruit, wire, foil, etc. This will give you more ways to trigger these electrodes.
 
 **How it works?**
 
-在mpr121库中，我们将相关功能集成到了MPR121类中。
+In the mpr121 library, we have integrated the functionality into the ``MPR121`` class.
 
 .. code-block:: python
 
     from mpr121 import MPR121
 
-MPR121是一个I2C模块，需要定义一组I2C引脚，
-用于初始化MPR121对象。此时该模块的电极们的状态会被记录为初始值。如延长电极，需要重新运行示例来重置初始值。
+MPR121 is an I2C module that requires a set of I2C pins to be defined to initialize the ``MPR121`` object. At this point the state of the module's electrodes will be recorded as initial values. If the electrodes are extended, the example needs to be rerun to reset the initial values.
 
 .. code-block:: python
 
@@ -60,17 +67,18 @@ MPR121是一个I2C模块，需要定义一组I2C引脚，
 
 * `Inter-Integrated Circuit - Wikipedia <https://en.wikipedia.org/wiki/I2C>`_
 
-随后使用 ``mpr.get_all_states()`` 来读取电极是否被触发即可。假如0号和1号电极被触发，值 ``[1, 0]`` 将会产生。
+Then use ``mpr.get_all_states()`` to read if the electrodes are triggered. If electrodes 2 and 3 are triggered, the value ``[2, 3]`` will be generated.
 
-.. code-block:: python
+
+.. code-block::
 
     while True:
         value = mpr.get_all_states()
-        if len(value) != 0:
+        if len(value) ! = 0:
             print(value)
         time.sleep_ms(100)
 
-你也可以使用 ``mpr.is_touched(electrode)`` 来检测特定的电极。当被触发时，返回 ``True`` ，否则返回 ``False`` 。
+You can also use ``mpr.is_touched(electrode)`` to detect a specific electrode. When triggered, it returns ``True``, otherwise it returns ``False``.
 
 .. code-block:: python
 

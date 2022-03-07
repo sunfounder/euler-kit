@@ -1,31 +1,47 @@
-Toggle the Joystick
-====================
+.. _ar_joystick:
 
-如果你经常玩电子游戏，那么你应当对Joystick十分熟悉。
-它通常用于移动游戏角色，旋转画面等等。
+4.1 - Toggle the Joystick
+================================
 
-Joystick让计算机读取我们的操作行为的原理十分简单。
-它可以看作由两个相互垂直的电位器构成，
-这两个电位器一个测量操纵杆的垂直方向的模拟值，一个测量水平方向的模拟值，从而得出一个平面直角坐标系中的值(x,y)。
+If you play a lot of video games, then you should be very familiar with the Joystick.
+It is usually used to move the character around, rotate the screen, etc.
+
+The principle behind Joystick's ability to allow the computer to read our actions is very simple.
+It can be thought of as consisting of two potentiometers that are perpendicular to each other.
+These two potentiometers measure the analog value of the joystick vertically and horizontally, resulting in a value (x,y) in a planar right-angle coordinate system.
+
 
 The joystick of this kit also has a digital input, which is activated when the joystick is pressed.
 
 * :ref:`cpn_joystick`
 
-
-**Wiring**
-
-.. note:: sw引脚需要接一个上拉电阻，否则z轴无法顺利使用。
-
+**Schematic**
 
 |sch_joystick|
+
+The SW pin is connected to a 10K pull-up resistor, the reason is to be able to get a stable high level on the SW pin (Z axis) when the joystick is not pressed; otherwise the SW is in a suspended state and the output value may vary between 0/1.
+
+
+**Wiring**
 
 |wiring_joystick|
 
 **Code**
 
-:raw-code:
+.. note::
 
-程序运行后，可以打开串口监视器查看摇杆X轴和Y轴的读数，以及Z轴的按键状态。
-X 轴和 Y 轴的值为模拟值，在0~1023范围内变化。
-Z轴则是数字值，状态为1或0。
+   * You can open the file ``4.1_toggle_the_joyostick.ino`` under the path of ``euler-kit/arduino/4.1_toggle_the_joyostick``. 
+   * Or copy this code into **Arduino IDE**.
+   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+    
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/dfe53878-7cb4-4543-bb97-7f5ef5aad15a/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After the program runs, the Shell prints out the x,y,z values of joystick.
+
+* The x-axis and y-axis values are analog values that vary from 0 to 65535.
+* The Z-axis is a digital value with a status of 1 or 0.

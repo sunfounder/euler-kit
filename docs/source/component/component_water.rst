@@ -5,16 +5,23 @@ Water Level Sensor
 
 |img_water_sensor|
 
-水位指示器是一种将信息传递回控制面板以指示水体是否具有高水位或低水位的系统。
-水位指示器的目的是测量和管理水箱中的水位，比如在水位过低时自动打开水泵，将水箱注满。
+The water level sensor transmits the sensed water level signal to the controller, and the computer in the controller compares the measured water level signal with the set signal to derive the deviation, and then issues "on" and "off" commands to the feedwater electric valve according to the nature of the deviation to ensure that the vessel reaches the set water level.
 
 
-水位传感器有十个暴露的铜迹，五个是Power Traces，五个是Sensor Traces。这些Traces交叉分布，并会在被淹没时被水桥接。
-电路板上有一个电源 LED，当电路板通电时会亮起。
+The water level sensor has ten exposed copper traces, five for the Power traces and five for the Sensor traces, which are crossed and bridged by water when flooded.
+The circuit board has a power LED that lights up when the board is energized.
 
-这些Traces的组合起到了类似可变电阻器的作用，会根据水位变化而改变电阻值。
-更准确的说，传感器浸入的水越多，导电性越好，电阻越低。反之，导电性越差，电阻越高。
-接下来，传感器会处理输出信号电压，该电压将被发送到微控制器，从而帮助我们确定水位。
+The combination of these traces acts like a variable resistor, changing the resistance value according to the water level.
+To be more precise, the more water the sensor is immersed in, the better the conductivity and the lower the resistance. Conversely, the less conductive it is, the higher the resistance.
+Next, the sensor will process the output signal voltage which will be sent to the microcontroller, thus helping us to determine the water level.
 
 
-.. warning:: 该传感器不能完全浸入水中，请只将十个Traces所在的部分与水接触。另外，在潮湿环境下通电会加快探头的腐蚀速度，削减传感器寿命，建议您仅在读取读数时供电。
+.. warning:: 
+    The sensor cannot be fully submerged in water, please only leave the part where the ten traces are located in contact with water. In addition, energizing the sensor in a humid environment will speed up the corrosion of the probe and cut the life of the sensor, so we recommend that you only supply power when taking readings.
+
+
+**Example**
+
+* :ref:`py_water` (For MicroPython User)
+* :ref:`ar_water` (For Arduino User)
+* :ref:`per_water_tank` (For Piper Make User)

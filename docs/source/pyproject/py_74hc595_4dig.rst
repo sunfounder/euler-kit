@@ -1,8 +1,10 @@
-Time Counter
+.. _py_74hc_4dig:
+
+5.3 Time Counter
 ================================
 
 
-4-Digit 7-segment display consists of four 7- segment displays working
+4-digit 7-segment display consists of four 7-segment displays working
 together.
 
 The 4-digtal 7-segment display works independently. It uses the
@@ -18,13 +20,25 @@ effect and the principle of visual residue, we can see four characters
 at the same time.
 
 
-**Wiring**
+**Schematic**
 
 |sch_4dig|
+
+Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only difference is that Q0-Q7 are connected to the a ~ g pins of the 4-digit 7-segment display.
+
+Then G10 ~ G13 will select which 7-segment display to work.
+
+**Wiring**
 
 |wiring_4dig|
 
 **Code**
+
+.. note::
+
+    * Open the ``5.3_time_counter.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
 .. code-block:: python
 
@@ -87,12 +101,12 @@ at the same time.
         pickDigit(3)
         hc595_shift(SEGCODE[count%10000//1000])     
 
-程序运行后，你将能看到四位数码管变成了一个计数器，每秒数字增加1。
+After the program is run, you will see the 4-digit 7-segment display become a counter and the number increases by 1 per second.
 
 **How it works?**
 
-为每一个七段数码管写入信号的方式与 :ref:`py_7seg` 是一样的，使用 ``hc595_shift()`` 函数。
-四位数码管的核心要点，就是有选择性的激活各个七段数码管。与之相关的代码如下：
+Writing signals to each 7-segment display is done in the same way as :ref:`py_74hc_7seg`, using the ``hc595_shift()`` function.
+The core point of the 4-digit 7-segment display is to selectively activate each 7-segment display. The code associated with this is as follows.
 
 .. code-block:: python
 
@@ -121,16 +135,16 @@ at the same time.
         hc595_shift(SEGCODE[count%10000//1000])
         pickDigit(3)   
 
-在这里，用了4个引脚(GP10，GP11，GP12，GP13)来单独控制四位数码管的各个位。
-当这些引脚状态为 ``0`` 时，相应的数码管激活；状态为 ``1`` 时，则相反。
+Here, four pins (GP10, GP11, GP12, GP13) are used to control each bit of the 4-digit 7-segment display individually.
+When the state of these pins is ``0``, the corresponding 7-segment display is active; when the state is ``1``, the opposite is true.
 
-在这里 ``pickDigit(digit)`` 函数的作用就是unable所有四个数码管后，单独启用特定的某个数码管。
-随后，用 ``hc595_shift()`` 为数码管写入对应的 8 bits code即可。
+Here the ``pickDigit(digit)`` function is used to unable all four digits and then enable a particular digit individually.
+After that, ``hc595_shift()`` is used to write the corresponding 8 bits code for the 7-segment display.
 
-四位数码管需要持续性的轮流激活各个数码管，从而让我们能看到它显示四位数字，这就意味着主程序中不能轻易添加会影响时序的代码。
-然而我们又需要在这个这个示例中添加计时功能，如果增加一个 ``sleep(1)``，
-我们就会识破它四个数码管同时工作的假象，暴露出一次只有一个数码管发光的事实。
-那么，使用 ``time`` 库中的 ``time.ticks_ms()`` 函数，就是一个绝佳的方法。
+The 4-digit 7-segment display needs to be continuously activated in turn so that we can see it display four digits, which means that the main program cannot easily add code that would affect the timing.
+However, we need to add a timing function to this example, and if we add a ``sleep(1)``, we will know that it has four digits.
+we will see through the illusion of 4-digit 7-segment display working at the same time, exposing the fact that only one 7-segment display is illuminated at a time.
+Then, using the ``time.ticks_ms()`` function in the ``time`` library is an excellent way to do this.
 
 .. code-block:: python
 
@@ -143,11 +157,11 @@ at the same time.
 
     while True:
         count = timer1()
- 
 
-``time.ticks_ms()`` 函数可以获取一个(非明确的)时间，我们把首次获取的时间值记录为 ``timerStart`` ，
-随后在需要获取时间时，重新调用 ``time.ticks_ms()`` 函数，把值减去  ``timerStart`` ，就能得到程序运行了多久(单位是毫秒)。
 
-最后，把这个时间值转化并输出到四位数码管就可以了。
+The ``time.ticks_ms()`` function gets a (non-explicit) time, and we record the first time value we get as ``timerStart``.
+Subsequently, when the time is needed, the ``time.ticks_ms()`` function is called again, and the value is subtracted from ``timerStart`` to get how long the program has been running (in milliseconds).
+
+Finally, convert and output this time value to the 4-digit 7-segment display and you're done.
 
 * `Time - MicroPython Docs <https://docs.micropython.org/en/latest/library/time.html>`_

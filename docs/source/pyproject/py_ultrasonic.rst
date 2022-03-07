@@ -1,17 +1,28 @@
-Measuring Distance
-==================
+.. _py_ultrasonic:
 
-超声波传感器的工作原理是声纳和雷达系统，用于确定与物体的距离。
+6.1 Measuring Distance
+======================================
+
+The ultrasonic sensor module works on the principle of sonar and radar systems for determining the distance to an object.
 
 * :ref:`cpn_ultrasonic`
 
-**Wiring**
+
+**Schematic**
 
 |sch_ultrasonic|
+
+**Wiring**
 
 |wiring_ultrasonic|
 
 **Code**
+
+.. note::
+
+    * Open the ``6.1_measuring_distance.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
 .. code-block:: python
 
@@ -41,12 +52,12 @@ Measuring Distance
         print ('Distance: %.2f' % dis)
         time.sleep_ms(300)
 
-程序运行后，Shell将打印出超声波传感器距离前方障碍物的距离。
+Once the program is running, the Shell will print out the distance of the ultrasonic sensor from the obstacle ahead.
 
 **How it works?**
 
-超声波传感器产生高频声波（超声波）。当这种超声波击中物体时，它反射为回波，由接收器检测到，通过测量回波到达接收器所需的时间，就可以计算出距离了。
-根据这个原理，可以得出函数 ``distance()`` 。
+Ultrasonic sensors produce high frequency sound waves (ultrasonic waves) emitted by the transmitting probe. When this ultrasonic wave hits an object, it is reflected as an echo, which is detected by the receiving probe. By calculating the time from transmission to reception, the distance can be calculated.
+Based on this principle, the function ``distance()`` can be derived.
 
 .. code-block:: python
 
@@ -65,7 +76,7 @@ Measuring Distance
         during = time.ticks_diff(time2,time1)
         return during * 340 / 2 / 10000
 
-其中，前面几行用于发射一道10us的超声波。
+* Among them, the first few lines are used to transmit a 10us ultrasonic wave.
 
 .. code-block:: python
 
@@ -75,7 +86,7 @@ Measuring Distance
     time.sleep_us(10)
     TRIG.low()
 
-然后，将程序暂停，待超声波发射完毕后，记录当前时间。
+* Then, the program is paused and the current time is recorded when the ultrasonic wave has been emitted.
 
 .. code-block:: python
 
@@ -83,7 +94,7 @@ Measuring Distance
             pass
         time1 = time.ticks_us()
 
-随后，将程序再次暂停，待接收到回波后，再一次记录当前时间。
+* Subsequently, the program is suspended again. After the echo is received, the current time is recorded once again.
 
 .. code-block:: python
 
@@ -91,13 +102,12 @@ Measuring Distance
             pass
         time2 = time.ticks_us()
 
-最后，根据两次记录的时间差，用音速(340m/s)乘以时间得到超声波的路程（即超声波从传感器到障碍物之间的一次来回），是距离的两倍)。
-将单位换算为厘米，得到我们需要的返回值。
+* Finally, based on the time difference between the two recordings, the speed of sound (340m/s) is multiplied by the time to obtain double the distance between the ultrasonic module and the obstacle (i.e., one round trip of the ultrasonic waves from the module to the obstacle). Converting the units to centimeters gives us the return value we need.
 
 .. code-block:: python
 
         during = time.ticks_diff(time2,time1)
         return during * 340 / 2 / 10000
 
-需要注意的是，超声波传感器在工作时会将程序暂停，这在编写复杂的项目时，可能会导致一些卡顿的情况。
+Note that the ultrasonic sensor will pause the program when it is working, which may cause some lagging when writing complex projects.
 

@@ -1,4 +1,6 @@
-RGB LED Strip
+.. _ar_neopixel:
+
+3.3 - RGB LED Strip
 ======================
 
 WS2812 is a intelligent control LED light source that the control circuit and RGB chip are integrated in a package of 5050 components. 
@@ -13,16 +15,17 @@ pixel adopt auto reshaping transmit technology, making the pixel cascade number 
 
 * :ref:`cpn_ws2812`
 
-
-**Wiring**
+**Schematic**
 
 |sch_ws2812|
 
+**Wiring**
+
 |wiring_ws2812|
 
-1. Connect the +5V of the LED Strip to the VBUS of the Pico.
-#. Connect the GND of the LED Strip to the GND of the Pico.
-#. Connect the DIN of the LED Strip to the GP0 of Pico.
+.. 1. Connect the +5V of the LED Strip to the VBUS of the Pico.
+.. #. Connect the GND of the LED Strip to the GND of the Pico.
+.. #. Connect the DIN of the LED Strip to the GP0 of Pico.
 
 .. warning::
     One thing you need to pay attention to is current.
@@ -34,10 +37,20 @@ pixel adopt auto reshaping transmit technology, making the pixel cascade number 
 
 **Code**
 
-The libraries ``Adafruit_NeoPixel.h`` needs adding manually. 
-Add Method: Refer to :ref:`apx_add_lib`.
+.. note::
 
-.. :raw-code:
+    * You can open the file ``3.3_rgb_led_strip.ino`` under the path of ``euler-kit/arduino/3.3_rgb_led_strip``. 
+    * Or copy this code into **Arduino IDE**.
+    
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+    Here you need to use the library called ``Adafruit_NeoPixel``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_ar`.
+
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/efe5d60f-ea0f-4446-bc5b-30c76197fedf/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
 
 Let's select some favorite colors and display them on the RGB LED Strip!
 
@@ -67,23 +80,44 @@ Initialize strip object and initialize all pixels to 'off'.
 Function
     * ``strip.begin()`` : Initialize NeoPixel strip object (REQUIRED).
     * ``strip.setPixelColor(index, color)`` : Set pixel's color (in RAM), the ``color`` must be a single 'packed' 32-bit value.
-    * ``strip.Color(red, green, blue)`` : Color as a single 'packed' 32-bit value.*
+    * ``strip.Color(red, green, blue)`` : Color as a single 'packed' 32-bit value.
     * ``strip.show()`` : Update strip with new contents.
   
 **What more?**
 
 We can randomly generate colors and make a colorful flowing light.
 
-.. :raw-code:
+.. note::
 
-整个strip围绕色轮(范围为65535)进行彩虹循环。
+   * You can open the file ``3.3_rgb_led_strip_flowing.ino`` under the path of ``euler-kit/arduino/3.3_rgb_led_strip_flowing``. 
+   * Or copy this code into **Arduino IDE**.
+   
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+    
 
-.. :raw-code:
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/a3d7c520-b4f8-4445-9454-5fe7d2a24fd9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Function
-    * ``strip.getPixelColor(index)`` : Query the color of a previously-set pixel.
-    * ``strip.ColorHSV(pixelHue)`` : Convert hue, saturation and value into a packed 32-bit RGB color that can be passed to ``setPixelColor()`` or other RGB-compatible functions.
-    * ``strip.gamma32()`` : Provides a "truer" color before assigning to each pixel.
+
+Or have this WS2812 LED Strip rainbow cycle around the color wheel (range 65535).
+
+.. note::
+
+   * You can open the file ``3.3_rgb_led_strip_rainbow.ino`` under the path of ``euler-kit/arduino/3.3_rgb_led_strip_rainbow``. 
+   * Or copy this code into **Arduino IDE**.
+   
+   Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+    
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/47d84804-3560-48fa-86df-49f8e2f6ad63/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>   
+
+
+* ``strip.getPixelColor(index)`` : Query the color of a previously-set pixel.
+* ``strip.ColorHSV(pixelHue)`` : Convert hue, saturation and value into a packed 32-bit RGB color that can be passed to ``setPixelColor()`` or other RGB-compatible functions.
+* ``strip.gamma32()`` : Provides a "truer" color before assigning to each pixel.
 
 
 

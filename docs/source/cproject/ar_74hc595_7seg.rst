@@ -1,6 +1,6 @@
-.. _ar_7seg:
+.. _ar_74hc_7seg:
 
-Number Display
+5.2 - Number Display
 =======================
 
 LED Segment Display can be seen everywhere in life.
@@ -14,49 +14,62 @@ This means that it needs to be controlled by 8 digital signals at the same time 
 
 * :ref:`cpn_7-seg`
 
-**Wiring**
-
+**Schematic**
 
 |sch_74hc_7seg|
 
+**Wiring**
+
 |wiring_74hc_7seg|
 
-1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
-#. Insert 74HC595 across the middle gap into the breadboard.
-#. Connect the GP0 pin of Pico to the DS pin (pin 14) of 74HC595 with a jumper wire.
-#. Connect the GP1 pin of Pico to the STcp pin (12-pin) of 74HC595.
-#. Connect the GP2 pin of Pico to the SHcp pin (pin 11) of 74HC595.
-#. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
-#. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
-#. Insert the LED Segment Display into the breadboard, and connect a 220Ω resistor in series with the GND pin to the negative power bus.
-#. Follow the table below to connect the 74hc595 and LED Segment Display.
+.. 1. Connect 3V3 and GND of Pico to the power bus of the breadboard.
+.. #. Insert 74HC595 across the middle gap into the breadboard.
+.. #. Connect the GP0 pin of Pico to the DS pin (pin 14) of 74HC595 with a jumper wire.
+.. #. Connect the GP1 pin of Pico to the STcp pin (12-pin) of 74HC595.
+.. #. Connect the GP2 pin of Pico to the SHcp pin (pin 11) of 74HC595.
+.. #. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
+.. #. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
+.. #. Insert the LED Segment Display into the breadboard, and connect a 220Ω resistor in series with the GND pin to the negative power bus.
+.. #. Follow the table below to connect the 74hc595 and LED Segment Display.
 
-    .. list-table:: Wiring
-        :widths: 15 25
-        :header-rows: 1
+.. list-table:: Wiring
+    :widths: 15 25
+    :header-rows: 1
 
-        *   - 74HC595
-            - LED Segment Display
-        *   - Q0
-            - a
-        *   - Q1
-            - b
-        *   - Q2
-            - c
-        *   - Q3
-            - d
-        *   - Q4
-            - e
-        *   - Q5
-            - f
-        *   - Q6
-            - g
-        *   - Q7
-            - dp
+    *   - 74HC595
+        - LED Segment Display
+    *   - Q0
+        - a
+    *   - Q1
+        - b
+    *   - Q2
+        - c
+    *   - Q3
+        - d
+    *   - Q4
+        - e
+    *   - Q5
+        - f
+    *   - Q6
+        - g
+    *   - Q7
+        - dp
 
 
 **Code**
 
+.. note::
+
+   * You can open the file ``5.2_number_display.ino`` under the path of ``euler-kit/arduino/5.2_number_display``. 
+   * Or copy this code into **Arduino IDE**.
+   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+
+    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+
+.. raw:: html
+    
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/a237801f-40d7-4920-80fb-a349307b1e05/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+    
 When the program is running, you will be able to see the LED Segment Display display 0~9 in sequence.
 
 **How it works?**

@@ -5,6 +5,8 @@ MPU6050
 
 **MPU6050**
 
+|img_mpu6050|
+
 The MPU-6050 is a 6-axis(combines 3-axis Gyroscope, 3-axis
 Accelerometer) motion tracking devices.
 
@@ -84,3 +86,10 @@ The X axis, for example, the Accelerometer X axis raw data is 16384 and
 ranges + / - 250°/ s:
 
 **Angular velocity along the X axis = (16384 / 65536 \* 500)°/s** **=125°/s**
+
+**Example**
+
+* :ref:`py_mpu6050` (For MicroPython User)
+* :ref:`py_somato_controller` (For MicroPython User)
+* :ref:`py_bubble_level` (For MicroPython User)
+* :ref:`ar_mpu6050` (For Arduino User)

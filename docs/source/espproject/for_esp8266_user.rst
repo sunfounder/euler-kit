@@ -1,21 +1,29 @@
+.. _esp_in:
+
 Play Pico with APP 
 ================================================
 
 
-本节将指导您使用Sunfounder Controller APP搭建远程项目，这意味着您可以使用手机/平板电脑控制你的电路。
+This section will guide you through building a remote project using the Sunfounder Controller APP, which means you can use your phone/tablet to control your circuit.
 
-这个玩法基于micropython，建议在完成micropython教程后进行。
+This play is based on micropython and it is recommended to do it after completing the micropython tutorial.
 
 
-ESP8266模块为pico提供了wifi功能，它们之间通过uart协议通信。
+The ESP8266 module provides wifi functionality for the pico, and they communicate with each other via the uart protocol.
 
 * `Uart - Wikipedia <https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter>`_
 * :ref:`cpn_esp8266`
+
+
+
+Here are some examples that teach you how to implement communication between Raspberry Pi Pico and SunFounder Controller, as well as some interesting projects.
 
 .. toctree::
     :maxdepth: 1
 
     esp_basic_function
+    code_explan
+    transfer_data
     esp_input
     esp_output
     esp_piano

@@ -3,6 +3,8 @@
 IC L293D 
 =================
 
+|img_l293d0|
+
 L293D is a 4-channel motor driver integrated by chip with high voltage and high current. 
 It's designed to connect to standard DTL, TTL logic level, and drive inductive loads (such as relay coils, DC, Stepper Motors) and power switching transistors etc. 
 DC Motors are devices that turn DC electrical energy into mechanical energy. They are widely used in electrical drive for their superior speed regulation performance.
@@ -18,3 +20,13 @@ You can see the relationship among them at the right bottom.
 When pin EN is High level, if A is High, Y outputs high level; if A is Low, Y outputs Low level. When pin EN is Low level, the L293D does not work.
 
 |img_l293d2|
+
+* `L293D Datasheet <https://cdn-shop.adafruit.com/datasheets/l293d.pdf>`_
+
+**Example**
+
+* :ref:`py_motor` (For MicroPython User)
+* :ref:`ar_motor` (For Arduino User)
+* :ref:`py_pump` (For MicroPython User)
+* :ref:`ar_pump` (For Arduino User)
+* :ref:`per_smart_fan` (For Piper Make User)

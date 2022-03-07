@@ -14,53 +14,97 @@ Here is the Email: cs@sunfounder.com.
 |euler_list|
 
 
-**Components Introduction**
+**Basic**
 
 .. toctree::
     :maxdepth: 1
 
-    breadboard
-    led
-    rgb_led
-    resistor
-    potentiometer
-    photoresistor
-    thermistor
-    transistor
+    component_breadboard
+    component_wire
+    component_resistor
+    component_transistor
     component_capacitor
-    button
-    tilt_switch
-    slide_switch
-    buzzer
-    servo
-    ws2812_rgb_8_leds_strip
-    74hc595
-    7_segment_display
     component_diode
-    component_relay
-    component_keypad
+
+
+**Chip**
+
+.. toctree::
+    :maxdepth: 1
+
+    component_74hc595
     component_l293d
-    component_dc_motor
-    component_reed
-    component_humiture
-    component_788bs
-    component_rfid
-    component_ultrasonic
-    component_joystick
-    pir_motion_sensor
-    component_mpu6050
-    component_water
-    i2c_lcd1602
-    component_mpr121
-    component_power_module
-    component_irrecv
+
+**Display**
+
+.. toctree::
+    :maxdepth: 1
+
+    component_led
+    component_rgb_led
     component_led_bar
-    component_limit_switch
+    component_7segment
     component_4_digit_display
+    component_788bs
+    component_i2clcd1602
+    component_ws2812
+
+**Sound**
+
+.. toctree::
+    :maxdepth: 1
+
+    component_buzzer
+
+**Actuators**
+
+.. toctree::
+    :maxdepth: 1
+
+    component_dc_motor
+    component_servo
     component_pump
-    component_esp8266
+    component_relay
+    component_power_module
+
+
+**Controller**
+
+.. toctree::
+    :maxdepth: 1
+
+    component_button
+    component_micro_switch
+    component_slide_switch
+    component_potentiometer
+    component_irrecv
+    component_joystick
+    component_keypad
+    component_mpr121
+    component_rfid
+
+**Sensor**
+
+.. toctree::
+    :maxdepth: 1
+
+    component_photoresistor
+    component_thermistor
+    component_tilt_switch
+    component_reed
+    component_pir
+    component_water
+    component_ultrasonic
+    component_humiture
+    component_mpu6050
     
 
+**Communication**
+
+.. toctree::
+    :maxdepth: 1
+
+    component_esp8266
 
 
 

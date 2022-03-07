@@ -3,6 +3,7 @@
 Relay
 ==========================================
 
+|img_relay|
 
 As we may know, relay is a device which is used to provide connection
 between two or more points or devices in response to the input signal
@@ -51,3 +52,8 @@ of a load circuit.
 
 
 * `Relay - Wikipedia <https://en.wikipedia.org/wiki/Relay>`_
+
+**Example**
+
+* :ref:`py_relay` (For MicroPython User)
+* :ref:`ar_relay` (For Arduino User)
