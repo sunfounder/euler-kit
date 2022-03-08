@@ -81,8 +81,3 @@ We recommend that you read the chapters in order.
     ar_irremote
     ar_rfid
 
-**7. Funny Project**
-
-.. toctree::
-    :maxdepth: 1
-
