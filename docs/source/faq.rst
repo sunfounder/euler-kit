@@ -5,7 +5,6 @@ Arduino
 ---------------------
 
 #. Code upload failed in Arduino IDE?
-
     * Check that your Pico is correctly recognised by the Arduino IDE, the port should be COMXX (Raspberry Pi Pico), for instructions please refer to :ref:`setup_pico_arduino`.
     * Check that the Board(Raspberry Pi Pico) or port（COMXX (Raspberry Pi Pico)）is selected correctly.
     * If your code is OK and you have selected the correct board and port, but the upload is still not successful. At this point you can click on the **Upload** icon again, when the progress below shows "Upload...", unplug the USB cable, then press and hold the **BOOTSEL** button to plug it in and the code will be uploaded successfully.
@@ -38,11 +37,11 @@ MicroPython
 
 
 #. If your computer is win7 and pico cannot be detected.
-    #. Download the USB CDC driver from http://aem-origin.microchip.com/en-us/mindi-sw-library?swsearch=Atmel%2520USB%2520CDC%2520Virtual%2520COM%2520Driver
-    #. Unzip the ``amtel_devices_cdc.inf`` file to a folder named ``pico-serial``.
-    #. Change the name of ``amtel_devices_cdc.inf`` file to ``pico-serial.inf``.
-    #. Open/edit the ``pico-serial.inf`` in a basic editor like notepad
-    #. Remove and replace the lines under the following headings:
+    * Download the USB CDC driver from http://aem-origin.microchip.com/en-us/mindi-sw-library?swsearch=Atmel%2520USB%2520CDC%2520Virtual%2520COM%2520Driver
+    * Unzip the ``amtel_devices_cdc.inf`` file to a folder named ``pico-serial``.
+    * Change the name of ``amtel_devices_cdc.inf`` file to ``pico-serial.inf``.
+    * Open/edit the ``pico-serial.inf`` in a basic editor like notepad
+    * Remove and replace the lines under the following headings:
 
     .. code-block::
 

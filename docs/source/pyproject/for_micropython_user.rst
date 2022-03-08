@@ -15,6 +15,7 @@ We recommend that you read the chapters in order.
     python_start/thonny_python_ide
     python_start/download_add
     python_start/quick_guide_thonny
+    python_start/syntax/micropython_basic_syntax
 
 
 

@@ -30,7 +30,6 @@ Here is the Email: cs@sunfounder.com.
     espproject/for_esp8266_user
     cproject/for_arduino_user
     piperproject/for_piper
-    appendix
     faq
 
 
