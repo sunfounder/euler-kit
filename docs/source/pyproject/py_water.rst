@@ -34,7 +34,9 @@ It measures the water level by having a series of exposed parallel wire traces t
 
     * Open the ``2.14_feel_the_water_level.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+
+    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
 
 
 .. code-block:: python
@@ -63,7 +65,9 @@ First, take a reading of the Water Sensor in a dry environment first, record it,
 
     * Open the ``2.14_water_level_threshold.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+
+    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
 
 .. code-block:: python
 

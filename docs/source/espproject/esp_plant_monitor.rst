@@ -20,7 +20,9 @@ When you press the pump button on the APP, it will replenish water for the plant
     .. note::
 
         * Open the ``1.7_ws_plant_monitor.py`` file under the path of ``euler-kit/esp8266``.
-        * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+        * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+
+    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
 
 #. Each time you rerun the code, you need to connect your device's Wi-Fi to ``my_esp8266``, then turn on SunFounder Controller and reconnect.
 #. After clicking the **Run/Stop** button in the upper right corner. You will see the current temperature, humidity and water level value on the SunFounder controller. When you press the pump button on the APP, it will replenish water for the plants.

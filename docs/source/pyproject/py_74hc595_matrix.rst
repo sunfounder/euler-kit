@@ -79,7 +79,9 @@ pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
 
     * Open the ``5.4_8x8_pixel_graphics.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+
+    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
 
 
 .. code-block:: python

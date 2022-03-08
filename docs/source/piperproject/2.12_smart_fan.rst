@@ -43,6 +43,8 @@ Here we make a temperature controlled smart fan with thermistor, L293D, motor, a
     * If the motor is still spinning after you click the Stop button, you need to reset the Run pin on the Pico with a wire to GND at this time, and then unplug this wire to run the code again.
     * This is because the motor is operating with too much current, which may cause the Pico to disconnect from the computer. 
 
+    |wiring_run_reset|
+
 
 **How it Works?**
 

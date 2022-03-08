@@ -44,7 +44,9 @@ By programming the value of the photoresistor to affect the frequency of the pas
 
     * Open the ``7.1_light_theremin.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+
+    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
 
 .. code-block:: python
 

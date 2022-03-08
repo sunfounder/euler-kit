@@ -37,6 +37,7 @@ To make the wiring easier, in the above diagram, the column row of the matrix ke
 
     * You can open the file ``4.2_4x4_keypad.ino`` under the path of ``euler-kit/arduino/4.2_4x4_keypad``. 
     * Or copy this code into **Arduino IDE**.
+    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
     
     Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 

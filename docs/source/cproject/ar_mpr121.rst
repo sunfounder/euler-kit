@@ -24,6 +24,7 @@ If you connect the electrodes to a banana, you can turn the banana into a touch 
 
     * You can open the file ``4.3_electrode_keyboard.ino`` under the path of ``euler-kit/arduino/4.3_electrode_keyboard``. 
     * Or copy this code into **Arduino IDE**.
+    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
     
     Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 

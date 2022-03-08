@@ -32,6 +32,7 @@ The purpose of the 10K resistor is to keep the GP14 at a steady low level when n
 
    * You can open the file ``2.9_feel_the_magnetism.ino`` under the path of ``euler-kit/arduino/2.9_feel_the_magnetism``. 
    * Or copy this code into **Arduino IDE**.
+   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
    * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
 
     Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
@@ -59,6 +60,7 @@ When a magnet approaches, the circuit will be closed. Just like the button in th
 
 ..    * You can open the file ``2.9_feel_the_magnetism_irq.ino`` under the path of ``euler-kit/arduino/2.9_feel_the_magnetism_irq``. 
 ..    * Or copy this code into **Arduino IDE**.
+   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
 ..    * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
 
 ..     Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.

@@ -45,7 +45,9 @@ The buzzer needs a transistor to work, here we use S8050.
 
     * Open the ``3.2_custom_tone.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+
+    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -95,7 +97,9 @@ We can simulate the specific tone according to the fundamental frequency of the 
 
     * Open the ``3.2_custom_tone_2.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+
+    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
 
 
 .. code-block:: python

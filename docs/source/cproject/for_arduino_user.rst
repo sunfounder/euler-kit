@@ -14,6 +14,7 @@ We recommend that you read the chapters in order.
     arduino_start/install_introduce
     arduino_start/setuo_pico_ar
     arduino_start/download_add_ar
+    arduino_start/quick_guide_on_arduino
 
 **2. Output & input**
 

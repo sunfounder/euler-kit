@@ -41,6 +41,7 @@ pixel adopt auto reshaping transmit technology, making the pixel cascade number 
 
     * You can open the file ``3.3_rgb_led_strip.ino`` under the path of ``euler-kit/arduino/3.3_rgb_led_strip``. 
     * Or copy this code into **Arduino IDE**.
+    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
     
     Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 
@@ -91,6 +92,7 @@ We can randomly generate colors and make a colorful flowing light.
 
    * You can open the file ``3.3_rgb_led_strip_flowing.ino`` under the path of ``euler-kit/arduino/3.3_rgb_led_strip_flowing``. 
    * Or copy this code into **Arduino IDE**.
+   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
    
     Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
     
@@ -106,6 +108,7 @@ Or have this WS2812 LED Strip rainbow cycle around the color wheel (range 65535)
 
    * You can open the file ``3.3_rgb_led_strip_rainbow.ino`` under the path of ``euler-kit/arduino/3.3_rgb_led_strip_rainbow``. 
    * Or copy this code into **Arduino IDE**.
+   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
    
    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
     

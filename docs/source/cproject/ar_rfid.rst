@@ -28,6 +28,7 @@ Thus, they may have increased processing, transmission capabilities and range.
 
    * You can open the file ``6.5_rfid_write.ino`` under the path of ``euler-kit/arduino/6.5_rfid_write``. 
    * Or copy this code into **Arduino IDE**.
+   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
 
    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 
@@ -43,6 +44,7 @@ The main function is divided into two:
 
    * You can open the file ``6.5_rfid_write.ino`` under the path of ``euler-kit/arduino/6.5_rfid_write``. 
    * Or copy this code into **Arduino IDE**.
+   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
    
    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 
@@ -58,6 +60,7 @@ After running you will be able to enter message in the serial monitor, ending wi
 
    * You can open the file ``6.5_rfid_read.ino`` under the path of ``euler-kit/arduino/6.5_rfid_read``. 
    * Or copy this code into **Arduino IDE**.
+   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
    
    Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 

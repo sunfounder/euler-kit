@@ -101,7 +101,7 @@ Again, in the code section, we show the code directly and you can copy it to Tho
 
     |mps_sec_inter|
 
-#. Run  and Save the Code
+#. Run and Save the Code
 
     You need click **Run Current Script** or simply press F5 to run it. If your code has not been saved, a window will pop up asking to save to **This computer** or **Raspberry Pi Pico**.
 

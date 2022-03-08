@@ -397,6 +397,7 @@ rst_epilog += """
 .. |ars_arduino_ide| image:: /img/arduino_start/arduino_ide.png
 .. |ars_serial_monitor| image:: /img/arduino_start/serial_monitor.png
 .. |ars_baud_rate| image:: /img/arduino_start/baud_rate.png
+.. |ars_open_code| image:: /img/arduino_start/ar_open_code.png
 
 """
 

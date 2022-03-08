@@ -38,8 +38,10 @@ It uses a capacitive humidity sensor and thermistor to measure the surrounding a
 
     * Open the ``6.2_temperature_humidity.py`` file under the path of ``euler-kit/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
 
+    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+    
     * Here you need to use the library called ``dht.py``, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
 
 .. code-block:: python

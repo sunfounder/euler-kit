@@ -18,6 +18,8 @@ Here is the Email: cs@sunfounder.com.
 
 * :download:`SunFounder Euler Kit Example <https://github.com/sunfounder/euler-kit/archive/refs/heads/main.zip>`
 
+* Or check out the code at `Euler Kit - GitHub <https://github.com/sunfounder/euler-kit>`_
+
 **Content**
 
 .. toctree::

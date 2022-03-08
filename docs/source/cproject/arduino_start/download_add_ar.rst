@@ -7,7 +7,9 @@
 
 Download the relevant code from the link below.
 
-* :download:`SunFounder Euler Kit <https://github.com/sunfounder/euler-kit/archive/refs/heads/main.zip>`
+* :download:`SunFounder Euler Kit Example <https://github.com/sunfounder/euler-kit/archive/refs/heads/main.zip>`
+
+* Or check out the code at `Euler Kit - GitHub <https://github.com/sunfounder/euler-kit>`_
 
 .. _add_libraries_ar:
 

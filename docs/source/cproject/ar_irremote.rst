@@ -28,6 +28,7 @@ Inside the remote control is a matching IR LED, which emits IR pulses to tell th
 
     * You can open the file ``6.4_ir_remote_control.ino`` under the path of ``euler-kit/arduino/6.4_ir_remote_control``. 
     * Or copy this code into **Arduino IDE**.
+    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
     
     Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 

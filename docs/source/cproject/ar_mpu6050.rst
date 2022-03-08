@@ -31,6 +31,7 @@ Applications of gyroscopes include anti-rollover and airbag systems for automobi
 
     * You can open the file ``6.3_6axis_motion_tracking.ino`` under the path of ``euler-kit/arduino/6.3_6axis_motion_tracking``. 
     * Or copy this code into **Arduino IDE**.
+    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
     
     Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 

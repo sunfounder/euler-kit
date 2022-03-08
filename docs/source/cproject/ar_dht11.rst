@@ -37,6 +37,7 @@ It uses a capacitive humidity sensor and thermistor to measure the surrounding a
 
     * You can open the file ``6.2_dht11.ino`` under the path of ``euler-kit/arduino/6.2_dht11``. 
     * Or copy this code into **Arduino IDE**.
+    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
     
     Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 

@@ -38,6 +38,7 @@ Here we will use the I2C0 interface to control the LCD1602 and display text.
 
     * You can open the file ``3.4_liquid_crystal_display.ino`` under the path of ``euler-kit/arduino/3.4_liquid_crystal_display``. 
     * Or copy this code into **Arduino IDE**.
+    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
     
     Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
     
@@ -136,6 +137,7 @@ Upload the codes to the Pico, the content that you input in the serial monitor w
 
    * You can open the file ``3.4_liquid_crystal_display_2.ino`` under the path of ``euler-kit/arduino/3.4_liquid_crystal_display_2``. 
    * Or copy this code into **Arduino IDE**.
+   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
    
     Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
     
