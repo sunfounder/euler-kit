@@ -25,7 +25,7 @@ Import the Code
 
 In Piper Make's `home page <https://make.playpiper.com/>`_, click **Import Project**.
     
-|per_import|
+|per_import-2|
 
 Select the ``.png`` file in the path ``euler-kit\piper`` and click **Import**. 
 Note that you need to download the `SunFounder Euler Kit <https://github.com/sunfounder/euler-kit/archive/refs/heads/main.zip>`_ package first.
