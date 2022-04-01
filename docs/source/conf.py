@@ -502,7 +502,10 @@ rst_epilog += """
 .. |media17| image:: /img/piper_start/media17.png
 .. |pico_port| image:: /img/piper_start/pico_port.png
 .. |disconnect_per| image:: /img/piper_start/disconnect_per.png
-
+.. |media2-s| image:: /img/piper_start/media2-s.png
+.. |media9-s| image:: /img/piper_start/media9-s.png
+.. |media11-s| image:: /img/piper_start/media11-s.png
+.. |per_import-s| image:: /img/piper_start/per_import-s.png
 
 """
 

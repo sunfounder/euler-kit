@@ -14,9 +14,9 @@ Then enter the file name and click the **Download** button again to save the cod
 
 |download_per|
 
-You can also see it on the `home page <https://make.playpiper.com/>`_ in Piper Make.
+.. You can also see it on the `home page <https://make.playpiper.com/>`_ in Piper Make.
 
-|per_home|
+.. |per_home|
 
 .. _import_code_piper:
 

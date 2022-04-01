@@ -6,15 +6,19 @@
 1. Create New Project
 -----------------------
 
-Now that you have set up Pico, it is time to learn how to program it. Now let's light up the onboard LED.
+Now that you have set up Pico, it is time to learn how to program it. 
+Now let's light up the onboard LED.
 
-Click on the **New Project** button, and a new project will appear in the **MY PROJECTS** section and will be assigned a random name that can be changed from the programming page.
 
-|media9|
+Switch to ``CREATIVE MODE`` and click on the **New Project** button, 
+and a new project will appear in the **MY PROJECTS** section and 
+will be assigned a random name that can be changed from the programming page.
+
+|media9-s|
 
 Then open the new project just created.
 
-|media11|
+|media11-s|
 
 Now go to the Piper Make programming page.
 
