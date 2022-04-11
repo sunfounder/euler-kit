@@ -51,7 +51,7 @@ Specifically, it can replace 8 pins for digital signal output by writing an 8-bi
    * You can open the file ``5.1_microchip_74hc595.ino`` under the path of ``euler-kit/arduino/5.1_microchip_74hc595``. 
    * Or copy this code into **Arduino IDE**.
    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+   * Or run this code directly in the `Arduino Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
 
     Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 

@@ -37,7 +37,7 @@ Since DC motors require a high current, we use a power supply module to power th
    * You can open the file ``3.5_small_fan.ino`` under the path of ``euler-kit/arduino/3.5_small_fan``. 
    * Or copy this code into **Arduino IDE**.
    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+   * Or run this code directly in the `Arduino Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
 
     Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 

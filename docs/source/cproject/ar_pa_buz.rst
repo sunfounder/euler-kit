@@ -41,7 +41,7 @@ The buzzer needs a transistor to work, here we use S8050.
    * You can open the file ``3.2_custom_tone.ino`` under the path of ``euler-kit/arduino/3.2_custom_tone``. 
    * Or copy this code into **Arduino IDE**.
    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+   * Or run this code directly in the `Arduino Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
 
     Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 
@@ -79,7 +79,7 @@ We can simulate the specific tone according to the fundamental frequency of the 
    * You can open the file ``3.2_custom_tone_2.ino`` under the path of ``euler-kit/arduino/3.2_custom_tone_2``. 
    * Or copy this code into **Arduino IDE**.
    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-   * Or run this code directly in the `Arduino Web Editor <https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a>`_.
+   * Or run this code directly in the `Arduino Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
 
     Don't forget to select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
 
