@@ -126,7 +126,7 @@ When ``i`` is 2, the second line is activated (the chip of the control line gets
 Incidentally, like the 4-digit 7-segment display, it has to maintain the refresh rate to prevent flickering by the human eye, so the extra ``sleep()`` in the main loop should be avoided as much as possible.
 
 
-**What more?**
+**Learn More**
 
 Try replacing ``datArray`` with the following array and see what images appear!
 

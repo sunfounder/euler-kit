@@ -128,7 +128,7 @@ Prints text to the LCD.
 
 
 
-**What more？**
+**Learn More**
 
 
 Upload the codes to the Pico, the content that you input in the serial monitor will be printed on the LCD.

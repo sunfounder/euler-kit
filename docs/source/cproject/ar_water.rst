@@ -44,7 +44,7 @@ It measures the water level by having a series of exposed parallel wire traces t
 After the program is run, submerge the Water Sensor module slowly into the water, and as the depth increases, the Shell will print a larger value.
 
 
-**What More?**
+**Learn More**
 
 There is a way to use the analog input module as a digital module.
 

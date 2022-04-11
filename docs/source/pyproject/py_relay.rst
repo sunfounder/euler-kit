@@ -82,7 +82,7 @@ When the code is run, the relay will switch the operating state of the controlle
 You can manually comment out one of the lines to further clarify the correspondence between the relay circuit and the load circuit.
 
 
-**What More?**
+**Learn More**
 
 Pin 3 of the relay is normally open and only turns on when the contactor coil is operating; pin 4 is normally closed and turns on when the contactor coil is energized.
 Pin 1 is connected to pin 6 and is the common terminal of the load circuit.

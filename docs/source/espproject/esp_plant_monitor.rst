@@ -72,7 +72,7 @@ Here, the ``on_receive()`` function can be divided into 3 parts.
 * **show water level sensor message**: The water level message is displayed on the widget in area **P**. When the water level message is greater than 10000, let the pump stop working.
 
 
-**What's more?**
+**Learn More**
 
 If you want Pico to run this ``1.7_ws_plant_monitor.py`` file automatically after booting, refer to the following steps.
 

@@ -85,7 +85,7 @@ We use the ``duty_u16()`` function to set the duty cycle to 30000(about 50%). It
 
 
 
-**What more?**
+**Learn More**
 
 We can simulate the specific tone according to the fundamental frequency of the piano, so as to play a complete piece of music.
 

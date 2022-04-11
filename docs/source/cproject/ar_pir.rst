@@ -41,7 +41,7 @@ When the PIR module detects someone passing by, GP14 will be high, otherwise it 
 After the program runs, if the PIR module detects someone nearby, the Serial Monitor will print out "Somebody here!" 
 
 
-**What more?**
+**Learn More**
 
 PIR is a very sensitive sensor. In order to adapt it to the environment of use, 
 it needs to be adjusted. Let the side with the 2 potentiometers facing you, 

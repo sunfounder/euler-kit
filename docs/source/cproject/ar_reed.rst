@@ -46,7 +46,7 @@ The purpose of the 10K resistor is to keep the GP14 at a steady low level when n
 When a magnet approaches, the circuit will be closed. Just like the button in the :ref:`ar_button` chapter.
 
 
-.. **What's more?**
+.. **Learn More**
 
 .. This time, we tried a flexible way of using switches: interrupt requests, or IRQs.:  interrupt requests, or IRQs.
 

@@ -167,7 +167,7 @@ Create a loop, rewrite the program, and it will be what you saw at the beginning
 
 * :ref:`While Loops`
 
-**What More?**
+**Learn More**
 
 
 Usually, the library will have a corresponding API (Application Programming Interface) file. 

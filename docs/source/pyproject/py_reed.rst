@@ -48,7 +48,7 @@ The purpose of the 10K resistor is to keep the GP14 at a steady low level when n
 
 When the code is run, GP14 goes high when a magnet is near the reed switch, otherwise it goes low. Just like the button in the :ref:`py_button` chapter.
 
-**What more?**
+**Learn More**
 
 This time, we tried a flexible way of using switches: interrupt requests, or IRQs.: interrupt requests, or IRQs.
 

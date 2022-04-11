@@ -84,7 +84,7 @@ Function
     * ``strip.Color(red, green, blue)`` : Color as a single 'packed' 32-bit value.
     * ``strip.show()`` : Update strip with new contents.
   
-**What more?**
+**Learn More**
 
 We can randomly generate colors and make a colorful flowing light.
 

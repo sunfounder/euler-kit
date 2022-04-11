@@ -68,7 +68,7 @@ This function has three parameters:
 
 * `tone <https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/>`_
 
-**What more?**
+**Learn More**
 
 We can simulate the specific tone according to the fundamental frequency of the piano, so as to play a complete piece of music.
 

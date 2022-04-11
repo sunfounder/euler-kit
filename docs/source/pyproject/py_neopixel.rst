@@ -110,7 +110,7 @@ You can also directly use the following statement to make all LEDs light up the 
     ws.write_all(color value)
 
 
-**What more?**
+**Learn More**
 
 We can randomly generate colors and make a colorful flowing light.
 
