@@ -15,9 +15,6 @@ In the pop-up page, if you don't need to subscribe for more tutorials, you can j
 .. note::
     If you see a different pop-up window, your browser version is not supported, please update your browser and try again. 
 
-.. Scroll to the bottom of this page and click on the **Set up my Pico** under the **Tools** section and follow the prompts to configure it.
-
-.. |media2|
 
 Find the ``SETUP MY PICO`` button, click it, and follow the prompts to configure it.
 

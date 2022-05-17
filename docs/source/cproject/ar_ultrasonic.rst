@@ -29,7 +29,7 @@ The ultrasonic sensor module works on the principle of sonar and radar systems f
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/631a1663-ce45-4d46-b8f0-7d10f32097a9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
-    
+
 
 Once the program is running, the Serial Monitor will print out the distance of the ultrasonic sensor from the obstacle ahead.
 

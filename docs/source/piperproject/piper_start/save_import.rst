@@ -14,18 +14,14 @@ Then enter the file name and click the **Download** button again to save the cod
 
 |download_per|
 
-.. You can also see it on the `home page <https://make.playpiper.com/>`_ in Piper Make.
-
-.. |per_home|
-
 .. _import_code_piper:
 
 Import the Code
 --------------------
 
 In Piper Make's `home page <https://make.playpiper.com/>`_, click **Import Project**.
-    
-|per_import-2|
+
+|per_import|
 
 Select the ``.png`` file in the path ``euler-kit\piper`` and click **Import**. 
 Note that you need to download the `SunFounder Euler Kit <https://github.com/sunfounder/euler-kit/archive/refs/heads/main.zip>`_ package first.
