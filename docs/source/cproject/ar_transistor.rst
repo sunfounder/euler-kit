@@ -70,7 +70,6 @@ The only difference you will notice between this circuit and the previous one is
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/77c437de-028f-47c1-9d79-177e90eb0599/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
-    
 
 Two kinds of transistors can be controlled with the same code. When we press the button, Pico will send a high-level signal to the transistor; when we release it, it will send a low-level signal.
 We can see that diametrically opposite phenomena have occurred in the two circuits.
