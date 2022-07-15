@@ -3,12 +3,12 @@
 1.3 Install and Introduce Thonny IDE
 =======================================
 
-Before you can start to program Pico with MicroPython, you need an integrated development environment (IDE), here we recommend Thonny. Thonny comes with Python 3.7 built in, just one simple installer is needed and you're ready to learn programming.
+To program Pico with MicroPython, you need an integrated development environment (IDE), here we recommend Thonny. Python 3.7 is pre-installed in Thonny, so all you need to do is install it.
 
 Download from Web
 ------------------------
 
-You can download it by visiting the Thonny website: https://thonny.org/. Once open the page, you will see a light gray box in the upper right corner, click on the link that applies to your operating system.
+You can download it from the Thonny website: https://thonny.org/. If you open the page, you will see a light gray box in the upper right corner, click on the link that applies to your operating system.
 
 |mps_download_thonny|
 
@@ -19,23 +19,23 @@ Thonny IDE Introduction
 * 
     |mps_thonny_ide.jpg|
 
-* **A**: The menu bar that contains the file New, Save, Edit, View, Run, Debug, etc.
+* **A**: The menu bar containing New, Save, Edit, View, Run, Debug, etc.
 * **B**: This paper icon allows you to create a new file.
-* **C**: The folder icon allows you to open files that already exist in your computer or Raspberry Pi Pico, if your Pico is already plugged into your computer.
-* **D**: Click on the floppy disk icon to save the code. Similarly, you can choose whether to save the code to your computer or to the Raspberry Pi Pico.
-* **E**: The play icon allows you to run the code. If you have not saved the code, save the code before it can run.
-* **F**: The Debug icon allows you to debug your code. Inevitably, you will encounter errors when writing code. Errors can take many forms, sometimes using incorrect syntax, sometimes incorrect logic. Debugging is the tool for finding and investigating errors.
+* **C**: If your Raspberry Pi Pico is already plugged into your computer, you can open files that already exist on your computer or Pico.
+* **D**: Click on the floppy disk icon to save the code. You can also choose whether to save the code to your computer or the Raspberry Pi Pico.
+* **E**: The play icon allows you to run the code. Before running the code, save it if you have not already done so.
+* **F**: The Debug icon allows you to debug your code. When writing code, you will inevitably encounter errors. There are many forms of errors, including incorrect syntax and logical errors. Debugging is the tool for finding and investigating errors.
 
 .. note::
 
-    The Debug tool cannot be used when MicroPython (Raspberry Pi Pico) is selected as the interpreter. 
+    When MicroPython (Raspberry Pi Pico) is selected as the interpreter, the Debug tool cannot be used. 
     
-    If you want to debug your code, you need to select the interpreter as the default interpreter and save as to your computer after debugging.
+    To debug your code, select the interpreter as the default interpreter and save it to your computer after debugging.
 
-    Finally, select the MicroPython (Raspberry Pi Pico) interpreter again, click the save as button, and re-save the debugged code to your Raspberry Pi Pico. 
+    You can now save the debugged code to your Raspberry Pi Pico by selecting the MicroPython (Raspberry Pi Pico) interpreter again, clicking the save as button, and clicking the save button again. 
 
-* The G, H and I arrow icons allow you to run the program step by step, but can only be started after clicking on the Degug icon. As you click on each arrow, you will notice that the yellow highlighted bar will indicate the line or section of Python that is currently evaluating.
-    
+* When you click on the Degug icon, you can run the program step by step using the G, H, and I arrow icons. When you click on each arrow, a yellow highlighted bar will appear to indicate which Python line or section is being evaluated.
+
     * **G**: Take a big step, which means jumping to the next line or block of code.  
     * **H**: Take a small step means expressing each component in depth.  
     * **I**: Exit out of the debugger.  
@@ -49,5 +49,5 @@ Thonny IDE Introduction
 
    **NO MicroPython(Raspberry Pi Pico) Interpreter Option ?**
 
-   * Check that your Pico is plugged into your computer via a USB cable.
+   * Make sure your Pico is plugged into your computer via a USB cable.
    * The Raspberry Pi Pico interpreter is only available in version 3.3.3 or higher version of Thonny. If you are running an older version, please update.

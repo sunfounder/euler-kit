@@ -4,12 +4,9 @@
 =======================
 
 
-Next, follow me to make a game device to challenge your concentration. 
-Tie the tilt switch to a stick to make a magic wand. 
-Shake the wand, the 4-digit segment display will start counting, 
-shake again will let it stop counting. 
-If you succeed in keeping the displayed count at **10.00**, 
-then you win. You can play the game with your friends to see who is the time wizard.
+To challenge your concentration, follow me next to make a game device. 
+Make a magic wand by connecting the tilt switch with a stick. When you shake the wand, the 4-digit segment display will start counting, and when you shake it again, it will stop counting. In order to win, you must keep the displayed count at **10.00**. You can play the game with your friends to see who is the time wizard.
+
 
 **Schematic**
 
@@ -17,8 +14,8 @@ then you win. You can play the game with your friends to see who is the time wiz
 |sch_10_second|
 
 
-* This circuit is based on the :ref:`py_74hc_4dig` with the addition of a tilt switch.
-* When the tilt switch is upright, GP16 is high, and when it is tilted, it is low.
+* This circuit is based on :ref:`py_74hc_4dig` with the addition of a tilt switch.
+* GP16 is high when the tilt switch is upright; low when tilted.
 
 **Wiring**
 
@@ -112,5 +109,5 @@ then you win. You can play the game with your friends to see who is the time wiz
             count = int((time.ticks_ms()-timeStart)/10)
         display(count)
 
-Shake the wand, the 4-digit 7-segment display will start counting, shake again will let it stop counting. 
-If you succeed in keeping the displayed count at 10.00, then you win. Shake it one more time to start the next round of the game.
+The 4-digit 7-segment display will begin counting when you shake the wand, and will stop counting when you shake it again. 
+You win if you manage to keep the displayed count at 10.00. The game will continue after one more shake.

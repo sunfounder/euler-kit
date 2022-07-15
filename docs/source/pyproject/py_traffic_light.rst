@@ -10,18 +10,17 @@
 Traffic signals are standardized by the `Vienna Convention on Road Signs and Signals <https://en.wikipedia.org/wiki/Vienna_Convention_on_Road_Signs_and_Signals>`_.
 Provides users with the right-of-way by alternating LEDs in three standard colors.
 
-* **Red light**: A flashing red light indicates that traffic needs to stop, equivalent to a stop sign.
-* **Yellow light**: warning signal about to turn red. Traffic laws in different countries (regions) have different interpretations of the yellow light.
-* **Green light**: allows traffic to move in the direction indicated.
+* **Red light**: Traffic should stop if it sees a flashing red light, equivalent to a stop sign.
+* **Yellow light**: A warning signal is about to turn red. Yellow lights are interpreted differently in different countries (regions).
+* **Green light**: Allows traffic to move in the indicated direction.
 
-In this project, we will use LED lights of three colors to realize the change of traffic lights and a 4-digit 7-segment display will be used to display the timing of each traffic state.
+In this project, we will use three colors of LEDs to implement traffic light changes and a 4-digit 7-segment display to show the time of each traffic state.
 
 
 **Schematic**
 
 
 |sch_traffic_light|
-
 
 
 * This circuit is based on the :ref:`py_74hc_4dig` with the addition of 3 LEDs.
@@ -132,4 +131,4 @@ In this project, we will use LED lights of three colors to realize the change of
         display(counter)
         lightup(color_state)
 
-After the code runs, the green light is on for 30s, the yellow light is on for 5s, then the green light is on for 30 seconds, and it goes through this cycle.
+When the code runs, the green LED stays on for 30 seconds, the yellow LED stays on for 5 seconds, and the green LED stays on for 30 seconds.

@@ -4,27 +4,24 @@
 7.11 Somatosensory Controller
 =============================
 
+If you watch a lot of robot movies, you've probably seen images like this.
+The protagonist turned his wrist and the giant robot followed; the protagonist shakes his fist, and the robot follows, which is very cool.
 
-If you watch a lot of robot movies, then you should have seen images like this.
-the protagonist turning his wrist, the giant robot also followed by turning his wrist.
-The protagonist shakes his fist, and the robot follows suit, which is very cool.
+The use of this technology is already common in universities and research institutes, and the arrival of 5G will greatly expand its application areas.
+"Surgical robot da Vinci" remote surgery medical is a typical example.
 
-This technology is already very common in universities and research institutes, and the arrival of 5G will greatly expand the scope of application of such technology.
-For example, the "surgical robot da Vinci" remote surgery medical is a typical application.
+A robotic system of this type is typically composed of two modules: a human motion capture module and a robotic arm actuation module (some application scenarios also include a data communication module).
 
-Such a robotic system is usually divided into a human motion capture module and a robotic arm actuation module (some application scenarios also add a data communication module).
-
-Here we use MPU6050 to implement human motion capture (e.g., mount it on a glove) and servo to represent robotic arm actuation to make a simple somatosensory control system.
-
+The MPU6050 is used here to implement human motion capture (by mounting it on a glove) and the servo is used to represent robotic arm motion.
 
 **Schematic**
 
 
 |sch_somato|
 
-MPU6050 will get the acceleration value in each direction and calculate the attitude angle.
+The MPU6050 calculates the attitude angle based on the acceleration values in each direction.
 
-As the attitude angle changes, the program will also control the servo to make the corresponding deflection angle.
+The program will control the servo to make the corresponding deflection angle as the attitude angle changes.
 
 **Wiring**
 
@@ -93,4 +90,4 @@ As the attitude angle changes, the program will also control the servo to make t
         servo_write(servo,interval_mapping(average_angle,-90,90,0,180))
 
 
-Once the program is running, when you tilt the MPU6050 left and right (or turn your wrist left and right if it is mounted on a glove), the servo will turn left and right at the same time.
+As soon as the program runs, the servo will turn left and right as you tilt the MPU6050 (or turn your wrist if it is mounted on a glove).

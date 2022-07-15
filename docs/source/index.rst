@@ -1,17 +1,18 @@
 SunFounder Euler Kit for Raspberry Pi Pico 
 ===========================================================
-SunFounder Euler Kit is an advanced learning kit based on Raspberry Pi Pico.
 
-The kit contains various types of components, such as displays, sounds, drivers, controllers, and sensors, allows you to learn electronic devices comprehensively.
+Thank you for choosing the SunFounder Euler Kit
 
-we have prepared many interesting and practical projects for you, and collected a lot of authoritative related information, 
-just turn on your computer and you can complete programming learning in one stop.
+This is an advanced learning kit based on the Raspberry Pi Pico. It contains a variety of components, including displays, sounds, drivers, controllers and sensors, which allows you to gain a comprehensive understanding of electronic devices.
 
-In addition, we offer 3 programming languages. microPython, C/C++ (Arduino) and a block-based language (Piper Make). Each programming language has targeted and interesting projects to help you get started quickly, so you can choose according to your needs.
+For you, we have prepared a number of interesting and useful projects as well as a great deal of relevant and authoritative information. All you need to do is turn on your computer, and you can learn programming in no time at all.
 
-If you want to learn another projects which we don’t have, please feel free to send Email and we will update to our online tutorials as soon as possible, any suggestions are welcomed.
+Additionally, we offer three programming languages. MicroPython, C/C++ (Arduino) and Piper Make are all available. To help you get started quickly, each language has targeted and interesting projects, so you can pick one that meets your needs.
 
-Here is the Email: cs@sunfounder.com.
+Please feel free to e-mail us if you are interested in learning other projects we don't have. We will update our online tutorials as soon as possible.
+
+Here is the email: cs@sunfounder.com.
+
 
 **About the display language**
 

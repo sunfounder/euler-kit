@@ -4,16 +4,16 @@
 ========================
 
 
-So far, we have used only two output signals: high level and low level (or called 1 & 0, ON & OFF), which is called digital output.
+As of now, we have only used two output signals: high level and low level (also called ON and OFF), which is called digital output.
 However, in actual use, many devices do not simply ON/OFF to work, for example, adjusting the speed of the motor, adjusting the brightness of the desk lamp, and so on.
-In the past, a slider that can adjust the resistance was used to achieve this goal, but this is always unreliable and inefficient.
+To achieve this goal, a slider that adjusts resistance was used in the past, but it is unreliable and inefficient.
 Therefore, Pulse width modulation (PWM) has emerged as a feasible solution to such complex problems.
 
-A digital output composed of a high level and a low level is called a pulse. The pulse width of these pins can be adjusted by changing the ON/OFF speed.
+A pulse is a digital output that contains a high level and a low level. The pulse width of these pins can be adjusted by changing the ON/OFF speed.
 
-Simply put, when we are in a short period (such as 20ms, most people’s visual retention time),
-Let the LED turn on, turn off, and turn on again, we won’t see it has been turned off, but the brightness of the light will be slightly weaker.
-During this period, the more time the LED is turned on, the higher the brightness of the LED.
+When we are in a short period of time (like 20ms, which is most people's visual retention period), 
+let the LED turn on, turn off, and turn on again, we won’t see it has been turned off, but the brightness of the light will be slightly weaker.
+During this period, the more time the LED is on, the brighter it becomes.
 In other words, in the cycle, the wider the pulse, the greater the "electric signal strength" output by the microcontroller.
 This is how PWM controls LED brightness (or motor speed).
 
@@ -23,11 +23,11 @@ There are some points to pay attention to when Pico uses PWM. Let's take a look 
 
 |pin_pwm|
 
-Each GPIO pin of Pico supports PWM, but it actually has a total of 16 independent PWM outputs (instead of 30), distributed between GP0 to GP15 on the left, and the PWM output of the right GPIO is equivalent to the left copy.
+Pico supports PWM on each GPIO pin, but there are actually 16 independent PWM outputs (instead of 30), distributed between GP0 to GP15 on the left, and the right GPIO's PWM output is identical to the left.
 
-What we need to pay attention to is to avoid setting the same PWM channel for different purposes during programming. (For example, GP0 and GP16 are both PWM_0A)
+It is important to avoid setting the same PWM channel for different purposes during programming. For example, GP0 and GP16 are both PWM_0A.
 
-After understanding this knowledge, let us try to achieve the effect of Fading LED.
+Let's try to achieve the faded LED effect after understanding this knowledge.
 
 * :ref:`cpn_led`
 
@@ -103,6 +103,6 @@ Here, we change the brightness of the LED by changing the duty cycle of the GP15
 
 * ``led = machine.PWM(machine.Pin(15))`` sets the GP15 pin as PWM output.
 
-* The line ``led.freq(1000)`` is used to set the PWM frequency, here it is set to 1000Hz, which means 1ms (1/1000) is a cycle. The PWM frequency can be adjusted, for example, the steering wheel needs to work at 50Hz, the passive buzzer can change the tone by changing the PWM frequency. However, there is no limit when using LEDs alone, we set it to 1000Hz.
+* The line ``led.freq(1000)`` is used to set the PWM frequency, here it is set to 1000Hz, which means 1ms (1/1000) is a cycle.
 
-* The ``led.duty_u16()`` line is used to set the duty cycle, which is a 16-bit interger(2^16=65536). When we assign a 0 to this function, the duty cycle is 0%, and each cycle has 0% of the time to output a high level, in other words, turn off all pulses. When the value is 65535, the duty cycle is 100%, that is, the complete pulse is turned on, and the result is equal to ‘1’ as a digital output. If it is 32768, it will turn on half a pulse, and the brightness of the LED will be half of that when it is fully turned on.
+* The ``led.duty_u16()`` line is used to set the duty cycle, which is a 16-bit interger(2^16=65536). A 0 indicates 0% duty cycle, which means each cycle has 0% time to output a high level, i.e., all pulses are turned off. The value 65535 indicates a duty cycle of 100%, which means the whole pulse is turned on, and the result is '1'. When it is 32768, it will turn on half a pulse, so the LED will be half as bright when fully on.

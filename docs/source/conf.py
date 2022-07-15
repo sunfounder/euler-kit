@@ -210,7 +210,8 @@ rst_epilog += """
 .. |img_esp8266| image:: /img/component/esp8266.png
     :width: 400
 .. |img_diode| image:: /img/component/Diodes-symbol.png
-
+.. |img_PIR_TTE| image:: /img/component/PIR_TTE.png
+    :width: 400
 """
 
 

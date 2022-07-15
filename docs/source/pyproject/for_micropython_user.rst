@@ -1,7 +1,6 @@
 For MicroPython User
 ======================
-This section contains the history of MicroPython, installing MicroPython in Pico, 
-the basic syntax of MicroPython and a dozen interesting and practical projects to help you learn MicroPython quickly.
+In this section, you will learn the history of MicroPython, how to install MicroPython in Pico, the basic syntax, and a dozen interesting and practical projects to help you learn MicroPython quickly.
 
 We recommend that you read the chapters in order.
 

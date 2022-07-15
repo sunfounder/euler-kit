@@ -1,15 +1,11 @@
 What is Included in This Kit
 =============================
 
-The following is a list of this kit, after you receive the goods, you can check the contents of the list first. 
+The following is a list of this kit so you can check the contents of the kit once you receive it.
 
-Some of the components on the kit are very small and look the same, the worker may omit or send it wrong when packing. 
-Please do not hesitate to send us the picture of the kit and the names of the missing or wrong components via email.
+There are some components in the kit that are very small and look the same, and staff may miss or send them by mistake when packing the kit. You are welcome to send us the name of the missing or incorrect component if you find one.
 
-Here is the Email: cs@sunfounder.com.
-
-
-**Components List**
+Here is the email: cs@sunfounder.com.
 
 |euler_list|
 

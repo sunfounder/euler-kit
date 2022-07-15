@@ -5,18 +5,9 @@
 ==============================
 
 
+Guessing Numbers is a fun party game where you and your friends input numbers (0-99). With each input of the number, the range will shrink until a player answers the riddle correctly. Then the player is defeated and punished. 
 
-Guessing Numbers is a fun party game where you and 
-your friends take turns inputting a number (0~99). 
-The range will be smaller with the inputting of 
-the number till a player answers the riddle correctly. 
-Then the player is defeated and punished. For example, 
-if the lucky number is 51 which the players cannot see, 
-and the player ① inputs 50, the prompt of number range 
-changes to 50~99; if the player ② inputs 70, the range 
-of number can be 50~70; if the player ③ inputs 51, 
-this player is the unlucky one. Here, we use keypad 
-to input numbers and use LCD to output outcomes.
+As an example, if the lucky number is 51, which the players cannot see, and the player 1 inputs 50, the prompt changes to 50 - 99; if the player 2 inputs 70, the range changes to 50 - 70; if the player 3 inputs 51, the player is unlucky. In this case, numbers are inputted through the keypad, and outcomes are displayed on a LCD screen.
 
 
 **Schematic**

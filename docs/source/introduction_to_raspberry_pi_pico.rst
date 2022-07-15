@@ -5,8 +5,8 @@ Introduction to Raspberry Pi Pico
 
 The Raspberry Pi Pico is a microcontroller board based on the Raspberry Pi RP2040 microcontroller chip.
 
-Whether you want to learn the MicroPython programming language, take the first step in physical computing, or want to build a hardware project, Raspberry Pi Pico – 
-and its amazing community – will support you every step of the way. In the project, it can control anything, from LEDs and buttons to sensors, motors, and even other microcontrollers.
+With Raspberry Pi Pico, you can learn MicroPython programming, take your first step into physical computing, or build a hardware project. 
+This amazing community - will support you every step of the way. In the project, it can control anything, from LEDs and buttons to sensors, motors, and even other microcontrollers.
 
 Features
 --------------

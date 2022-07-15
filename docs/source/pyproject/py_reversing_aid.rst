@@ -5,12 +5,8 @@
 7.10 Reversing Aid
 ======================
 
-
-
-In this project, we will use LED, 
-buzzer and ultrasonic sensors to make a reverse assist system. 
-We can put it on the remote control vehicle to simulate the 
-actual process of reversing the car into the garage.
+This project uses an LED, a buzzer and an ultrasonic module to create a reversing assist system.
+We can put it on a remote control car to simulate the the actual process of reversing a car into a garage.
 
 
 **Schematic**
@@ -114,8 +110,8 @@ actual process of reversing the car into the garage.
             beep()
             previousMills=currentMills
         
-* Once the program is running, the ultrasonic sensor will continuously read the distance to the obstacle in front of you, and you can see the exact distance value from the shell.
+* As soon as the program runs, the ultrasonic sensor will continuously read the distance to the obstacle in front of you, and you will be able to see the exact distance value on the shell.
 * The LED and buzzer will change the frequency of blinking and beeping depending on the distance value, thus indicating the approach of the obstacle.
-* In the :ref:`py_ultrasonic` article, we mentioned that the ultrasonic sensor will pause the program when it works.
-* Therefore, in this example, we created a separate thread for ranging, so that it does not interfere with the timing of the LED and buzzer.
+* The :ref:`py_ultrasonic` article mentioned that when the ultrasonic sensor works, the program will be paused.
+* To avoid interfering with the LED or buzzer timing, we created a separate thread for ranging in this example.
 

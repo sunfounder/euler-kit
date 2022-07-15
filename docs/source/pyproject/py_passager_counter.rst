@@ -4,16 +4,15 @@
 7.4 Passager Counter
 ====================
 
+For large shopping malls, shopping centers, chain stores, airports, stations, museums, and public places such as exhibition halls, passenger traffic is an indispensable data.
 
-Passenger traffic is an indispensable data for large shopping malls, shopping centers, chain stores, airports, stations, museums, Public places such as exhibition halls are indispensable data for management and decision making.
+In airports and stations, for example, the number of people needs to be strictly controlled to ensure safety and smooth flow.
+It is also possible to know when there are more visitors in shopping centers and chain stores, how many orders each user can generate, etc.
+As a result, we can analyze people's consumption habits and increase turnover.
 
-In airports and stations, for example, the number of people needs to be strictly controlled in order to avoid exceeding the capacity for the safety and smooth flow of people.
-For shopping centers and chain stores, it is also possible to know more about the time of day when there are more visitors, how many orders each user can generate, and so on.
-Thus, we can analyze people's consumption habits and get more turnover.
+Passenger counters can help people understand the operation of these public places and organize their operations efficiently.
 
-To sum up, a passager counter can help people understand the operation of these public places and organize their operations effectively!
-
-Here we use a PIR sensor to make a simple passager counter and a 4-digit 7-segment display to display the flow of people.
+A simple passager counter is created using a PIR sensor and a 4-digit 7-segment display.
 
 
 **Schematic**
@@ -22,6 +21,9 @@ Here we use a PIR sensor to make a simple passager counter and a 4-digit 7-segme
 
 * This circuit is based on the :ref:`py_74hc_4dig` with the addition of a PIR module.
 * The PIR will send a high signal of about 2.8s long when someone passes by.
+* The PIR module has two potentiometers: one adjusts sensitivity, the other adjusts detection distance. To make the PIR module work better, you need to turn both of them counterclockwise to the end.
+
+    |img_PIR_TTE|
 
 
 **Wiring**
@@ -108,5 +110,5 @@ Here we use a PIR sensor to make a simple passager counter and a 4-digit 7-segme
         hc595_shift(SEGCODE[count%10000//1000])
 
 
-After the code runs, whenever someone passes by, the number on the 4-digit 7-segment display is added by 1.
+When the code is run, the number on the 4-digit 7-segment display will be added by one if someone passes in front of the PIR module.
 

@@ -16,6 +16,11 @@ More specifically, it tells the main control board that someone has entered your
 
 When the PIR module detects someone passing by, GP14 will be high, otherwise it will be low.
 
+.. note::
+    The PIR module has two potentiometers: one adjusts sensitivity, the other adjusts detection distance. To make the PIR module work better, you need to turn both of them counterclockwise to the end.
+
+    |img_PIR_TTE|
+
 **Wiring**
 
 |wiring_pir|

@@ -3,7 +3,7 @@
 7.2 Room Temperature Meter
 ======================================
 
-We can combine thermistor and I2C LCD1602 to make a room temperature meter.
+Using a thermistor and an I2C LCD1602, we can create a room temperature meter.
 
 This project is very simple, it is based on :ref:`py_temp` with I2C LCD1602 to display the temperature.
 
@@ -53,4 +53,4 @@ This project is very simple, it is based on :ref:`py_temp` with I2C LCD1602 to d
         utime.sleep(1)
         lcd.clear()
 
-After the program runs, you will be able to see the temperature value in the current environment on the LCD.
+The LCD will display the temperature value in the current environment after the program runs.

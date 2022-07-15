@@ -11,29 +11,29 @@ Just as printing "Hello, world!" is the first step in learning to program, using
 
 |sch_led|
 
-The principle of this circuit is simple and the current direction is shown in the figure. When GP15 outputs high level(3.3v), the LED will light up after the 220ohm current limiting resistor. When GP15 outputs low level (0v), the LED will turn off.
+This circuit works on a simple principle, and the current direction is shown in the figure. The LED will light up after the 220ohm current limiting resistor when GP15 outputs high level (3.3v). The LED will turn off when GP15 outputs low level (0v).
 
 **Wiring**
 
 |wiring_led|
 
-Let us follow the direction of the current to build the circuit!
+To build the circuit, let's follow the current's direction!
 
-1. Here we use the electrical signal from the GP15 pin of the Pico board to make the LED work, and the circuit starts from here.
-#. The current needs to pass through a 220 ohm resistor (used to protect the LED). Insert one end (either end) of the resistor into the same row as the Pico GP15 pin (row 20 in my circuit), and insert the other end into the free row of the breadboard (row 24 in my circuit).
+1. The LED is powered by the GP15 pin of the Pico board, and the circuit begins here.
+#. To protect the LED, the current must pass through a 220 ohm resistor. One end of the resistor should be inserted into the same row as the Pico GP15 pin (row 20 in my circuit), and the other end should be inserted into the free row of the breadboard (row 24).
 
     .. note::
         The color ring of the 220 ohm resistor is red, red, black, black and brown.
 
-#. Pick up the LED, you will see that one of its leads is longer than the other. Insert the longer lead into the same row as the end of the resistor, and connect the shorter lead across the middle gap of the breadboard to the same row.
-    
+#. If you pick up the LED, you will see that one of its leads is longer than the other. Connect the longer lead to the same row as the resistor, and the shorter lead to the same row across the middle gap on the breadboard.
+
     .. note::
-        The longer lead is known as the anode, and represents the positive side of the circuit; the shorter lead is the cathode, and represents the negative side. 
+        The longer lead is the anode, which represents the positive side of the circuit; the shorter lead is the cathode, which represents the negative side. 
 
         The anode needs to be connected to the GPIO pin through a resistor; the cathode needs to be connected to the GND pin.
 
-#. Insert the male-to-male (M2M) jumper wire into the same row as the LED short pin, and then connect it to the negative power bus of the breadboard.
-#. Use a jumper to connect the negative power bus to the GND pin of Pico.
+#. Using a male-to-male (M2M) jumper wire, connect the LED short pin to the breadboard's negative power bus.
+#. Connect the GND pin of Pico to the negative power bus using a jumper.
 
 
 **Code**
@@ -71,8 +71,8 @@ The machine library is required to use GPIO.
 
     import machine
 
-This library contains all the instructions needed to communicate between MicroPython and Pico. 
-Without this line of code, we will not be able to control any GPIOs.
+The library contains all the instructions needed to communicate between MicroPython and Pico. 
+In the absence of this line of code, we will not be able to control any GPIOs.
 
 The next thing to notice is this line:
 
@@ -80,12 +80,12 @@ The next thing to notice is this line:
 
     led = machine.Pin(15, machine.Pin.OUT)
 
-An object named ``led`` is defined here. Technically, it can be any name, it can be x, y, banana, Micheal_Jackson, or any character, 
-but it is best to use a name that describes the purpose to ensure that the program is easy to read.
+The object ``led`` is defined here. Technically, it can be any name, such as x, y, banana, Michael_Jackson, or any character. 
+To ensure that the program is easy to read, it is best to use a name that describes the purpose.
 
-The second part of this line (the part after the equal sign) calls the Pin function in the machine library. It is used to tell Pico's GPIO pins what to do.
-The Pin function has two parameters: the first parameter (15) means the pin you want to set; 
-the second parameter (machine.Pin.OUT) tells that the pin should be used as an output instead of an input.
+In the second part of this line (the part after the equal sign), we call the Pin function found in the ``machine`` library. It is used to tell Pico's GPIO pins what to do.
+A ``Pin`` function has two parameters: the first (15) represents the pin to set; 
+The second parameter (machine.Pin.OUT) specifies that the pin should be output rather than input.
 
 The above code has "set" the pin, but it will not light up the LED. To do this, we also need to "use" the pin.
 
@@ -93,13 +93,13 @@ The above code has "set" the pin, but it will not light up the LED. To do this, 
 
     led.value(1)
 
-We have set up the GP15 pin before and named it led. The function of this statement is to set the value of ``led`` to 1 to turn the on-board LED on.
+The GP15 pin has been set up previously and named ``led``. The function of this statement is to set the value of ``led`` to 1 to turn the LED on.
 
 All in all, to use GPIO, these steps are necessary:
 
-* **import machine library**: This is necessary, and it is only executed once in the entire program.
-* **Set GPIO**: Each pin should be set before use.
-* **Use**: Assign a value to the pin, each assignment will change the working state of the pin.
+* **import machine library**: This is necessary, and it is only executed once.
+* **Set GPIO**: Before using, each pin should be set.
+* **Use**: Change the working state of the pin by assigning a value to it.
 
 If we follow the above steps to write an example, then you will get code like this:
 
@@ -120,26 +120,26 @@ Next, we try to add the "extinguished" statement:
     led.value(1)
     led.value(0)
 
-According to the code line, this program will make the LED turn on first and then turn off. 
+Based on the code line, this program will turn on the LED first, then turn it off. 
 But when you use it, you will find that this is not the case. 
-The LED never seems to light up. This is because the execution speed between the two lines is very fast, much faster than the reaction time of the human eye. 
-The moment the LED lights up is not enough to make us perceive the light. To fix that, we need to slow down the program.
+There is no light coming from the LED. This is due to the very rapid execution speed between the two lines, much faster than the human eye can react. 
+When the LED lights up, we don't perceive the light instantly. This can be fixed by slowing down the program.
 
-Insert the following statement into the second line of the program:
+The second line of the program should contain the following statement:
 
 .. code-block:: python
 
     import utime
 
-Like machine, the ``utime`` library is introduced here, which handles all time-related things, 
-including the delay we need to use. Let's insert a delay sentence between ``led.value(1)`` and ``led.value(0)``, let them be separated by 2 seconds:
+Similarly to ``machine``, the ``utime`` library is imported here, which handles all things time-related.
+The delays we need to use are included in this. Add a delay statement between ``led.value(1)`` and ``led.value(0)`` and let them be separated by 2 seconds.
 
 .. code-block:: python
 
     utime.sleep(2)
 
-Now, the code should look like this. 
-Run it, we will be able to see that the LED turns on first and then turns off:
+This is how the code should look now. 
+We will see that the LED turns on first, then turns off when we run it:
 
 .. code-block:: python
 
@@ -170,8 +170,8 @@ Create a loop, rewrite the program, and it will be what you saw at the beginning
 **Learn More**
 
 
-Usually, the library will have a corresponding API (Application Programming Interface) file. 
-This is a concise reference manual that contains all the information needed to use this library, detailed introduction to functions, classes, return types, parameters, etc., and even comes with a tutorial.
+There will usually be an API (Application Programming Interface) file associated with the library. 
+It contains all the information necessary to use this library, including detailed descriptions of functions, classes, return types, parameter types, etc.
 
 In this article, we used MicroPython's ``machine`` and ``utime`` libraries, we can find more ways to use them here.
 
@@ -179,7 +179,7 @@ In this article, we used MicroPython's ``machine`` and ``utime`` libraries, we c
 
 * `utime <https://docs.micropython.org/en/latest/library/utime.html>`_
 
-The following is also an example of making the LED blink, please try to read the API file to understand it!
+Please read the API file to understand this example of making the LED blink!
 
 .. note::
 

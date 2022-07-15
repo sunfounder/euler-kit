@@ -3,8 +3,7 @@
 2.5 Reading Button Value
 ==============================================
 
-From the name of GPIO (General-purpose input/output), we can see that these pins have both input and output functions. 
-In the previous lessons, we used the output function, in this chapter we will use the input function to input read the button value.
+These pins have both input and output functions, as indicated by their name GPIO (General-purpose input/output). Previously, we used the output function; in this chapter, we will use the input function to input the button value.
 
 * :ref:`cpn_button`
 
@@ -13,8 +12,7 @@ In the previous lessons, we used the output function, in this chapter we will us
 
 |sch_button|
 
-One side of the button pin is connected to 3.3v, and the other side pin is connected to GP14, so when the button is pressed, GP14 will be high. However, when the button is not pressed, GP14 is in a suspended state and may be high or low. In order to get a stable low level when the button is not pressed, GP14 needs to be reconnected to GND through a 10K pull-down resistor.
-
+As long as one side of the button pin is connected to 3.3v, and the other side pin is connected to GP14, then when the button is pressed, GP14 will be high. However, when the button is not pressed, GP14 is in a suspended state and may be high or low. In order to get a stable low level when the button is not pressed, GP14 needs to be reconnected to GND through a 10K pull-down resistor.
 
 
 **Wiring**
@@ -28,9 +26,9 @@ One side of the button pin is connected to 3.3v, and the other side pin is conne
 .. #. Insert the button into the breadboard and straddle the central dividing line.
 
 .. note::
-    We can think of the four-legged button as an H-shaped button. Its left (right) two feet are connected, which means that after it straddles the central dividing line, it will connect the two half rows of the same row number together. (For example, in my circuit, E23 and F23 have been connected, as are E25 and F25).
+    A four-pin button is shaped like an H. Its left two pins or right two pins are connected, which means that when it crosses the central gap, it connects two half rows with the same row number. (For example, in my circuit, E23 and F23 are already connected, as are E25 and F25).
 
-    Before the button is pressed, the left and right sides are independent of each other, and current cannot flow from one side to the other.
+    Until the button is pressed, the left and right pins are independent of each other and current cannot flow from one side to the other.
 
 .. #. Use a jumper wire to connect one of the button pins to the positive bus (mine is the pin on the upper right).
 .. #. Connect the other pin (upper left or lower left) to GP14 with a jumper wire.
@@ -57,12 +55,12 @@ One side of the button pin is connected to 3.3v, and the other side pin is conne
             print("You pressed the button!")
             utime.sleep(1)
 
-After the code runs, when you press the button, the shell will print "You pressed the button!
+As soon as the code runs, the shell prints "You pressed the button!"
 
 **Pull-up Working Mode**
 
 
-Next is the wiring and code when the button in the pull-up working mode, please try it.
+The next part is the wiring and code when you use the button in the pull-up mode.
 
 |sch_button_pullup|
 

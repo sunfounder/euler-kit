@@ -4,10 +4,9 @@
 ============================
 
 
-A `bubble Level <https://en.wikipedia.org/wiki/Spirit_level>`_, is an instrument designed to indicate whether a surface is horizontal (level) or vertical (plumb). Different types of spirit levels may be used by carpenters, stonemasons, bricklayers, other building trades workers, surveyors, millwrights and other metalworkers, and in some photographic or videographic work.
+A `bubble Level <https://en.wikipedia.org/wiki/Spirit_level>`_, is an instrument designed to indicate whether a surface is horizontal (level) or vertical (plumb). There are different types of spirit levels used by carpenters, stonemasons, bricklayers, other building trades workers, surveyors, millwrights, and other metalworkers, as well as in some photographic and videographic work.
 
-Here we make a digital bubble level with MPU6050 and 8x8 led matrix.
-When you deflect the MPU6050, the bubble on the LED matrix will also be deflected.
+Here we make a digital bubble level using MPU6050 and 8x8 LED matrix. When you deflect the MPU6050, the bubble on the LED matrix will also be deflected.
 
 
 
@@ -17,9 +16,9 @@ When you deflect the MPU6050, the bubble on the LED matrix will also be deflecte
 
 The MPU6050 takes the acceleration values in each direction and calculates the attitude angle.
 
-The program writes a set of data for the two 74HC595 chips, thus drawing a 2x2 Dot on the dot matrix.
+As a result, the program draws a 2x2 dot on the dot matrix based on data from the two 74HC595 chips.
 
-As the attitude angle changes, the program sends different data to the 74HC595 chips and the position of the dot is changed, thus creating the effect of a bubble Level.
+As the attitude angle changes, the program sends different data to the 74HC595 chips, and the position of the dot changes, creating a bubble effect.
 
 **Wiring**
 
@@ -131,6 +130,6 @@ As the attitude angle changes, the program sends different data to the 74HC595 c
         matrix=drop_bubble(matrix,bubble) # drop the bubble into empty matrix
         display(matrix_2_glyph(matrix)) # show matrix
 
-After you run the program, place the breadboard on a level table.
-You will see a dot appear in the center of the LED matrix (if it is not in the center, the MPU6050 may not be level, please adjust it slightly).
-Then you deflect the breadboard and the dot will move in the direction you deflected it.
+Once you have run the program, place the breadboard on a level surface.
+A dot will appear in the center of the LED matrix (if it isn't in the center, the MPU6050 may not be level).
+When you deflect the breadboard, the dot will move in the direction you deflected.

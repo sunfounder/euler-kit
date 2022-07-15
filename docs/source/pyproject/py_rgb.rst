@@ -31,7 +31,8 @@ The PWM pins GP13, GP14 and GP15 control the Red, Green and Blue pins of the RGB
 
 |img_rgb_pin|
 
-An RGB LED has 4 pins: the longest pin is the common cathode pin, which is usually connected to GND, the left pin next to the longest pin is Red, and the 2 pins on the right are Green and Blue.
+The RGB LED has 4 pins: the long pin is the common cathode pin, which is usually connected to GND; the left pin next to the longest pin is Red; and the two pins on the right are Green and Blue.
+
 
 |wiring_rgb|
 
@@ -94,9 +95,9 @@ Write the RGB value into ``color_set()``, you will be able to see the RGB light 
 
 **How it works?**
 
-We defined a ``color_set()`` function to let the three primary colors work together.
+To allow the three primary colors to work together, we defined a ``color_set()`` function.
 
-At present, pixels in computer hardware usually adopt a 24-bit representation method. The three primary colors are divided into 8 bits, and the color value range is 0 to 255. With 256 possible values for each of the three primary colors (don't forget to count 0!), that 256 x 256 x 256 = 16,777,216 colors can be combined in this way.
-The ``color_set()`` function also follows the 24-bit notation, which makes it easier for us to select the desired color.
+At present, pixels in computer hardware usually use 24-bit representations. Each primary color is divided into 8 bits, and the color value range is 0 to 255. There are 256 possible combinations of each of the three primary colors (don't forget to count 0! ), so 256 x 256 x 256 = 16,777,216 colors.
+The ``color_set()`` function also uses 24-bit notation, so we can choose a color more easily.
 
 And since the value range of ``duty_u16()`` is 0~65535 (instead of 0 to 255) when the output signals to RGB LED through PWM, we have defined ``color_to_duty()`` and ``interval_mapping ()`` function to map the color values to the duty values.

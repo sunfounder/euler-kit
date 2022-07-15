@@ -4,12 +4,13 @@
 6.5 Radio Frequency Identification
 ================================================
 
-Radio Frequency Identification (RFID) refers to technologies that involve using wireless communication between an object (or tag) and an interrogating device (or reader) to automatically track and identify such objects. The tag transmission range is limited to several meters from the reader. A clear line of sight between the reader and tag is not necessarily required.
+Radio Frequency Identification (RFID) is a technology that uses wireless communication between an object (or tag) and an interrogating device (or reader) to track and identify it. The tag's transmission range is limited to several meters. Readers and tags do not necessarily require a line of sight.
 
-Most tags contain at least one integrated circuit (IC) and an antenna. 
-The microchip stores information and is responsible for managing the radio frequency (RF) communication with the reader. Passive tags do not have an independent energy source and depend on an external electromagnetic signal, provided by the reader, to power their operations. 
-Active tags contain an independent energy source, such as a battery. 
-Thus, they may have increased processing, transmission capabilities and range.
+An integrated circuit (IC) and an antenna are usually present on most tags. 
+As well as storing information, the microchip manages communication with the reader via radio frequency (RF).
+In passive tags, there is no independent energy source and they rely on an external electromagnetic signal from the reader for power. 
+An active tag is powered by an independent energy source, such as a battery. As a result, they may be more powerful in terms of processing, transmission, and range.
+
 
 * :ref:`cpn_mfrc522`
 

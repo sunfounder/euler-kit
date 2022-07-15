@@ -3,9 +3,9 @@
 7.1 Light Theremin
 =========================
 
-Theremin is an electronic musical instrument that does not require physical contact. It produces different tones by sensing the position of the player's hand.
+Theremin is an electronic musical instrument that does not require physical contact. Based on the position of the player's hand, it produces different tones.
 
-The instrument's controlling section usually consists of two metal antennas that sense the relative position of the thereminist's hands and control oscillators for frequency with one hand, and amplitude (volume) with the other. The electric signals from the theremin are amplified and sent to a loudspeaker.
+Its controlling section is usually made up of two metal antennas that sense the position of the thereminist's hands and control oscillators with one hand and volume with the other. The electric signals from the theremin are amplified and sent to a loudspeaker.
 
 We cannot reproduce the same instrument through Pico, but we can use photoresistor and passive buzzer to achieve similar gameplay.
 
@@ -15,13 +15,12 @@ We cannot reproduce the same instrument through Pico, but we can use photoresist
 
 |sch_light_theremin|
 
-Before starting the project, you need to debug the range of light taken under the current environment by lifting up and down above the photoresistor by hand. The LED connected in GP16 is used to indicate the debugging time, and the LED is lit to start debugging and off to end debugging.
-
+Before starting the project, wave your hand up and down over the photoresistor to calibrate the range of light intensity. The LED connected in GP16 is used to indicate the debugging time, and the LED is lit to indicate the start of debugging and off to indicate the end of debugging.
 
 When GP15 outputs high level, S8050 (NPN transistor) conducts and the passive buzzer starts to sound.
 
-GP28 reads the value of the photoresistor, when the stronger the light, the smaller the value GP28 gets; and vice versa, the larger.
-By programming the value of the photoresistor to affect the frequency of the passive buzzer, the Light Theremin is simulated.
+When the light is stronger, GP28's value is smaller; vice versa, it is larger when the light is weaker.
+By programming the value of the photoresistor to affect the frequency of the passive buzzer, a photosensitive device can be simulated.
 
 
 **Wiring**
@@ -88,9 +87,9 @@ By programming the value of the photoresistor to affect the frequency of the pas
             tone(buzzer,pitch,20)
         utime.sleep_ms(10)
 
-When the program runs, the LED will light up, and we will have five seconds to calibrate the detection range of the photoresistor by lifting up and down above the photoresistor by hand. This is because we may be in a different light environment each time we use it (e.g. the light intensity is different between midday and dusk).
+As soon as the program runs, the LED will light up, and we will have five seconds to calibrate the photoresistor's detection range.
 
-At this time, we need to swing our hands up and down on top of the photoresistor, and the movement range of the hand will be calibrated to the playing range of this instrument.
+This is due to the different light environments we may have when we use it (e.g., different light intensities at noon and dusk), as well as our hands' height above the photoresistor. You need to set the maximum and minimum height of your hand from the photoresistor, which is also the height at which you play the instrument.
 
-After five seconds, the LED will go out and we can wave our hands on the photoresistor to play.
+After five seconds, the LED will turn off, at which point we can wave our hands over the photoresistor and play.
 

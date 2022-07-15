@@ -3,18 +3,18 @@
 7.3 Alarm Siren Lamp
 =======================
 
-In life (or in the movie), you can often see the police lights. It is generally used to maintain traffic, play a warning role, is an important prop to protect people's lives and property safety, often in police cars, engineering vehicles, fire trucks, emergency vehicles. If you see its lights or hear its sound, then you have to beware, which means you (or around the people) may be in danger.
+Police lights are often visible in real life (or in movies). Usually, it is used to maintain traffic, serve as a warning device, and serve as an important safety prop for officers, emergency vehicles, fire trucks, and engineering vehicles. When you see its lights or hear its sound, you must be careful, which means you (or those around you) may be in danger.
 
-Here we use LEDs and buzzers to create a small warning light, and a slide switch to activate it.
+An LED and buzzer are used here to create a small warning light, which is activated by a slide switch.
 
 
 **Schematic**
 
 |sch_alarm_siren_lamp|
 
-* GP17 is connected to the middle pin of the slider switch after connecting a 10kΩ resistor in series, which enables the slider to output high or low level when toggled to the left or right.
-* When GP15 goes high, the S8050 (NPN transistor) turns on and the passive buzzer starts to sound. The passive buzzer is programmed to gradually increase in frequency, thus producing a siren sound with a modulation effect.
-* The GP16 is connected to the LED and is also programmed to change its brightness periodically to simulate the effect of a siren.
+* GP17 is connected to the middle pin of the slider, along with a 10K resistor and a capacitor (filter) in parallel to GND, which allows the slider to output a steady high or low level when toggled to the left or right.
+* As soon as GP15 is high, the NPN transistor conducts, causing the passive buzzer to start sounding. This passive buzzer is programmed to gradually increase in frequency to produce a siren sound.
+* An LED is connected to GP16 and is programmed to periodically change its brightness in order to simulate a siren.
 
 **Wiring**
 
@@ -80,4 +80,4 @@ Here we use LEDs and buzzers to create a small warning light, and a slide switch
             noTone(buzzer)
             led.duty_u16(0)
 
-After the program runs, toggle the slide switch to the left, the buzzer will emit a gradual warning tone and the LED will change its brightness accordingly; toggle the slide switch to the right, the buzzer and LED will stop working.
+Once the program is running, toggle the slide switch to the left (yours may be to the right, depending on how your slide switch is wired) and the buzzer will emit a progressive warning tone and the LED will change its brightness accordingly; toggle the slide switch to the right and the buzzer and LED will stop working.

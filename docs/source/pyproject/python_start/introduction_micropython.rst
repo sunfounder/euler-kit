@@ -1,22 +1,22 @@
 1.1 Introduction of MicroPython
 ======================================
 
-MicroPython is a full Python compiler and runtime that runs on the microcontroller's hardware like Raspberry Pi Pico. 
-The user is presented with an interactive prompt (the REPL) to excute supported commands immediately. 
-Included are a selection of core Python libraries; MicroPython includes modules which give the programmer access to low-level hardware.
+MicroPython is a software implementation of a programming language largely compatible with Python 3, written in C, that is optimized to run on a microcontroller.[3][4]
+
+MicroPython consists of a Python compiler to bytecode and a runtime interpreter of that bytecode. The user is presented with an interactive prompt (the REPL) to execute supported commands immediately. Included are a selection of core Python libraries; MicroPython includes modules which give the programmer access to low-level hardware.
 
 * Reference: `MicroPython - Wikipedia <https://en.wikipedia.org/wiki/MicroPython>`_
 
 The Story Starts Here
 --------------------------------
 
-Everything changed in 2013 when Damien George launched a crowdfunding campaign (Kickstarter).
+Things changed in 2013 when Damien George launched a crowdfunding campaign (Kickstarter).
 
 Damien was an undergraduate student at Cambridge University and an avid robotics programmer. He wanted to reduce the world of Python from a gigabyte machine to a kilobyte. His Kickstarter campaign was to support his development while he turned his proof of concept into a finished implementation.
 
 MicroPython is supported by a diverse Pythonista community that has a keen interest in seeing the project succeed.
 
-In addition to testing and supporting the code base, the developers provided tutorials, code libraries, and hardware ports, making the project far more than Damien could have done alone.
+Apart from testing and supporting the code base, the developers provided tutorials, code libraries, and hardware porting, so Damien was able to focus on other aspects of the project.
 
 * Reference: `realpython <https://realpython.com/micropython/>`_
 

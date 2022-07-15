@@ -4,20 +4,19 @@
 ============================
 
 
-In addition to many metal objects, the human body is electrically conductive, and so are fruits.
-We can use this property to create a fun little project: a fruit piano.
-More precisely, we turn fruits into keyboards that play music by simply touching different fruits, as if by magic.
+Electrical conductivity is found in many metal objects, as well as in the human body and fruits.
+This property can be used to create a fun little project: a fruit piano.
+In other words, we turn fruits into keyboards that can play music just by touching them.
 
 **Schematic**
 
 |sch_fruit_piano| 
 
-After the circuit is built, you still need to use multiple wires to connect the electrodes on the MPR121 to the fruit (e.g. inserted into the banana handle) so that the fruit can be turned into a piano key.
+To turn the fruit into a piano key, you still need to connect the electrodes on the MPR121 to the fruit (e.g. into the banana handle).
 
-When the program starts running, MPR121 will initialize and each electrode will get a value based on the current charge; when a conductor (such as a human body) touches the electrode, the charge will shift and rebalance.
-At this point, the value obtained by the electrode is different from the value obtained during initialization, thus telling the main control board that the electrode has been touched.
-What needs to be noted in this process is to make sure that the wiring of each electrode is stable when initializing so that its charge is in balance.
-
+In the beginning, MPR121 will initialize and each electrode will get a value based on the current charge; when a conductor (such as a human body) touches an electrode, the charge will shift and rebalance.
+As a result, the electrode's value is different from its initial value, telling the main control board that it has been touched.
+During this process, ensure that the wiring of each electrode is stable so that its charge is balanced when initializing.
 
 
 **Wiring**

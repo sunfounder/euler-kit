@@ -3,16 +3,11 @@
 7.8 RFID Music Player
 ==========================
 
+Through our previous project, :ref:`py_rfid`, we learned that the MFRC522 module allows us to write up to 48 letters of information to the card (or key), including both the key and identity information, as well as the music score.
 
-RFID can only be used for access cards? Let's open our minds and play a different way!
-Let's make a different kind of music player!
-
-Through the previous project - :ref:`py_rfid`, we know that we can write a certain amount of information (up to 48 letters) to the card (or key) through the MFRC522 module, which can be not only the key and identity information, but also the music score.
-
-For example, if you write ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC``, the buzzer will play the music when the card (or key) is read again with the MFRC522 module. Also can be equipped with WS2812 waiting to show cool effects.
+As an example, if you write ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC``, the buzzer will play the music when the card (or key) is read again. It can also be equipped with an WS2812 to display amazing effects.
 
 You can find more sheet music on the Internet, or even write your own music, put them into the card (or key), and share them with your friends!
-
 
 
 **Schematic**
@@ -100,5 +95,4 @@ You can find more sheet music on the Internet, or even write your own music, put
         read()
 
 
-
-#. Put the card (or key) close to the MFRC522 module again, the buzzer will play the music stored in the card (or key), and the RGB light bar will light up in a random color at the corresponding location.
+#. By putting the card (or key) close to the MFRC522 module again, the buzzer will play the music stored on the card (or key), and the RGB strip will light up in a random color.
