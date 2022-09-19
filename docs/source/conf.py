@@ -19,7 +19,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'SunFounder Euler Kit for Raspberry Pi Pico'
-copyright = '2021, SunFounder'
+copyright = '2022, SunFounder'
 author = 'Jimmy, SunFounder'
 
 # The full version, including alpha/beta/rc tags
