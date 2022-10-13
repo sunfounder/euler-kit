@@ -609,3 +609,30 @@ rst_epilog += """
 """
 
 
+# open link in a new window
+
+rst_epilog += """
+
+.. |link_micropython| raw:: html
+
+    <a href="https://en.wikipedia.org/wiki/MicroPython" target="_blank">MicroPython - Wikipedia</a>
+    
+.. |link_thonny| raw:: html
+
+    <a href="https://thonny.org/" target="_blank">Thonny</a>
+
+.. |link_sunfounder_controller| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/sf-controller/en/latest/" target="_blank">SunFounder Control</a>
+
+.. |link_realpython| raw:: html
+
+    <a href="https://realpython.com/micropython/" target="_blank">realpython</a>
+
+.. |link_micropython_pi| raw:: html
+
+    <a href="https://www.raspberrypi.com/documentation/microcontrollers/micropython.html#drag-and-drop-micropython" target="_blank">method</a>
+
+
+
+"""
