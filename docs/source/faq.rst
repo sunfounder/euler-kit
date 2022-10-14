@@ -119,6 +119,8 @@ After unzipping, you will see 3 files.
 
     .. image:: img/com_port.png
 
+#. Replug the Raspberry Pi Pico (without holding down the **BOOTSEL** button) to get ready for the next steps.
+
 **3. Build the circuit**
 
 Connect ESP8266 module and Raspberry Pi Pico.
@@ -137,7 +139,7 @@ Connect ESP8266 module and Raspberry Pi Pico.
         .. note::
             If the burn-in fails, please check the following points.
 
-          * If it does not work the first time, close the window and double click ``install.bat``.
+          * If it does not work the first time, close the window and open ``install.bat`` again.
           * Reset the ESP8266 module by inserting the RST to GND and then unplugging it.
           * Check if the wiring is correct.
           * Make sure the port is not occupied.
@@ -167,7 +169,6 @@ Connect ESP8266 module and Raspberry Pi Pico.
         .. note::
             If the burn-in fails, please check the following points.
 
-          * If it does not work the first time, close the window and double click ``install.bat``.
           * Reset the ESP8266 module by inserting the RST to GND and then unplugging it.
           * Check if the wiring is correct.
           * Make sure the port is not occupied.

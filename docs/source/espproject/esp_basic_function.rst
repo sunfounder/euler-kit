@@ -21,11 +21,12 @@ This section will guide you to complete the communication between Sunfounder Con
 
 #. Run ``1.1_ws_test.py`` file.
 
-    Double click the ``1.1_ws_test.py`` file under the ``euler-kit/esp8266/`` path, then click "run current script" button or just press F5 to run it.
+    Double click the ``1.1_ws_test.py`` file under the ``euler-kit/esp8266/`` path, then click **run current script** button or just press F5 to run it.
 
-    After running the program, you will see the IP address and the "start" prompt in the Shell.
+    After running the program, you will see the IP address and the ``start`` prompt in the Shell.
 
-    .. note::
+    .. warning::
+
         If the wiring is OK, but still no successful connection prompt after several runs, the firmware of ESP8266 module may need to be re-burned, please refer to :ref:`burn_firmware` for details.
 
     |sc_run_test|
