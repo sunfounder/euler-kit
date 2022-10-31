@@ -57,10 +57,9 @@ Here are some things you should know about breadboards.
 
 #. In a circuit, current flows from the positive pole to the negative pole after passing through the load. In this case, a short circuit may occur.
 
+**Let us follow the direction of the current to build the circuit!**
+
 |bc3| 
-
-
-Let us follow the direction of the current to build the circuit!
 
 1. In this circuit, we use the 3V3 pin of the Pico board to power the LED. Use a male-to-male (M2M) jumper wire to connect it to the red power bus.
 #. To protect the LED, the current must pass through a 220 ohm resistor. Connect one end (either end) of the resistor to the red power bus, and the other end to the free row of the breadboard (row 24 in my circuit).
@@ -89,7 +88,7 @@ Direction of the circuit
 -------------------------------
 There is an orientation to circuits, and the orientation plays a significant role in certain electronic components. There are some devices with polarity, which means they must be connected correctly based on their positive and negative poles. Circuits built with the wrong orientation will not function properly.
 
-|bc3| 
+|bc4|
 
 If you reverse the LED in this simple circuit that we built earlier, you will find that it no longer works.
 
@@ -115,8 +114,6 @@ Therefore, current (I) = voltage (V) / resistance (R).
 * `Ohm's law - Wikipedia <https://en.wikipedia.org/wiki/Ohm%27s_law>`_
 
 About Ohm's law we can do a simple experiment.
-
-|bc3| 
 
 By changing the wire connecting 3V3 to 5V (i.e. VBUS, the 40th pin of Pico), the LED will become brighter.
 If you change the resistor from 220ohm to 1000ohm (color ring: brown, black, black, brown and brown), you will notice that the LED becomes dimmer than before. The larger the resistor, the dimmer the LED.

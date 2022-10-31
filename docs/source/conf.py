@@ -437,6 +437,7 @@ rst_epilog += """
 .. |bc2| image:: /img/bc2.png
 .. |bc2.5| image:: /img/bc2.5.png
 .. |bc3| image:: /img/bc3.png
+.. |bc4| image:: /img/bc4.png
 """
 
 # sunfounder controller
