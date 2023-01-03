@@ -15,12 +15,13 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import sphinx_rtd_theme
+import time
 
 # -- Project information -----------------------------------------------------
 
 project = 'SunFounder Euler Kit for Raspberry Pi Pico'
-copyright = '2022, SunFounder'
-author = 'Jimmy, SunFounder'
+copyright = f'{time.localtime().tm_year}, SunFounder'
+author = 'www.sunfounder.com'
 
 # The full version, including alpha/beta/rc tags
 release = '1.0'
@@ -212,6 +213,11 @@ rst_epilog += """
 .. |img_diode| image:: /img/component/Diodes-symbol.png
 .. |img_PIR_TTE| image:: /img/component/PIR_TTE.png
     :width: 400
+
+.. |i2c_address| image:: /img/component/i2c_address.jpg 
+
+.. |back_lcd1602| image:: /img/component/back_lcd1602.jpg 
+
 """
 
 
