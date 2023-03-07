@@ -69,8 +69,8 @@ sensitivity=4          # The higher the number, the more sensitive
 matrix_range=7         # The size of the matrix is 8, so the coordinate range is 0~7
 point_range=matrix_range-1     # The x, y value of the bubble's marker point (upper left point) should be between 0-6
 def bubble_position():
-    x,y=get_angle()
-    x=int(clamp_number(interval_mapping(x,-90,90,0-sensitivity,point_range+sensitivity),0,point_range))
+    y,x=get_angle()
+    x=int(clamp_number(interval_mapping(x,90,-90,0-sensitivity,point_range+sensitivity),0,point_range))
     y=int(clamp_number(interval_mapping(y,-90,90,point_range+sensitivity,0-sensitivity),0,point_range))
     return [x,y]
 
