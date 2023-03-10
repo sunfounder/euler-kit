@@ -17,6 +17,8 @@ water_sensor = machine.ADC(28)
 motor1A = machine.Pin(14, machine.Pin.OUT)
 motor2A = machine.Pin(15, machine.Pin.OUT)
 
+motor1A.low()
+motor2A.low()   
 
 # ESP8266
 NAME = 'my_esp8266'
@@ -38,11 +40,14 @@ def on_receive(data):
     
     # input
     # show dht11 message
-    sensor.measure()
-    value = sensor.temperature
-    ws.send_dict['G'] = value
-    value = sensor.humidity
-    ws.send_dict['H'] = value
+    try:
+        sensor.measure()
+        value = sensor.temperature
+        ws.send_dict['G'] = value
+        value = sensor.humidity
+        ws.send_dict['H'] = value
+    except:
+        pass
     
     # show water level sensor message
     value = water_sensor.read_u16()
@@ -55,7 +60,7 @@ def on_receive(data):
         motor2A.low()
     
     # stop pumping
-    if value>=15000:
+    if value>=15000 or 'M' in data.keys() and data['M'] is False:
         motor1A.low()
         motor2A.low()
 
@@ -64,10 +69,12 @@ ws.on_receive = on_receive
 def main():
     print("start")
     while True:
-
         ws.loop()
 
+
 main()
+ 
 
  
+
 
