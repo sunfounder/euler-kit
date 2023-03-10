@@ -463,7 +463,7 @@ rst_epilog += """
 .. |sc_app_widget_act| image:: /img/esp8266/sc_app_act.png
 .. |sc_app_widget_dis| image:: /img/esp8266/sc_app_dis.png
 .. |sc_app_piano| image:: /img/esp8266/sc_app_piano.jpg
-.. |sc_app_plant_monitor| image:: /img/esp8266/sc_app_plant_monitor.jpg
+.. |sc_app_plant_monitor| image:: /img/esp8266/sc_app_plant_monitor_2.jpg
 .. |sc_img_plant_monitor| image:: /img/esp8266/sc_img_plant_monitor.jpg
 .. |sc_app_my_esp8266| image:: /img/esp8266/my_esp8266.png
 .. |sc_app_connect_anyway| image:: /img/esp8266/connect_anyway.png

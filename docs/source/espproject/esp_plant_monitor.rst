@@ -41,29 +41,31 @@ When you press the pump button on the APP, it will replenish water for the plant
 
     def on_receive(data):
         
-        # output
-        # start pumping
-        if data['G'] == True :
-            motor1A.high()
-            motor2A.low()
-        
         # input
         # show dht11 message
         sensor.measure()
         value = sensor.temperature
-        ws.send_dict['C'] = value
+        ws.send_dict['G'] = value
         value = sensor.humidity
-        ws.send_dict['B'] = value
+        ws.send_dict['H'] = value
         
         # show water level sensor message
         value = water_sensor.read_u16()
         ws.send_dict['P'] = value
+
+        # output
+        # start pumping
+        if 'M' in data.keys() and data['M'] is True and value<15000:
+            motor1A.high()
+            motor2A.low()
+        
         # stop pumping
-        if value>=10000:
+        if value>=15000:
             motor1A.low()
             motor2A.low()
 
     ws.on_receive = on_receive
+
 
 Here, the ``on_receive()`` function can be divided into 3 parts.
 
