@@ -43,11 +43,14 @@ When you press the pump button on the APP, it will replenish water for the plant
         
         # input
         # show dht11 message
-        sensor.measure()
-        value = sensor.temperature
-        ws.send_dict['G'] = value
-        value = sensor.humidity
-        ws.send_dict['H'] = value
+        try:
+            sensor.measure()
+            value = sensor.temperature
+            ws.send_dict['G'] = value
+            value = sensor.humidity
+            ws.send_dict['H'] = value
+        except:
+            pass
         
         # show water level sensor message
         value = water_sensor.read_u16()
@@ -60,7 +63,7 @@ When you press the pump button on the APP, it will replenish water for the plant
             motor2A.low()
         
         # stop pumping
-        if value>=15000:
+        if value>=15000 or 'M' in data.keys() and data['M'] is False:
             motor1A.low()
             motor2A.low()
 
