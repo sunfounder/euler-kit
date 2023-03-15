@@ -35,37 +35,39 @@ ws = WS_Server(name=NAME, mode=WIFI_MODE, ssid=SSID, password=PASSWORD)
 ws.start()
 
 def on_receive(data):
-    
-    # output
-    # start pumping
-    if data['G'] == True :
-        motor1A.high()
-        motor2A.low()
-    
     # input
     # show dht11 message
-    sensor.measure()
-    value = sensor.temperature
-    ws.send_dict['C'] = value
-    value = sensor.humidity
-    ws.send_dict['B'] = value
+    try:
+        sensor.measure()
+        value = sensor.temperature
+        ws.send_dict['G'] = value
+        value = sensor.humidity
+        ws.send_dict['H'] = value
+    except:
+        pass
     
     # show water level sensor message
     value = water_sensor.read_u16()
-    ws.send_dict['P'] = value
-    # stop pumping
-    if value>=10000:
-        motor1A.low()
-        motor2A.low()
+    ws.send_dict['P'] = value 
+
+    # output
+    if 'M' in data.keys():
+        # start pumping
+        if data['M'] == True and value < 30000:
+            motor1A.high()
+            motor2A.low()
+        else:
+        # stop pumping
+            motor1A.low()
+            motor2A.low()
 
 ws.on_receive = on_receive
 
 def main():
     print("start")
     while True:
-
         ws.loop()
-
+        
 main()
 
  
