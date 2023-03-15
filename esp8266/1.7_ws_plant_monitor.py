@@ -17,6 +17,8 @@ water_sensor = machine.ADC(28)
 motor1A = machine.Pin(14, machine.Pin.OUT)
 motor2A = machine.Pin(15, machine.Pin.OUT)
 
+motor1A.low()
+motor2A.low()   
 
 # ESP8266
 NAME = 'my_esp8266'
@@ -67,8 +69,7 @@ def main():
     print("start")
     while True:
         ws.loop()
-        
+
 main()
 
- 
 
