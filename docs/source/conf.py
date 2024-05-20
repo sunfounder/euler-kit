@@ -620,6 +620,10 @@ rst_epilog += """
 
 rst_epilog += """
 
+.. |link_sf_facebook| raw:: html
+
+    <a href="https://bit.ly/44PAzYa" target="_blank">here</a>
+
 .. |link_micropython| raw:: html
 
     <a href="https://en.wikipedia.org/wiki/MicroPython" target="_blank">MicroPython - Wikipedia</a>
