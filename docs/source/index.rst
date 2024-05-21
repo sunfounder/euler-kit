@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-SunFounder Euler Kit for Raspberry Pi Pico 
+SunFounder Euler Ultimate Kit for Raspberry Pi Pico
 ===========================================================
 
 Thank you for choosing the SunFounder Euler Kit
