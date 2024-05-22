@@ -1,5 +1,5 @@
 # SunFounder euler-Kit
-This repository is for SunFounder electronic Kit. you can buy it on [our website](https://www.sunfounder.com/), or search sunfounder in Amazon.
+This repository is for SunFounder Euler Kit Kit. you can buy it on [our website](https://www.sunfounder.com/), or search sunfounder in Amazon.
 
 Quick Links:
 
