@@ -620,6 +620,14 @@ rst_epilog += """
 
 rst_epilog += """
 
+.. |link_Euler_Ultimate_Kit| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-euler-kit?_pos=1&_sid=f998e5c59&_ss=r" target="_blank">Purchase Link for Euler Ultimate Kit</a>
+
+.. |link_Euler_Kit| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-euler-kit?_pos=1&_sid=f998e5c59&_ss=r" target="_blank">Euler Ultimate Kit</a>
+
 .. |link_sf_facebook| raw:: html
 
     <a href="https://bit.ly/raphaelkit" target="_blank">here</a>

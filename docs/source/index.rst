@@ -12,10 +12,12 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-SunFounder Euler Ultimate Kit for Raspberry Pi Pico
+SunFounder |link_Euler_Kit| for Raspberry Pi Pico
 ===========================================================
 
-Thank you for choosing the SunFounder Euler Kit
+* |link_Euler_Ultimate_Kit|
+
+Thank you for choosing the SunFounder |link_Euler_Kit|
 
 This is an advanced learning kit based on the Raspberry Pi Pico. It contains a variety of components, including displays, sounds, drivers, controllers and sensors, which allows you to gain a comprehensive understanding of electronic devices.
 
