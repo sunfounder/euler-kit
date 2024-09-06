@@ -7,6 +7,6 @@ mpu = MPU6050(i2c)
 
 while True:
     print("x: %s, y: %s, z: %s"%(mpu.accel.x, mpu.accel.y, mpu.accel.z))
-    time.sleep(0.1)
+    time.sleep(0.5)
     print("A: %s, B: %s, Y: %s"%(mpu.gyro.x, mpu.gyro.y, mpu.gyro.z))
-    time.sleep(0.1)
+    time.sleep(0.5)
