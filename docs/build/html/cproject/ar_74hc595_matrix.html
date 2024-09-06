@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5.4 - 8x8 Pixel Graphics &mdash; SunFounder Euler Kit for Raspberry Pi Pico 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.1 - Measuring Distance" href="ar_ultrasonic.html" />
+    <link rel="prev" title="5.3 - Time Counter" href="ar_74hc595_4dig.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder Euler Kit for Raspberry Pi Pico
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download_the_code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bc_basic_circuit.html">Electronic Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyproject/for_micropython_user.html">For MicroPython User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espproject/for_esp8266_user.html">Play Pico with APP</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="for_arduino_user.html">For Arduino User</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/install_arduino_ide.html">1.1 Install Arduino IDE(Important)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/introduce_ide.html">1.2 Introduce of Arduino IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/install_pico.html">1.3 Setting Up the Raspberry Pi Pico (Important)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/add_libraries_ar.html">1.4 Install libraries (Important)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_led.html">2.1 - Hello, LED!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_led_bar.html">2.2 - Display the Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_fade.html">2.3 - Fading LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_rgb.html">2.4 - Colorful Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_button.html">2.5 - Reading Button Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_tilt.html">2.6 - Tilt It！</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_slide.html">2.7 - Toggle Left and Right</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_micro.html">2.8 - Press Gently</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_reed.html">2.9 - Feel the Magnetism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pir.html">2.10 - Detect Human Movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pot.html">2.11 - Turn the Knob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_photoresistor.html">2.12 - Feel the Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_temp.html">2.13 - Thermometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_water.html">2.14 - Feel the Water Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_transistor.html">2.15 - Two Kinds of Transistors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_relay.html">2.16 - Control Another Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_ac_buz.html">3.1 - Beep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pa_buz.html">3.2 - Custom Tone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_neopixel.html">3.3 - RGB LED Strip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_lcd.html">3.4 - Liquid Crystal Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_motor.html">3.5 - Small Fan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pump.html">3.6 - Pumping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_servo.html">3.7 - Swinging Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_joystick.html">4.1 - Toggle the Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_keypad.html">4.2 - 4x4 Keypad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_mpr121.html">4.3 - Electrode Keyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_74hc595_led.html">5.1 -  Microchip - 74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_74hc595_7seg.html">5.2 - Number Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_74hc595_4dig.html">5.3 - Time Counter</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.4 - 8x8 Pixel Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_ultrasonic.html">6.1 - Measuring Distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_dht11.html">6.2 - Temperature - Humidity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_mpu6050.html">6.3 - 6-axis Motion Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_irremote.html">6.4 - IR Remote Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_rfid.html">6.5 - Radio Frequency Identification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../piperproject/for_piper.html">For Piper Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../component/what_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder Euler Kit for Raspberry Pi Pico</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="for_arduino_user.html">For Arduino User</a></li>
+      <li class="breadcrumb-item active">5.4 - 8x8 Pixel Graphics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cproject/ar_74hc595_matrix.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="x8-pixel-graphics">
+<span id="ar-74hc-788bs"></span><h1>5.4 - 8x8 Pixel Graphics<a class="headerlink" href="#x8-pixel-graphics" title="Permalink to this heading">¶</a></h1>
+<p>ED matrix is a low-resolution dot-matrix display. it uses an array of light-emitting diodes as pixels for patterned displays.</p>
+<p>They are bright enough to be visible in outdoor sunlight, and you can see them on some stores, billboards, signs, and variable message displays (such as those on public transit vehicles).</p>
+<p>Used in this kit is an 8x8 dot matrix with 16 pins. Their anodes are connected in rows and their cathodes are connected in columns (at the circuit level), which together control these 64 LEDs.</p>
+<p>To light the first LED, you should provide a high level for Row1 and a low level for Col1. To light the second LED, it should provide a high level for Row1, a low level for Col2, and so on.
+By controlling the current through each pair of rows and columns, each LED can be controlled individually to display characters or pictures.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../component/component_788bs.html#cpn-788bs"><span class="std std-ref">LED Matrix</span></a></p></li>
+<li><p><a class="reference internal" href="../component/component_74hc595.html#cpn-74hc595"><span class="std std-ref">74HC595</span></a></p></li>
+</ul>
+<p><strong>Schematic</strong></p>
+<p><a class="reference internal" href="../_images/sch_8x8_pixel_graphics.png"><img alt="sch_ledmatrix" src="../_images/sch_8x8_pixel_graphics.png" style="width: 800px;" /></a></p>
+<p>The 8x8 dot matrix is controlled by two 74HC595 chips, one controlling the rows and one controlling the columns, while these two chips share G18~G20, which can greatly save the I/O ports of the Pico board.</p>
+<p>Pico needs to output a 16-bit binary number at a time, the first 8 bits are given to the 74HC595 which controls the rows, and the last 8 bits are given to the 75HC595 which controls the columns, so that the dot matrix can display a specific pattern.</p>
+<p>Q7’: Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series.</p>
+<p><strong>Wiring</strong></p>
+<p>Build the circuit. Since the wiring is complicated, let’s
+make it step by step.</p>
+<p><strong>Step 1:</strong>  First, insert the pico, the LED dot matrix
+and two 74HC595 chips into breadboard. Connect the 3.3V and GND of the
+pico to holes on the two sides of the board, then hook up pin16 and
+10 of the two 74HC595 chips to VCC, pin 13 and pin 8 to GND.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the Fritzing image above, the side with label is at the bottom.</p>
+</div>
+<p><a class="reference internal" href="../_images/wiring_matrix_4.png"><img alt="wiring_ledmatrix_4" src="../_images/wiring_matrix_4.png" style="width: 800px;" /></a></p>
+<p><strong>Step 2:</strong> Connect pin 11 of the two 74HC595 together, and then to
+GP20; then pin 12 of the two chips, and to GP19; next, pin 14 of the
+74HC595 on the left side to GP18 and pin 9 to pin 14 of the second
+74HC595.</p>
+<p><a class="reference internal" href="../_images/wiring_matrix_3.png"><img alt="wiring_ledmatrix_3" src="../_images/wiring_matrix_3.png" style="width: 800px;" /></a></p>
+<p><strong>Step 3:</strong> The 74HC595 on the right side is to control columns of the
+LED dot matrix. See the table below for the mapping. Therefore, Q0-Q7
+pins of the 74HC595 are mapped with pin 13, 3, 4, 10, 6, 11, 15, and 16
+respectively.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>74HC595</strong></p></td>
+<td><p><strong>Q0</strong></p></td>
+<td><p><strong>Q1</strong></p></td>
+<td><p><strong>Q2</strong></p></td>
+<td><p><strong>Q3</strong></p></td>
+<td><p><strong>Q4</strong></p></td>
+<td><p><strong>Q5</strong></p></td>
+<td><p><strong>Q6</strong></p></td>
+<td><p><strong>Q7</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>LED Dot Matrix</strong></p></td>
+<td><p><strong>13</strong></p></td>
+<td><p><strong>3</strong></p></td>
+<td><p><strong>4</strong></p></td>
+<td><p><strong>10</strong></p></td>
+<td><p><strong>6</strong></p></td>
+<td><p><strong>11</strong></p></td>
+<td><p><strong>15</strong></p></td>
+<td><p><strong>16</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../_images/wiring_matrix_2.png"><img alt="wiring_ledmatrix_2" src="../_images/wiring_matrix_2.png" style="width: 800px;" /></a></p>
+<p><strong>Step 4:</strong> Now connect the ROWs of the LED dot matrix. The 74HC595 on
+the left controls ROW of the LED dot matrix. See the table below for the
+mapping. We can see, Q0-Q7 of the 74HC595 on the left are mapped with
+pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>74HC595</strong></p></td>
+<td><p><strong>Q0</strong></p></td>
+<td><p><strong>Q1</strong></p></td>
+<td><p><strong>Q2</strong></p></td>
+<td><p><strong>Q3</strong></p></td>
+<td><p><strong>Q4</strong></p></td>
+<td><p><strong>Q5</strong></p></td>
+<td><p><strong>Q6</strong></p></td>
+<td><p><strong>Q7</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>LED Dot Matrix</strong></p></td>
+<td><p><strong>9</strong></p></td>
+<td><p><strong>14</strong></p></td>
+<td><p><strong>8</strong></p></td>
+<td><p><strong>12</strong></p></td>
+<td><p><strong>1</strong></p></td>
+<td><p><strong>7</strong></p></td>
+<td><p><strong>2</strong></p></td>
+<td><p><strong>5</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../_images/wiring_matrix_1.png"><img alt="wiring_ledmatrix_1" src="../_images/wiring_matrix_1.png" style="width: 800px;" /></a></p>
+<p><strong>Code</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You can open the file <code class="docutils literal notranslate"><span class="pre">5.4_8x8_pixel_graphics.ino</span></code> under the path of <code class="docutils literal notranslate"><span class="pre">euler-kit/arduino/5.4_8x8_pixel_graphics</span></code>.</p></li>
+<li><p>Or copy this code into <strong>Arduino IDE</strong>.</p></li>
+<li><p>Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.</p></li>
+</ul>
+</div>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/b3682592-17d4-4690-a730-1c0a6fcbd353/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe><p>Once the program is running, you will see a <strong>x</strong> graphic displayed on the 8x8 dot matrix.</p>
+<p><strong>How it works?</strong></p>
+<p>Here we use two 74HC595s to provide signals for the rows and columns of the dot matrix.
+The method of supplying signals is the same as <code class="docutils literal notranslate"><span class="pre">shiftOut()</span></code> in the previous chapters, except that here we need to write the 16-bit binary number at a time.</p>
+<p>The main loop calls <code class="docutils literal notranslate"><span class="pre">shiftOut()</span></code> twice, writes two 8-bit binary numbers and then outputs them to the bus, so that a pattern can be displayed.</p>
+<p>However, since the LEDs in the dot matrix use common poles, controlling multiple rows/multiple columns at the same time will interfere with each other (e.g., if (1,1) and (2,2) are lit at the same time, (1,2) and (2,1) will inevitably be lit together).
+Therefore, it is necessary to activate one column (or one row) at a time, cycle 8 times, and use the residual image principle to let the human eye merge 8 patterns, so as to let get a pair of patterns containing 8x8 amount of information.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">&lt;=</span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="n">num</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">STcp</span><span class="p">,</span><span class="kr">LOW</span><span class="p">);</span><span class="w"> </span><span class="c1">//ground ST_CP and hold low for as long as you are transmitting</span>
+<span class="w">   </span><span class="nf">shiftOut</span><span class="p">(</span><span class="n">DS</span><span class="p">,</span><span class="n">SHcp</span><span class="p">,</span><span class="n">MSBFIRST</span><span class="p">,</span><span class="n">datArray</span><span class="p">[</span><span class="n">num</span><span class="p">]);</span>
+<span class="w">   </span><span class="nf">shiftOut</span><span class="p">(</span><span class="n">DS</span><span class="p">,</span><span class="n">SHcp</span><span class="p">,</span><span class="n">MSBFIRST</span><span class="p">,</span><span class="mh">0x80</span><span class="o">&gt;&gt;</span><span class="n">num</span><span class="p">);</span>
+<span class="w">   </span><span class="c1">//return the latch pin high to signal chip that it</span>
+<span class="w">   </span><span class="c1">//no longer needs to listen for information</span>
+<span class="w">   </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">STcp</span><span class="p">,</span><span class="kr">HIGH</span><span class="p">);</span><span class="w"> </span><span class="c1">//pull the ST_CPST_CP to save the data</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, the main function nests a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, and when <code class="docutils literal notranslate"><span class="pre">i</span></code> is 1, only the first line is activated (the chip in the control line gets the value <code class="docutils literal notranslate"><span class="pre">0x80</span></code> ) and the image of the first line is written.
+When <code class="docutils literal notranslate"><span class="pre">i</span></code> is 2, the second line is activated (the chip of the control line gets the value <code class="docutils literal notranslate"><span class="pre">0x40</span></code>) and the image of the second line is written. And so on, completing 8 outputs.</p>
+<p>Incidentally, like the 4-digit 7-segment display, it has to maintain the refresh rate to prevent flickering by the human eye, so the extra <code class="docutils literal notranslate"><span class="pre">sleep()</span></code> in the main loop should be avoided as much as possible.</p>
+<p><strong>Learn More</strong></p>
+<p>Try replacing <code class="docutils literal notranslate"><span class="pre">datArray</span></code> with the following array and see what images appear!</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">int</span><span class="w"> </span><span class="n">datArray1</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0xFF</span><span class="p">,</span><span class="mh">0xEF</span><span class="p">,</span><span class="mh">0xC7</span><span class="p">,</span><span class="mh">0xAB</span><span class="p">,</span><span class="mh">0xEF</span><span class="p">,</span><span class="mh">0xEF</span><span class="p">,</span><span class="mh">0xEF</span><span class="p">,</span><span class="mh">0xFF</span><span class="p">};</span>
+<span class="kr">int</span><span class="w"> </span><span class="n">datArray2</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0xFF</span><span class="p">,</span><span class="mh">0xEF</span><span class="p">,</span><span class="mh">0xEF</span><span class="p">,</span><span class="mh">0xEF</span><span class="p">,</span><span class="mh">0xAB</span><span class="p">,</span><span class="mh">0xC7</span><span class="p">,</span><span class="mh">0xEF</span><span class="p">,</span><span class="mh">0xFF</span><span class="p">};</span>
+<span class="kr">int</span><span class="w"> </span><span class="n">datArray3</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0xFF</span><span class="p">,</span><span class="mh">0xEF</span><span class="p">,</span><span class="mh">0xDF</span><span class="p">,</span><span class="mh">0x81</span><span class="p">,</span><span class="mh">0xDF</span><span class="p">,</span><span class="mh">0xEF</span><span class="p">,</span><span class="mh">0xFF</span><span class="p">,</span><span class="mh">0xFF</span><span class="p">};</span>
+<span class="kr">int</span><span class="w"> </span><span class="n">datArray4</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0xFF</span><span class="p">,</span><span class="mh">0xF7</span><span class="p">,</span><span class="mh">0xFB</span><span class="p">,</span><span class="mh">0x81</span><span class="p">,</span><span class="mh">0xFB</span><span class="p">,</span><span class="mh">0xF7</span><span class="p">,</span><span class="mh">0xFF</span><span class="p">,</span><span class="mh">0xFF</span><span class="p">};</span>
+<span class="kr">int</span><span class="w"> </span><span class="n">datArray5</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0xFF</span><span class="p">,</span><span class="mh">0xBB</span><span class="p">,</span><span class="mh">0xD7</span><span class="p">,</span><span class="mh">0xEF</span><span class="p">,</span><span class="mh">0xD7</span><span class="p">,</span><span class="mh">0xBB</span><span class="p">,</span><span class="mh">0xFF</span><span class="p">,</span><span class="mh">0xFF</span><span class="p">};</span>
+<span class="kr">int</span><span class="w"> </span><span class="n">datArray6</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0xFF</span><span class="p">,</span><span class="mh">0xFF</span><span class="p">,</span><span class="mh">0xF7</span><span class="p">,</span><span class="mh">0xEB</span><span class="p">,</span><span class="mh">0xDF</span><span class="p">,</span><span class="mh">0xBF</span><span class="p">,</span><span class="mh">0xFF</span><span class="p">,</span><span class="mh">0xFF</span><span class="p">};</span>
+</pre></div>
+</div>
+<p>Or, you can try drawing your own graphics.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ar_74hc595_4dig.html" class="btn btn-neutral float-left" title="5.3 - Time Counter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ar_ultrasonic.html" class="btn btn-neutral float-right" title="6.1 - Measuring Distance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

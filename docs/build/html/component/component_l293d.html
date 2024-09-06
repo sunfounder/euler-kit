@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IC L293D &mdash; SunFounder Euler Kit for Raspberry Pi Pico 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="LED" href="component_led.html" />
+    <link rel="prev" title="74HC595" href="component_74hc595.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder Euler Kit for Raspberry Pi Pico
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download_the_code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bc_basic_circuit.html">Electronic Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyproject/for_micropython_user.html">For MicroPython User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espproject/for_esp8266_user.html">Play Pico with APP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cproject/for_arduino_user.html">For Arduino User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../piperproject/for_piper.html">For Piper Make</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="what_is_included_in_this_kit.html">What is Included in This Kit</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="component_breadboard.html">Breadboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_wire.html">Jumper Wires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_resistor.html">Resistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_transistor.html">Transistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_capacitor.html">Capacitor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_diode.html">Diode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_74hc595.html">74HC595</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">IC L293D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_led.html">LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_rgb_led.html">RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_led_bar.html">LED Bar Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_7segment.html">7-segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_4_digit_display.html">4-Digit 7-Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_788bs.html">LED Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_i2clcd1602.html">I2C LCD1602</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_ws2812.html">WS2812 RGB 8 LEDs Strip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_buzzer.html">Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_dc_motor.html">DC Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_servo.html">Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_pump.html">Centrifugal Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_relay.html">Relay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_power_module.html">Power Supply Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_micro_switch.html">Micro Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_slide_switch.html">Slide Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_potentiometer.html">Potentiometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_irrecv.html">Infrared-Receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_joystick.html">Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_keypad.html">Keypad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_mpr121.html">MPR121</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_rfid.html">MFRC522 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_photoresistor.html">Photoresistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_thermistor.html">Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_tilt_switch.html">Tilt Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_reed.html">Reed Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_pir.html">PIR Motion Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_water.html">Water Level Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_ultrasonic.html">Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_humiture.html">DHT11 Humiture Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_mpu6050.html">MPU6050</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_esp8266.html">ESP8266 Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder Euler Kit for Raspberry Pi Pico</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="what_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+      <li class="breadcrumb-item active">IC L293D</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/component/component_l293d.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="ic-l293d">
+<span id="cpn-l293d"></span><h1>IC L293D<a class="headerlink" href="#ic-l293d" title="Permalink to this heading">¶</a></h1>
+<p><a class="reference internal" href="../_images/l293d.png"><img alt="img_l293d0" src="../_images/l293d.png" style="width: 400px;" /></a></p>
+<p>L293D is a 4-channel motor driver integrated by chip with high voltage and high current.
+It’s designed to connect to standard DTL, TTL logic level, and drive inductive loads (such as relay coils, DC, Stepper Motors) and power switching transistors etc.
+DC Motors are devices that turn DC electrical energy into mechanical energy. They are widely used in electrical drive for their superior speed regulation performance.</p>
+<p>See the figure of pins below. L293D has two pins (Vcc1 and Vcc2) for power supply.
+Vcc2 is used to supply power for the motor, while Vcc1 to supply for the chip. Since a small-sized DC motor is used here, connect both pins to +5V.</p>
+<p><img alt="img_l293d1" src="../_images/l293d111.png" /></p>
+<p>The following is the internal structure of L293D.
+Pin EN is an enable pin and only works with high level; A stands for input and Y for output.
+You can see the relationship among them at the right bottom.
+When pin EN is High level, if A is High, Y outputs high level; if A is Low, Y outputs Low level. When pin EN is Low level, the L293D does not work.</p>
+<p><img alt="img_l293d2" src="../_images/l293d334.png" /></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cdn-shop.adafruit.com/datasheets/l293d.pdf">L293D Datasheet</a></p></li>
+</ul>
+<p><strong>Example</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../pyproject/py_motor.html#py-motor"><span class="std std-ref">3.5 Small Fan</span></a> (For MicroPython User)</p></li>
+<li><p><a class="reference internal" href="../cproject/ar_motor.html#ar-motor"><span class="std std-ref">3.5 - Small Fan</span></a> (For Arduino User)</p></li>
+<li><p><a class="reference internal" href="../pyproject/py_pump.html#py-pump"><span class="std std-ref">3.6 Pumping</span></a> (For MicroPython User)</p></li>
+<li><p><a class="reference internal" href="../cproject/ar_pump.html#ar-pump"><span class="std std-ref">3.6 - Pumping</span></a> (For Arduino User)</p></li>
+<li><p><a class="reference internal" href="../piperproject/2.12_smart_fan.html#per-smart-fan"><span class="std std-ref">2.12 Smart Fan</span></a> (For Piper Make User)</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="component_74hc595.html" class="btn btn-neutral float-left" title="74HC595" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="component_led.html" class="btn btn-neutral float-right" title="LED" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

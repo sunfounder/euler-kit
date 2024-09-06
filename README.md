@@ -26,6 +26,9 @@ Here is the email: cs@sunfounder.com.
 
 <a id="update"></a>
 ## Update:
+2024-09-06:
+- Update Arduino and Micropython project images and code related to DHT11, Keypad, IR receiver, MFRC522.
+- Modify other minor details
 
 2024-05-20:
  - Add the note of join in the SunFounder Facebook group

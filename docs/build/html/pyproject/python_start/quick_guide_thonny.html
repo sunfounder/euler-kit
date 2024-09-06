@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.5 Quick Guide on Thonny &mdash; SunFounder Euler Kit for Raspberry Pi Pico 1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.6 (Optional) MicroPython Basic Syntax" href="syntax/micropython_basic_syntax.html" />
+    <link rel="prev" title="1.4 Download and Upload the Code" href="download_add.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            SunFounder Euler Kit for Raspberry Pi Pico
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../download_the_code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bc_basic_circuit.html">Electronic Circuit</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../for_micropython_user.html">For MicroPython User</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction_micropython.html">1.1 Introduction of MicroPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thonny_python_ide.html">1.2 Install and Introduce Thonny IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install_micropython_pico.html">1.3 Install MicroPython Firmware on Your Pico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_add.html">1.4 Download and Upload the Code</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.5 Quick Guide on Thonny</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#open-and-run-code-directly">Open and Run Code Directly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-file-and-run-it">Create File and Run it</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="syntax/micropython_basic_syntax.html">1.6 (Optional) MicroPython Basic Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_led.html">2.1 Hello, LED!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_led_bar.html">2.2 Display the Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_fade.html">2.3 Fading LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_rgb.html">2.4 Colorful Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_button.html">2.5 Reading Button Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_tilt.html">2.6 Tilt It！</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_slide.html">2.7 Toggle Left and Right</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_micro.html">2.8 Press Gently</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_reed.html">2.9 Feel the Magnetism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_pir.html">2.10 Detect Human Movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_pot.html">2.11 Turn the Knob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_photoresistor.html">2.12 Feel the Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_temp.html">2.13 Thermometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_water.html">2.14 Feel the Water Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_transistor.html">2.15 Two Kinds of Transistors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_relay.html">2.16 Control Another Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_ac_buz.html">3.1 Beep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_pa_buz.html">3.2 Custom Tone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_neopixel.html">3.3 RGB LED Strip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_lcd.html">3.4 Liquid Crystal Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_motor.html">3.5 Small Fan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_pump.html">3.6 Pumping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_servo.html">3.7 Swinging Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_joystick.html">4.1 Toggle the Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_keypad.html">4.2 4x4 Keypad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_mpr121.html">4.3 Electrode Keyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_74hc595_led.html">5.1 Microchip - 74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_74hc595_7seg.html">5.2 Number Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_74hc595_4dig.html">5.3 Time Counter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_74hc595_matrix.html">5.4 8x8 Pixel Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_ultrasonic.html">6.1 Measuring Distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_dht11.html">6.2 Temperature - Humidity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_mpu6050.html">6.3 6-axis Motion Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_irremote.html">6.4 IR Remote Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_rfid.html">6.5 Radio Frequency Identification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_light_theremin.html">7.1 Light Theremin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_room_temp_meter.html">7.2 Room Temperature Meter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_alarm_siren_lamp.html">7.3 Alarm Siren Lamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_passager_counter.html">7.4 Passager Counter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_game_10_second.html">7.5 GAME - 10 Second</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_traffic_light.html">7.6 Traffic Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_game_guess_number.html">7.7 Guess Number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_rfid_music_player.html">7.8 RFID Music Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_fruit_piano.html">7.9 Fruit Piano</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_reversing_aid.html">7.10 Reversing Aid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_somatosensory_controller.html">7.11 Somatosensory Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py_digital_bubble_level.html">7.12 Digital Bubble Level</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../espproject/for_esp8266_user.html">Play Pico with APP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cproject/for_arduino_user.html">For Arduino User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../piperproject/for_piper.html">For Piper Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../component/what_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SunFounder Euler Kit for Raspberry Pi Pico</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../for_micropython_user.html">For MicroPython User</a></li>
+      <li class="breadcrumb-item active">1.5 Quick Guide on Thonny</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/pyproject/python_start/quick_guide_thonny.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="quick-guide-on-thonny">
+<h1>1.5 Quick Guide on Thonny<a class="headerlink" href="#quick-guide-on-thonny" title="Permalink to this heading">¶</a></h1>
+<section id="open-and-run-code-directly">
+<span id="open-run-code-py"></span><h2>Open and Run Code Directly<a class="headerlink" href="#open-and-run-code-directly" title="Permalink to this heading">¶</a></h2>
+<p>The code section in the projects tells you exactly which code is used, so double-click on the <strong>.py</strong> file with the serial number in the <strong>euler-kit/micropython/</strong> path to open it.</p>
+<p>However, you must first download the package and upload the library, as described in <a class="reference internal" href="download_add.html#download-upload"><span class="std std-ref">1.4 Download and Upload the Code</span></a>.</p>
+<ol class="arabic">
+<li><p>Open Code</p>
+<blockquote>
+<div><p>For example, <code class="docutils literal notranslate"><span class="pre">2.1_hello_led.py</span></code>.</p>
+<p>If you double click on it, a new window will open on the right. You can open more than one code at the same time.</p>
+<p><img alt="mps_open_code" src="../../_images/open_code.png" /></p>
+</div></blockquote>
+</li>
+<li><p>Select Correct Interpreter</p>
+<blockquote>
+<div><p>Use a micro USB cable to connect the Pico to your computer and select the “MicroPython (Raspberry Pi Pico)” interpreter.</p>
+<p><img alt="mps_sec_inter" src="../../_images/sec_inter.png" /></p>
+</div></blockquote>
+</li>
+<li><p>Run the Code</p>
+<blockquote>
+<div><p>To run the script, click the <strong>Run current script</strong> button or press F5.</p>
+<p><img alt="mps_run_it" src="../../_images/run_it.png" /></p>
+<p>If the code contains any information that needs to be printed, it will appear in the Shell; otherwise, only the following information will appear.</p>
+<p>Click <strong>View</strong> -&gt; <strong>Edit</strong> to open the Shell window if it doesn’t appear on your Thonny.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>MicroPython v1.17 on 2021-09-02; Raspberry Pi Pico with RP2040
+
+Type &quot;help()&quot; for more information.
+&gt;&gt;&gt; %Run -c $EDITOR_CONTENT
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>The first line shows the version of MicroPython, the date, and your device information.</p></li>
+<li><p>The second line prompts you to enter “help()” to get some help.</p></li>
+<li><p>The third line is a command from Thonny telling the MicroPython interpreter on your Pico to run the contents of the script area - “EDITOR_CONTENT”.</p></li>
+<li><p>If there is any message after the third line, it is usually a message that you tell MicroPython to print, or an error message for the code.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Stop Running</p>
+<blockquote>
+<div><p><img alt="mps_stop_it" src="../../_images/stop_it.png" /></p>
+<p>To stop the running code, click the <strong>Stop/Restart backend</strong> button. The <strong>%RUN -c $EDITOR_CONTENT</strong> command will disappear after stopping.</p>
+</div></blockquote>
+</li>
+<li><p>Save or Save as</p>
+<blockquote>
+<div><p>You can save changes made to the open example by pressing <strong>Ctrl+S</strong> or clicking the <strong>Save</strong> button on Thonny.</p>
+<p>The code can be saved as a separate file within the Raspberry Pi Pico by clicking on <strong>File</strong> -&gt; <strong>Save As</strong>.</p>
+<p><img alt="mps_save_as" src="../../_images/save_as.png" /></p>
+<p>Select <strong>Raspberry Pi Pico</strong>.</p>
+<p><img alt="mps_sec_pico" src="../../_images/sec_pico.png" /></p>
+<p>Then click <strong>OK</strong> after entering the file name and extension <strong>.py</strong>. On the Raspberry Pi Pico drive, you will see your saved file.</p>
+<p><img alt="mps_sec_name" src="../../_images/sec_name.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Regardless of what name you give your code, it’s best to describe what type of code it is, and not give it a meaningless name like <code class="docutils literal notranslate"><span class="pre">abc.py</span></code>.
+When you save the code as <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, it will run automatically when the power is turned on.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="create-file-and-run-it">
+<h2>Create File and Run it<a class="headerlink" href="#create-file-and-run-it" title="Permalink to this heading">¶</a></h2>
+<p>The code is shown directly in the code section. You can copy it to Thonny and run it as follows.</p>
+<ol class="arabic">
+<li><p>Create a new file</p>
+<blockquote>
+<div><p>Open Thonny IDE, click <strong>New</strong> button to create a new blank file.</p>
+<p><img alt="mps_new_file" src="../../_images/new_file.png" /></p>
+</div></blockquote>
+</li>
+<li><p>Copy Code</p>
+<blockquote>
+<div><p>Copy the code from the project to the Thonny IDE.</p>
+<p><img alt="mps_copy_file" src="../../_images/copy_file.png" /></p>
+</div></blockquote>
+</li>
+<li><p>Select Correct Interpreter</p>
+<blockquote>
+<div><p>Plug the Pico into your computer with a micro USB cable and select the “MicroPython (Raspberry Pi Pico)” interpreter in the bottom right corner.</p>
+<p><img alt="mps_sec_inter" src="../../_images/sec_inter.png" /></p>
+</div></blockquote>
+</li>
+<li><p>Run and Save the Code</p>
+<blockquote>
+<div><p>You need click <strong>Run Current Script</strong> or simply press F5 to run it. If your code has not been saved, a window will pop up asking to save to <strong>This computer</strong> or <strong>Raspberry Pi Pico</strong>.</p>
+<p><img alt="mps_where_save" src="../../_images/where_save.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Thonny saves your program on the Raspberry Pi Pico when you tell him to, so if you unplug the Pico and plug it into someone else’s computer, your program remains intact.</p>
+</div>
+<p>Click OK after selecting the location, naming the file and adding the extension <strong>.py</strong>.</p>
+<p><img alt="mps_sec_name" src="../../_images/sec_name.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Regardless of what name you give your code, it’s best to describe what type of code it is, and not give it a meaningless name like <code class="docutils literal notranslate"><span class="pre">abc.py</span></code>.
+When you save the code as <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, it will run automatically when the power is turned on.</p>
+</div>
+<p>Once your program is saved, it will run automatically and you will see the following information in the Shell area.</p>
+<p>Click <strong>View</strong> -&gt; <strong>Edit</strong> to open the Shell window if it does not appear on your Thonny.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>MicroPython v1.17 on 2021-09-02; Raspberry Pi Pico with RP2040
+
+Type &quot;help()&quot; for more information.
+&gt;&gt;&gt; %Run -c $EDITOR_CONTENT
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The first line shows the version of MicroPython, the date, and your device information.</p></li>
+<li><p>The second line prompts you to enter “help()” to get some help.</p></li>
+<li><p>The third line is a command from Thonny telling the MicroPython interpreter on your Pico to run the contents of the script area - “EDITOR_CONTENT”.</p></li>
+<li><p>If there is any message after the third line, it is usually a message that you tell MicroPython to print, or an error message for the code.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Stop Running</p>
+<blockquote>
+<div><p><img alt="mps_stop_it" src="../../_images/stop_it.png" /></p>
+<p>To stop the running code, click the <strong>Stop/Restart backend</strong> button. The <strong>%RUN -c $EDITOR_CONTENT</strong> command will disappear after stopping.</p>
+</div></blockquote>
+</li>
+<li><p>Open File</p>
+<blockquote>
+<div><p>Here are two ways to open a saved code file.</p>
+<ul class="simple">
+<li><p>The first method is to click the open icon on the Thonny toolbar, just like when you save a program, you will be asked if you want to open it from <strong>this computer</strong> or <strong>Raspberry Pi Pico</strong>, for example, click <strong>Raspberry Pi Pico</strong> and you will see a list of all the programs you have saved on the Pico.</p></li>
+<li><p>The second is to open the file preview directly by clicking <strong>View</strong>-&gt;**File**-&gt; and then double-clicking on the corresponding <code class="docutils literal notranslate"><span class="pre">.py</span></code> file to open it.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="download_add.html" class="btn btn-neutral float-left" title="1.4 Download and Upload the Code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="syntax/micropython_basic_syntax.html" class="btn btn-neutral float-right" title="1.6 (Optional) MicroPython Basic Syntax" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

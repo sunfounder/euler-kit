@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4-Digit 7-Segment Display &mdash; SunFounder Euler Kit for Raspberry Pi Pico 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="LED Matrix" href="component_788bs.html" />
+    <link rel="prev" title="7-segment Display" href="component_7segment.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder Euler Kit for Raspberry Pi Pico
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download_the_code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bc_basic_circuit.html">Electronic Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyproject/for_micropython_user.html">For MicroPython User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espproject/for_esp8266_user.html">Play Pico with APP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cproject/for_arduino_user.html">For Arduino User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../piperproject/for_piper.html">For Piper Make</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="what_is_included_in_this_kit.html">What is Included in This Kit</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="component_breadboard.html">Breadboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_wire.html">Jumper Wires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_resistor.html">Resistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_transistor.html">Transistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_capacitor.html">Capacitor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_diode.html">Diode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_74hc595.html">74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_l293d.html">IC L293D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_led.html">LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_rgb_led.html">RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_led_bar.html">LED Bar Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_7segment.html">7-segment Display</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4-Digit 7-Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_788bs.html">LED Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_i2clcd1602.html">I2C LCD1602</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_ws2812.html">WS2812 RGB 8 LEDs Strip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_buzzer.html">Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_dc_motor.html">DC Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_servo.html">Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_pump.html">Centrifugal Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_relay.html">Relay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_power_module.html">Power Supply Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_micro_switch.html">Micro Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_slide_switch.html">Slide Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_potentiometer.html">Potentiometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_irrecv.html">Infrared-Receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_joystick.html">Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_keypad.html">Keypad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_mpr121.html">MPR121</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_rfid.html">MFRC522 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_photoresistor.html">Photoresistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_thermistor.html">Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_tilt_switch.html">Tilt Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_reed.html">Reed Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_pir.html">PIR Motion Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_water.html">Water Level Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_ultrasonic.html">Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_humiture.html">DHT11 Humiture Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_mpu6050.html">MPU6050</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_esp8266.html">ESP8266 Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder Euler Kit for Raspberry Pi Pico</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="what_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+      <li class="breadcrumb-item active">4-Digit 7-Segment Display</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/component/component_4_digit_display.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="digit-7-segment-display">
+<span id="cpn-4dit"></span><h1>4-Digit 7-Segment Display<a class="headerlink" href="#digit-7-segment-display" title="Permalink to this heading">¶</a></h1>
+<p>4-Digit 7-segment display consists of four 7- segment displays working
+together.</p>
+<p><img alt="img_4-digit-sche" src="../_images/4-digit-sche.png" /></p>
+<p>The 4-digtal 7-segment display works independently. It uses the
+principle of human visual persistence to quickly display the characters
+of each 7-segment in a loop to form continuous strings.</p>
+<p>For example, when “1234” is displayed on the display, “1” is displayed
+on the first 7-segment, and “234” is not displayed. After a period of
+time, the second 7-segment shows “2”, the 1st 3th 4th of 7-segment does
+not show, and so on, the four digital display show in turn. This process
+is very short (typically 5ms), and because of the optical afterglow
+effect and the principle of visual residue, we can see four characters
+at the same time.</p>
+<p><img alt="img_4-digit-sche-ca" src="../_images/4-digit-sche-ca.png" /></p>
+<p><strong>Display Codes</strong></p>
+<p>To help you get to know how 7-segment displays(Common Cathode) display Numbers, we have drawn the following table. Numbers are the number 0-F displayed on the 7-segment display; (DP) GFEDCBA refers to the corresponding LED set to 0 or 1, For example, 00111111 means that DP and G are set to 0, while others are set to 1. Therefore, the number 0 is displayed on the 7-segment display, while HEX Code corresponds to hexadecimal number.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Glyph Code</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Numbers</p></th>
+<th class="head"><p>Binary Code</p></th>
+<th class="head"><p>Hex Code</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>00111111</p></td>
+<td><p>0x3f</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>00000110</p></td>
+<td><p>0x06</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>01011011</p></td>
+<td><p>0x5b</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>01001111</p></td>
+<td><p>0x4f</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>01100110</p></td>
+<td><p>0x66</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>01101101</p></td>
+<td><p>0x6d</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>01111101</p></td>
+<td><p>0x7d</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>00000111</p></td>
+<td><p>0x07</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>01111111</p></td>
+<td><p>0x7f</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>01101111</p></td>
+<td><p>0x6f</p></td>
+</tr>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>01110111</p></td>
+<td><p>0x77</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>01111100</p></td>
+<td><p>0x7c</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>00111001</p></td>
+<td><p>0x39</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>01011110</p></td>
+<td><p>0x5e</p></td>
+</tr>
+<tr class="row-even"><td><p>E</p></td>
+<td><p>01111001</p></td>
+<td><p>0x79</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>01110001</p></td>
+<td><p>0x71</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../pyproject/py_74hc595_4dig.html#py-74hc-4dig"><span class="std std-ref">5.3 Time Counter</span></a> (For MicroPython User)</p></li>
+<li><p><a class="reference internal" href="../pyproject/py_passager_counter.html#py-passage-counter"><span class="std std-ref">7.4 Passager Counter</span></a> (For MicroPython User)</p></li>
+<li><p><a class="reference internal" href="../pyproject/py_game_10_second.html#py-10-second"><span class="std std-ref">7.5 GAME - 10 Second</span></a> (For MicroPython User)</p></li>
+<li><p><a class="reference internal" href="../pyproject/py_traffic_light.html#py-traffic-light"><span class="std std-ref">7.6 Traffic Light</span></a> (For MicroPython User)</p></li>
+<li><p><a class="reference internal" href="../cproject/ar_74hc595_4dig.html#ar-74hc-4dig"><span class="std std-ref">5.3 - Time Counter</span></a> (For Arduino User)</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="component_7segment.html" class="btn btn-neutral float-left" title="7-segment Display" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="component_788bs.html" class="btn btn-neutral float-right" title="LED Matrix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

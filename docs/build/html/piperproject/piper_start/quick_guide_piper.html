@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.2 Quick Guide on Piper Make &mdash; SunFounder Euler Kit for Raspberry Pi Pico 1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.3 How to Save or Import Code?" href="save_import.html" />
+    <link rel="prev" title="1.1 Set up the Pico" href="set_up_pico.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            SunFounder Euler Kit for Raspberry Pi Pico
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../download_the_code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bc_basic_circuit.html">Electronic Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyproject/for_micropython_user.html">For MicroPython User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../espproject/for_esp8266_user.html">Play Pico with APP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cproject/for_arduino_user.html">For Arduino User</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../for_piper.html">For Piper Make</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="set_up_pico.html">1.1 Set up the Pico</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.2 Quick Guide on Piper Make</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-new-project">1. Create New Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connect-to-pico">2. Connect to Pico</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-the-code">3. Run the Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="save_import.html">1.3 How to Save or Import Code?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_blink_led.html">2.1 Blink LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_button.html">2.2 Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_service_bell.html">2.3 Service Bell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_rainbow_light.html">2.4 Rainbow Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.5_drum_kit.html">2.5 Drum Kit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.6_water_tank.html">2.6 Smart Water Tank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.7_swing_servo.html">2.7 Swing Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.8_light_intensity_display.html">2.8 Light Intensity Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.9_lucky_cat.html">2.9 Lucky Cat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.10_flowing_led.html">2.10 Flowing LEDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.11_reversing_system.html">2.11 Reversing System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.12_smart_fan.html">2.12 Smart Fan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.13_reaction_game.html">2.13 Reaction Game</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../component/what_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SunFounder Euler Kit for Raspberry Pi Pico</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../for_piper.html">For Piper Make</a></li>
+      <li class="breadcrumb-item active">1.2 Quick Guide on Piper Make</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/piperproject/piper_start/quick_guide_piper.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="quick-guide-on-piper-make">
+<span id="quick-guide-piper"></span><h1>1.2 Quick Guide on Piper Make<a class="headerlink" href="#quick-guide-on-piper-make" title="Permalink to this heading">¶</a></h1>
+<section id="create-new-project">
+<h2>1. Create New Project<a class="headerlink" href="#create-new-project" title="Permalink to this heading">¶</a></h2>
+<p>Now that you have set up Pico, it is time to learn how to program it.
+Now let’s light up the onboard LED.</p>
+<p>Switch to <code class="docutils literal notranslate"><span class="pre">CREATIVE</span> <span class="pre">MODE</span></code> and click on the <strong>New Project</strong> button,
+and a new project will appear in the <strong>MY PROJECTS</strong> section and
+will be assigned a random name that can be changed from the programming page.</p>
+<p><img alt="media9-s" src="../../_images/media9-s.png" /></p>
+<p>Then open the new project just created.</p>
+<p><img alt="media11-s" src="../../_images/media11-s.png" /></p>
+<p>Now go to the Piper Make programming page.</p>
+<p><img alt="piper_intro1" src="../../_images/piper_intro1.png" /></p>
+<ul class="simple">
+<li><p><strong>START</strong>: Used to run the code, if it’s gray, it’s not connected to Pico at this time.</p></li>
+<li><p><strong>Block palette</strong>: contains different types of blocks.</p></li>
+<li><p><strong>CONNECT</strong>: Used to connect to Pico, it is green when not connected to Pico, when connected it will become <strong>DISCONNECT(red)</strong>.</p></li>
+<li><p><strong>Programming Area</strong>: Drag blocks here to finish programming by stacking them.</p></li>
+<li><p><strong>Tools Area</strong>: You can click <strong>DIGITAL VIEW</strong> to see the pin distribution of Pico; you can view the print information in <strong>CONSOLE</strong>; you can read data from <strong>DATA</strong>, and you can click <strong>Python</strong> to view the Python source code.</p></li>
+<li><p><strong>Project name and description</strong>: You can change the project name and description.</p></li>
+<li><p><strong>DOWNLOAD</strong>: You can click the <strong>DOWNLOAD</strong> button to save it locally, usually in <strong>|</strong> format. Next time you can import it via the <strong>Import Project</strong> button on the home page.</p></li>
+</ul>
+<p>Click on the <strong>Chip</strong> palette and drag the [start] block to the <strong>Programming Area</strong>.</p>
+<p><img alt="media12" src="../../_images/media12.png" /></p>
+<p>Then drag the [loop] block in <strong>loops</strong> palette to the bottom of the [start] block, and set the loop interval to 1 second.</p>
+<p><img alt="media14" src="../../_images/media14.png" /></p>
+<p>The Raspberry Pi Pico’s onboard LED is at pin25, so we use the [turn pin () ON/OFF] block on the <strong>Chip</strong> palette to control it.</p>
+<p><img alt="media15" src="../../_images/media15.png" /></p>
+</section>
+<section id="connect-to-pico">
+<span id="connect-pico-per"></span><h2>2. Connect to Pico<a class="headerlink" href="#connect-to-pico" title="Permalink to this heading">¶</a></h2>
+<p>Now click on the <strong>CONNECT</strong> button to connect to pico, after clicking on it a new popup will appear.</p>
+<p><img alt="media16" src="../../_images/media16.png" /></p>
+<p>Select the recognized <strong>CircuitPython CDC control (COMXX)</strong> port, then click on <strong>Connect</strong>.</p>
+<p><img alt="pico_port" src="../../_images/pico_port.png" /></p>
+<p>When the connection is successful, the green <strong>CONNECT</strong> in the bottom left corner will change to a red <strong>DISCONNECT</strong>.</p>
+<p><img alt="disconnect_per" src="../../_images/disconnect_per.png" /></p>
+</section>
+<section id="run-the-code">
+<h2>3. Run the Code<a class="headerlink" href="#run-the-code" title="Permalink to this heading">¶</a></h2>
+<p>Now click on the <strong>START</strong> button to run this code and you will see the LED on the Pico lit up. If yours is gray, it means that the Pico is not connected, please reconnect it.</p>
+<p><img alt="media166" src="../../_images/media166.png" /></p>
+<p>Then turn off pin25 every second in the cycle, and click <strong>START</strong> on the upper left again, so that you can see the onboard LED lights flashing.</p>
+<p><img alt="media17" src="../../_images/media17.png" /></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="set_up_pico.html" class="btn btn-neutral float-left" title="1.1 Set up the Pico" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="save_import.html" class="btn btn-neutral float-right" title="1.3 How to Save or Import Code?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

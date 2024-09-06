@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.3 Setting Up the Raspberry Pi Pico (Important) &mdash; SunFounder Euler Kit for Raspberry Pi Pico 1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.4 Install libraries (Important)" href="add_libraries_ar.html" />
+    <link rel="prev" title="1.2 Introduce of Arduino IDE" href="introduce_ide.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            SunFounder Euler Kit for Raspberry Pi Pico
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../download_the_code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bc_basic_circuit.html">Electronic Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyproject/for_micropython_user.html">For MicroPython User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../espproject/for_esp8266_user.html">Play Pico with APP</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../for_arduino_user.html">For Arduino User</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install_arduino_ide.html">1.1 Install Arduino IDE(Important)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduce_ide.html">1.2 Introduce of Arduino IDE</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.3 Setting Up the Raspberry Pi Pico (Important)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-uf2-firmware">1. Installing UF2 Firmware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-the-board-package">2. Installing the Board Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selecting-the-board-and-port">3. Selecting the Board and Port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uploading-code">4. Uploading Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="add_libraries_ar.html">1.4 Install libraries (Important)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_led.html">2.1 - Hello, LED!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_led_bar.html">2.2 - Display the Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_fade.html">2.3 - Fading LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_rgb.html">2.4 - Colorful Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_button.html">2.5 - Reading Button Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_tilt.html">2.6 - Tilt It！</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_slide.html">2.7 - Toggle Left and Right</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_micro.html">2.8 - Press Gently</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_reed.html">2.9 - Feel the Magnetism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_pir.html">2.10 - Detect Human Movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_pot.html">2.11 - Turn the Knob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_photoresistor.html">2.12 - Feel the Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_temp.html">2.13 - Thermometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_water.html">2.14 - Feel the Water Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_transistor.html">2.15 - Two Kinds of Transistors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_relay.html">2.16 - Control Another Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_ac_buz.html">3.1 - Beep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_pa_buz.html">3.2 - Custom Tone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_neopixel.html">3.3 - RGB LED Strip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_lcd.html">3.4 - Liquid Crystal Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_motor.html">3.5 - Small Fan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_pump.html">3.6 - Pumping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_servo.html">3.7 - Swinging Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_joystick.html">4.1 - Toggle the Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_keypad.html">4.2 - 4x4 Keypad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_mpr121.html">4.3 - Electrode Keyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_74hc595_led.html">5.1 -  Microchip - 74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_74hc595_7seg.html">5.2 - Number Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_74hc595_4dig.html">5.3 - Time Counter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_74hc595_matrix.html">5.4 - 8x8 Pixel Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_ultrasonic.html">6.1 - Measuring Distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_dht11.html">6.2 - Temperature - Humidity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_mpu6050.html">6.3 - 6-axis Motion Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_irremote.html">6.4 - IR Remote Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ar_rfid.html">6.5 - Radio Frequency Identification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../piperproject/for_piper.html">For Piper Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../component/what_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SunFounder Euler Kit for Raspberry Pi Pico</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../for_arduino_user.html">For Arduino User</a></li>
+      <li class="breadcrumb-item active">1.3 Setting Up the Raspberry Pi Pico (Important)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/cproject/arduino_start/install_pico.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="setting-up-the-raspberry-pi-pico-important">
+<span id="setup-pico-arduino"></span><h1>1.3 Setting Up the Raspberry Pi Pico (Important)<a class="headerlink" href="#setting-up-the-raspberry-pi-pico-important" title="Permalink to this heading">¶</a></h1>
+<section id="installing-uf2-firmware">
+<h2>1. Installing UF2 Firmware<a class="headerlink" href="#installing-uf2-firmware" title="Permalink to this heading">¶</a></h2>
+<p>When you initially connect the Raspberry Pi Pico or hold down the BOOTSEL button while inserting it, you’ll see the device showing up as a drive without being assigned a COM port. This makes it impossible to upload code.</p>
+<p>To fix this, you need to install UF2 firmware. This firmware supports MicroPython and is also compatible with the Arduino IDE.</p>
+<ol class="arabic">
+<li><p>Download the UF2 Firmware from the link below.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference download external" download="" href="https://micropython.org/download/rp2-pico/rp2-pico-latest.uf2"><code class="xref download docutils literal notranslate"><span class="pre">Raspberry</span> <span class="pre">Pi</span> <span class="pre">Pico</span> <span class="pre">UF2</span> <span class="pre">Firmware</span></code></a></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Connect your Raspberry Pi Pico to your computer using a Micro USB cable. Your Pico will mount as a Mass Storage Device named <strong>RPI-RP2</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/install_pico_plugin.png" src="../../_images/install_pico_plugin.png" />
+</div></blockquote>
+</li>
+<li><p>Drag and drop the downloaded UF2 firmware into the <strong>RPI-RP2</strong> drive.</p>
+<blockquote>
+<div><img alt="../../_images/install_pico_uf2.png" src="../../_images/install_pico_uf2.png" />
+</div></blockquote>
+</li>
+<li><p>After this, the <strong>RPI-RP2</strong> drive will disappear, and you can proceed with the following steps.</p></li>
+</ol>
+</section>
+<section id="installing-the-board-package">
+<h2>2. Installing the Board Package<a class="headerlink" href="#installing-the-board-package" title="Permalink to this heading">¶</a></h2>
+<p>To program the Raspberry Pi Pico, you’ll need to install the corresponding package in the Arduino IDE. Here’s a step-by-step guide:</p>
+<ol class="arabic">
+<li><p>In the <strong>Boards Manager</strong> window, search for <strong>pico</strong>. Click the <strong>INSTALL</strong> button to commence the installation. This will install the <strong>Arduino Mbed OS RP2040 Boards</strong> package, which includes support for the Raspberry Pi Pico.</p>
+<blockquote>
+<div><img alt="../../_images/install_pico1.png" src="../../_images/install_pico1.png" />
+</div></blockquote>
+</li>
+<li><p>During the process, a few pop-up prompts will appear for the installation of specific device drivers. Select <strong>“Install”</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/install_pico_sa.png" src="../../_images/install_pico_sa.png" />
+</div></blockquote>
+</li>
+<li><p>Afterwards, there will be a notification indicating that the installation is complete.</p></li>
+</ol>
+</section>
+<section id="selecting-the-board-and-port">
+<h2>3. Selecting the Board and Port<a class="headerlink" href="#selecting-the-board-and-port" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>To select the appropriate board, navigate to <strong>Tools</strong> -&gt; <strong>Board</strong> -&gt; <strong>Arduino Mbed OS RP2040 Boards</strong> -&gt; <strong>Raspberry Pi Pico</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/install_pico_tool_board.png" src="../../_images/install_pico_tool_board.png" />
+</div></blockquote>
+</li>
+<li><p>If your Raspberry Pi Pico is connected to the computer, set the right port by navigating to <strong>Tools</strong> -&gt; <strong>Port</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/install_pico_tool_port.png" src="../../_images/install_pico_tool_port.png" />
+</div></blockquote>
+</li>
+<li><p>Arduino 2.0 offers a new quick-select feature. For the Raspberry Pi Pico, which is typically not auto-recognized, click <strong>Select other board and port</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/install_pico_select.png" src="../../_images/install_pico_select.png" />
+</div></blockquote>
+</li>
+<li><p>Type <strong>Raspberry Pi Pico</strong> into the search bar, select it when it shows up, choose the appropriate port, and click <strong>OK</strong>.</p>
+<blockquote>
+<div><img alt="../../_images/install_pico_board.png" src="../../_images/install_pico_board.png" />
+</div></blockquote>
+</li>
+<li><p>You can easily reselect it later through this quick access window.</p>
+<blockquote>
+<div><img alt="../../_images/install_pico_quick.png" src="../../_images/install_pico_quick.png" />
+</div></blockquote>
+</li>
+<li><p>Either of these methods will enable you to set the correct board and port. You’re now all set to upload code to the Raspberry Pi Pico.</p></li>
+</ol>
+</section>
+<section id="uploading-code">
+<h2>4. Uploading Code<a class="headerlink" href="#uploading-code" title="Permalink to this heading">¶</a></h2>
+<p>Now let’s dive into how to upload code to your Raspberry Pi Pico.</p>
+<ol class="arabic">
+<li><p>Open any <code class="docutils literal notranslate"><span class="pre">.ino</span></code> file or use the empty sketch currently displayed. Then, click the <strong>Upload</strong> button.</p>
+<blockquote>
+<div><img alt="../../_images/install_pico_upload.png" src="../../_images/install_pico_upload.png" />
+</div></blockquote>
+</li>
+<li><p>Wait for the uploading message to appear, as shown below.</p>
+<blockquote>
+<div><img alt="../../_images/install_pico_upload_dot.png" src="../../_images/install_pico_upload_dot.png" />
+</div></blockquote>
+</li>
+<li><p>Hold down the <strong>BOOTSEL</strong> button, quickly unplug your Raspberry Pi Pico, and plug it back in.</p>
+<blockquote>
+<div><img alt="../../_images/led_onboard.png" src="../../_images/led_onboard.png" />
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>This step is crucial, especially for first-time users on the Arduino IDE. Skipping this step will result in a failed upload.</p></li>
+<li><p>Once you successfully upload the code this time, your Pico will be recognized by the computer. For future uses, simply plug it into the computer.</p></li>
+</ul>
+</div>
+</div></blockquote>
+</li>
+<li><p>A prompt indicating successful upload will appear.</p>
+<blockquote>
+<div><img alt="../../_images/install_pico_upload_done.png" src="../../_images/install_pico_upload_done.png" />
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduce_ide.html" class="btn btn-neutral float-left" title="1.2 Introduce of Arduino IDE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="add_libraries_ar.html" class="btn btn-neutral float-right" title="1.4 Install libraries (Important)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

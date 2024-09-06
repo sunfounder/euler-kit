@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.6 Electronic Piano &mdash; SunFounder Euler Kit for Raspberry Pi Pico 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.7 Plant Monitor" href="esp_plant_monitor.html" />
+    <link rel="prev" title="1.5 APP Actuator Widgets" href="esp_output.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder Euler Kit for Raspberry Pi Pico
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download_the_code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bc_basic_circuit.html">Electronic Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyproject/for_micropython_user.html">For MicroPython User</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="for_esp8266_user.html">Play Pico with APP</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="esp_basic_function.html">1.1 First-time Use the APP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_explan.html">1.2 How <code class="docutils literal notranslate"><span class="pre">ws_test.py</span></code> Works?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transfer_data.html">1.3 What Data is Transferred between APP &amp; Pico？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="esp_input.html">1.4 APP Display Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="esp_output.html">1.5 APP Actuator Widgets</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.6 Electronic Piano</a></li>
+<li class="toctree-l2"><a class="reference internal" href="esp_plant_monitor.html">1.7 Plant Monitor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cproject/for_arduino_user.html">For Arduino User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../piperproject/for_piper.html">For Piper Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../component/what_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder Euler Kit for Raspberry Pi Pico</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="for_esp8266_user.html">Play Pico with APP</a></li>
+      <li class="breadcrumb-item active">1.6 Electronic Piano</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/espproject/esp_piano.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="electronic-piano">
+<h1>1.6 Electronic Piano<a class="headerlink" href="#electronic-piano" title="Permalink to this heading">¶</a></h1>
+<p>In this project, we use the button widget on the SunFounder Controller as the piano keys and connect a passive buzzer to the Pico to simulate an electronic piano.</p>
+<ol class="arabic">
+<li><p>Build the circuit.</p>
+<blockquote>
+<div><p><img alt="wiring_app_piano" src="../_images/wiring_esp8266_piano.png" /></p>
+</div></blockquote>
+</li>
+<li><p>Create a new controller, note that <strong>Single Stick</strong> is selected.</p>
+<blockquote>
+<div><p><img alt="sc_app_create_piano" src="../_images/piano.jpg" /></p>
+</div></blockquote>
+</li>
+<li><p>Add a <strong>Button</strong> widget to the <strong>G</strong> area, and click the <strong>Set</strong> button in the upper right corner to change the name.</p>
+<blockquote>
+<div><p><img alt="sc_app_set_button" src="../_images/set_button.jpg" /></p>
+</div></blockquote>
+</li>
+<li><p>Add a <strong>Slider</strong> widget to the <strong>H</strong> area and set its name, maximum, minimum and initial value.</p>
+<blockquote>
+<div><p><img alt="sc_app_set_bpmn" src="../_images/set_bpm.jpg" /></p>
+</div></blockquote>
+</li>
+<li><p>Add a <strong>Button</strong> widget in <strong>NOPSMQR</strong> area and change their names to <strong>note C</strong> ~ <strong>note B</strong> respectively.</p>
+<blockquote>
+<div><p><img alt="sc_app_piano_button" src="../_images/piano_button.jpg" /></p>
+</div></blockquote>
+</li>
+<li><p>After saving, the effect of the remote control is shown below.</p>
+<blockquote>
+<div><p><img alt="sc_app_piano" src="../_images/sc_app_piano.jpg" /></p>
+</div></blockquote>
+</li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">1.6_ws_piano.py</span></code>.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">1.6_ws_piano.py</span></code> file under the path of <code class="docutils literal notranslate"><span class="pre">euler-kit/esp8266</span></code> or copy this code into Thonny, then click “Run Current Script” or simply press F5 to run it.</p></li>
+<li><p>Don’t forget to click on the “MicroPython (Raspberry Pi Pico)” interpreter in the bottom right corner.</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>For detailed tutorials, please refer to <a class="reference internal" href="../pyproject/python_start/quick_guide_thonny.html#open-run-code-py"><span class="std std-ref">Open and Run Code Directly</span></a>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Each time you rerun the code, you need to connect your device’s Wi-Fi to <code class="docutils literal notranslate"><span class="pre">my_esp8266</span></code>, then turn on SunFounder Controller and reconnect.</p></li>
+<li><p>Now, click the <strong>Run/Stop</strong> button in the upper right corner.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If you press the Button widget in <strong>G</strong> area, the buzzer will play a melody.</p></li>
+<li><p>You can use the <strong>Slider</strong> widget in the <strong>H</strong> area to adjust the speed of this melody.</p></li>
+<li><p>If you press the button in NOPSMQR area separately, the passive buzzer will sound different notes, and the LED will light up and fade out when you press each button.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>How it works?</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">led</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">PWM</span><span class="p">(</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+<span class="n">led</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">buzzer</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">PWM</span><span class="p">(</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Define the connection pins for the LED and buzzer, and the frequency of the LED.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#note</span>
+<span class="n">note</span> <span class="o">=</span> <span class="p">[</span><span class="mi">262</span><span class="p">,</span><span class="mi">294</span><span class="p">,</span><span class="mi">330</span><span class="p">,</span><span class="mi">349</span><span class="p">,</span><span class="mi">392</span><span class="p">,</span><span class="mi">440</span><span class="p">,</span><span class="mi">494</span><span class="p">,</span><span class="mi">523</span><span class="p">]</span>
+
+<span class="c1">#melody</span>
+<span class="n">NOTE_C4</span> <span class="o">=</span> <span class="mi">262</span>
+<span class="n">NOTE_G3</span> <span class="o">=</span> <span class="mi">196</span>
+<span class="n">NOTE_A3</span> <span class="o">=</span> <span class="mi">220</span>
+<span class="n">NOTE_B3</span> <span class="o">=</span> <span class="mi">247</span>
+<span class="n">melody</span> <span class="o">=</span><span class="p">[</span><span class="n">NOTE_C4</span><span class="p">,</span><span class="n">NOTE_G3</span><span class="p">,</span><span class="n">NOTE_G3</span><span class="p">,</span><span class="n">NOTE_A3</span><span class="p">,</span><span class="n">NOTE_G3</span><span class="p">,</span><span class="n">NOTE_B3</span><span class="p">,</span><span class="n">NOTE_C4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Define the frequency of CDEFGAB and a melody here.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">light_led</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">brightness</span>
+    <span class="n">brightness</span> <span class="o">=</span> <span class="mi">65535</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="n">brightness</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">light_led()</span></code> function is used to let the LED display the maximum brightness(65535).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tone</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="n">frequency</span><span class="p">):</span>
+    <span class="n">pin</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="n">frequency</span><span class="p">)</span>
+    <span class="n">pin</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">30000</span><span class="p">)</span>
+    <span class="n">light_led</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">tone()</span></code> function can generate a square wave of the specified frequency (and 50% duty cycle) on a pin, also let the LED light up.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">noTone</span><span class="p">(</span><span class="n">pin</span><span class="p">):</span>
+    <span class="n">pin</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">notone()</span></code> function is used to stop the generation of a square wave triggered by <code class="docutils literal notranslate"><span class="pre">tone()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">music_box</span><span class="p">(</span><span class="n">duration</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">melody</span><span class="p">:</span>
+        <span class="n">tone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+        <span class="n">noTone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span>
+    <span class="n">noTone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">music_box()</span></code> function is to make the passive buzzer play the melody in the <code class="docutils literal notranslate"><span class="pre">melody[]</span></code> array with a specific beat.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_receive</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+
+    <span class="k">global</span> <span class="n">bpm_flag</span><span class="p">,</span><span class="n">gap</span><span class="p">,</span><span class="n">brightness</span>
+    <span class="n">bpm</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;H&#39;</span><span class="p">]</span>
+    <span class="n">bpm_flag</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;G&#39;</span><span class="p">]</span>
+    <span class="n">gap</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">/</span> <span class="n">bpm</span>
+
+    <span class="c1"># fade led</span>
+    <span class="k">if</span> <span class="n">brightness</span> <span class="o">&gt;=</span> <span class="mi">6000</span><span class="p">:</span>
+        <span class="n">brightness</span> <span class="o">=</span> <span class="n">brightness</span><span class="o">-</span><span class="mi">30000</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="n">brightness</span><span class="p">)</span>
+
+    <span class="c1"># music box</span>
+    <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;G&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">music_box</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">gap</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span>
+        <span class="k">return</span>
+
+    <span class="c1"># piano</span>
+    <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;N&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">tone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">,</span><span class="n">note</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;O&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">tone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">,</span><span class="n">note</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;P&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">tone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">,</span><span class="n">note</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">tone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">,</span><span class="n">note</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">tone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">,</span><span class="n">note</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">tone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">,</span><span class="n">note</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;R&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">tone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">,</span><span class="n">note</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">noTone</span><span class="p">(</span><span class="n">buzzer</span><span class="p">)</span>
+
+
+<span class="n">ws</span><span class="o">.</span><span class="n">on_receive</span> <span class="o">=</span> <span class="n">on_receive</span>
+</pre></div>
+</div>
+<p>Here, the <code class="docutils literal notranslate"><span class="pre">on_receive()</span></code> function can be divided into 3 parts.</p>
+<ul class="simple">
+<li><p><strong>fade led</strong>: Make the LED light up and then turn off after an intermediate brightness.</p></li>
+<li><p><strong>music box</strong>: When the button widget in the G area is pressed, the buzzer plays the melody in the <code class="docutils literal notranslate"><span class="pre">melody[]</span></code> array in 1/4 beats.</p></li>
+<li><p><strong>piano</strong>: When the buttons in NOPSMQR area are pressed separately, the passive buzzer will play different notes.</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="esp_output.html" class="btn btn-neutral float-left" title="1.5 APP Actuator Widgets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="esp_plant_monitor.html" class="btn btn-neutral float-right" title="1.7 Plant Monitor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

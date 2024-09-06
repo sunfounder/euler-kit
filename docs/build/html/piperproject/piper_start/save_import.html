@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.3 How to Save or Import Code? &mdash; SunFounder Euler Kit for Raspberry Pi Pico 1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.1 Blink LED" href="../2.1_blink_led.html" />
+    <link rel="prev" title="1.2 Quick Guide on Piper Make" href="quick_guide_piper.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            SunFounder Euler Kit for Raspberry Pi Pico
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../download_the_code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bc_basic_circuit.html">Electronic Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyproject/for_micropython_user.html">For MicroPython User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../espproject/for_esp8266_user.html">Play Pico with APP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cproject/for_arduino_user.html">For Arduino User</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../for_piper.html">For Piper Make</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="set_up_pico.html">1.1 Set up the Pico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick_guide_piper.html">1.2 Quick Guide on Piper Make</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.3 How to Save or Import Code?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#save-the-code">Save the Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-the-code">Import the Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_blink_led.html">2.1 Blink LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_button.html">2.2 Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_service_bell.html">2.3 Service Bell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_rainbow_light.html">2.4 Rainbow Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.5_drum_kit.html">2.5 Drum Kit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.6_water_tank.html">2.6 Smart Water Tank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.7_swing_servo.html">2.7 Swing Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.8_light_intensity_display.html">2.8 Light Intensity Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.9_lucky_cat.html">2.9 Lucky Cat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.10_flowing_led.html">2.10 Flowing LEDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.11_reversing_system.html">2.11 Reversing System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.12_smart_fan.html">2.12 Smart Fan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.13_reaction_game.html">2.13 Reaction Game</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../component/what_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SunFounder Euler Kit for Raspberry Pi Pico</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../for_piper.html">For Piper Make</a></li>
+      <li class="breadcrumb-item active">1.3 How to Save or Import Code?</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/piperproject/piper_start/save_import.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="how-to-save-or-import-code">
+<span id="per-save-import"></span><h1>1.3 How to Save or Import Code?<a class="headerlink" href="#how-to-save-or-import-code" title="Permalink to this heading">¶</a></h1>
+<section id="save-the-code">
+<h2>Save the Code<a class="headerlink" href="#save-the-code" title="Permalink to this heading">¶</a></h2>
+<p>After writing the code, you can change the code name and description, and then click the <strong>Download</strong> button to save the code locally or share it with others.</p>
+<p><img alt="save_download" src="../../_images/save_download.png" /></p>
+<p>Then enter the file name and click the <strong>Download</strong> button again to save the code as a <code class="docutils literal notranslate"><span class="pre">.png</span></code> file.</p>
+<p><img alt="download_per" src="../../_images/download_per.png" /></p>
+</section>
+<section id="import-the-code">
+<span id="import-code-piper"></span><h2>Import the Code<a class="headerlink" href="#import-the-code" title="Permalink to this heading">¶</a></h2>
+<p>In Piper Make’s <a class="reference external" href="https://make.playpiper.com/">home page</a>, click <strong>Import Project</strong>.</p>
+<p><img alt="per_import" src="../../_images/per_import.png" /></p>
+<p>Select the <code class="docutils literal notranslate"><span class="pre">.png</span></code> file in the path <code class="docutils literal notranslate"><span class="pre">euler-kit\piper</span></code> and click <strong>Import</strong>.
+Note that you need to download the <a class="reference external" href="https://github.com/sunfounder/euler-kit/archive/refs/heads/main.zip">SunFounder Euler Kit</a> package first.
+Or check out the code at <a class="reference external" href="https://github.com/sunfounder/euler-kit">Euler Kit - GitHub</a>.</p>
+<p><img alt="choose_file" src="../../_images/choose_file.png" /></p>
+<p>Now you can see the file you imported.</p>
+<p><img alt="import_led" src="../../_images/import_led.png" /></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quick_guide_piper.html" class="btn btn-neutral float-left" title="1.2 Quick Guide on Piper Make" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../2.1_blink_led.html" class="btn btn-neutral float-right" title="2.1 Blink LED" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PIR Motion Sensor &mdash; SunFounder Euler Kit for Raspberry Pi Pico 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Water Level Sensor" href="component_water.html" />
+    <link rel="prev" title="Reed Switch" href="component_reed.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder Euler Kit for Raspberry Pi Pico
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download_the_code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bc_basic_circuit.html">Electronic Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyproject/for_micropython_user.html">For MicroPython User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espproject/for_esp8266_user.html">Play Pico with APP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cproject/for_arduino_user.html">For Arduino User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../piperproject/for_piper.html">For Piper Make</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="what_is_included_in_this_kit.html">What is Included in This Kit</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="component_breadboard.html">Breadboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_wire.html">Jumper Wires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_resistor.html">Resistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_transistor.html">Transistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_capacitor.html">Capacitor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_diode.html">Diode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_74hc595.html">74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_l293d.html">IC L293D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_led.html">LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_rgb_led.html">RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_led_bar.html">LED Bar Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_7segment.html">7-segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_4_digit_display.html">4-Digit 7-Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_788bs.html">LED Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_i2clcd1602.html">I2C LCD1602</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_ws2812.html">WS2812 RGB 8 LEDs Strip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_buzzer.html">Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_dc_motor.html">DC Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_servo.html">Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_pump.html">Centrifugal Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_relay.html">Relay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_power_module.html">Power Supply Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_micro_switch.html">Micro Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_slide_switch.html">Slide Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_potentiometer.html">Potentiometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_irrecv.html">Infrared-Receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_joystick.html">Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_keypad.html">Keypad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_mpr121.html">MPR121</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_rfid.html">MFRC522 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_photoresistor.html">Photoresistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_thermistor.html">Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_tilt_switch.html">Tilt Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_reed.html">Reed Switch</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PIR Motion Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_water.html">Water Level Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_ultrasonic.html">Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_humiture.html">DHT11 Humiture Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_mpu6050.html">MPU6050</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_esp8266.html">ESP8266 Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder Euler Kit for Raspberry Pi Pico</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="what_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+      <li class="breadcrumb-item active">PIR Motion Sensor</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/component/component_pir.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="pir-motion-sensor">
+<span id="cpn-pir"></span><h1>PIR Motion Sensor<a class="headerlink" href="#pir-motion-sensor" title="Permalink to this heading">¶</a></h1>
+<p><a class="reference internal" href="../_images/pir.png"><img alt="img_pir" src="../_images/pir.png" style="width: 300px;" /></a></p>
+<p>The PIR sensor detects infrared heat radiation that can be used to detect the presence of organisms that emit infrared heat radiation.</p>
+<p>The PIR sensor is split into two slots that are connected to a differential amplifier. Whenever a stationary object is in front of the sensor, the two slots receive the same amount of radiation and the output is zero. Whenever a moving object is in front of the sensor, one of the slots receives more radiation than the other , which makes the output fluctuate high or low. This change in output voltage is a result of detection of motion.</p>
+<p><img alt="img_PIR_working_principle" src="../_images/PIR_working_principle.jpg" /></p>
+<p>After the sensing module is wired, there is a one-minute initialization. During the initialization, module will output for 0~3 times at intervals. Then the module will be in the standby mode. Please keep the interference of light source and other sources away from the surface of the module so as to avoid the misoperation caused by the interfering signal. Even you’d better use the module without too much wind, because the wind can also interfere with the sensor.</p>
+<p><img alt="img_pir_back" src="../_images/pir_back.png" /></p>
+<p><strong>Distance Adjustment</strong></p>
+<p>Turning the knob of the distance adjustment potentiometer clockwise, the range of sensing distance increases, and the maximum sensing distance range is about 0-7 meters. If turn it anticlockwise, the range of sensing distance is reduced, and the minimum sensing distance range is about 0-3 meters.</p>
+<p><strong>Delay adjustment</strong></p>
+<p>Rotate the knob of the delay adjustment potentiometer clockwise, you can also see the sensing delay increasing. The maximum of the sensing delay can reach up to 300s. On the contrary, if rotate it anticlockwise, you can shorten the delay with a minimum of 5s.</p>
+<p><strong>Two Trigger Modes</strong></p>
+<p>Choosing different modes by using the jumper cap.</p>
+<ul class="simple">
+<li><p><strong>H</strong>: Repeatable trigger mode, after sensing the human body, the module outputs high level. During the subsequent delay period, if somebody enters the sensing range,the output will keep being the high level.</p></li>
+<li><p><strong>L</strong>: Non-repeatable trigger mode, outputs high level when it senses the human body. After the delay, the output will change from high level into low level automatically.</p></li>
+</ul>
+<p><strong>Example</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../pyproject/py_pir.html#py-pir"><span class="std std-ref">2.10 Detect Human Movement</span></a> (For MicroPython User)</p></li>
+<li><p><a class="reference internal" href="../pyproject/py_passager_counter.html#py-passage-counter"><span class="std std-ref">7.4 Passager Counter</span></a> (For MicroPython User)</p></li>
+<li><p><a class="reference internal" href="../cproject/ar_pir.html#ar-pir"><span class="std std-ref">2.10 - Detect Human Movement</span></a> (For Arduino User)</p></li>
+<li><p><a class="reference internal" href="../piperproject/2.9_lucky_cat.html#per-lucky-cat"><span class="std std-ref">2.9 Lucky Cat</span></a> (For Piper Make User)</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="component_reed.html" class="btn btn-neutral float-left" title="Reed Switch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="component_water.html" class="btn btn-neutral float-right" title="Water Level Sensor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

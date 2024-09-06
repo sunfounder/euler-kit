@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6.4 - IR Remote Control &mdash; SunFounder Euler Kit for Raspberry Pi Pico 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.5 - Radio Frequency Identification" href="ar_rfid.html" />
+    <link rel="prev" title="6.3 - 6-axis Motion Tracking" href="ar_mpu6050.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder Euler Kit for Raspberry Pi Pico
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download_the_code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bc_basic_circuit.html">Electronic Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyproject/for_micropython_user.html">For MicroPython User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espproject/for_esp8266_user.html">Play Pico with APP</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="for_arduino_user.html">For Arduino User</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/install_arduino_ide.html">1.1 Install Arduino IDE(Important)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/introduce_ide.html">1.2 Introduce of Arduino IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/install_pico.html">1.3 Setting Up the Raspberry Pi Pico (Important)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/add_libraries_ar.html">1.4 Install libraries (Important)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_led.html">2.1 - Hello, LED!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_led_bar.html">2.2 - Display the Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_fade.html">2.3 - Fading LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_rgb.html">2.4 - Colorful Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_button.html">2.5 - Reading Button Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_tilt.html">2.6 - Tilt It！</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_slide.html">2.7 - Toggle Left and Right</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_micro.html">2.8 - Press Gently</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_reed.html">2.9 - Feel the Magnetism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pir.html">2.10 - Detect Human Movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pot.html">2.11 - Turn the Knob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_photoresistor.html">2.12 - Feel the Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_temp.html">2.13 - Thermometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_water.html">2.14 - Feel the Water Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_transistor.html">2.15 - Two Kinds of Transistors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_relay.html">2.16 - Control Another Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_ac_buz.html">3.1 - Beep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pa_buz.html">3.2 - Custom Tone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_neopixel.html">3.3 - RGB LED Strip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_lcd.html">3.4 - Liquid Crystal Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_motor.html">3.5 - Small Fan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pump.html">3.6 - Pumping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_servo.html">3.7 - Swinging Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_joystick.html">4.1 - Toggle the Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_keypad.html">4.2 - 4x4 Keypad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_mpr121.html">4.3 - Electrode Keyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_74hc595_led.html">5.1 -  Microchip - 74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_74hc595_7seg.html">5.2 - Number Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_74hc595_4dig.html">5.3 - Time Counter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_74hc595_matrix.html">5.4 - 8x8 Pixel Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_ultrasonic.html">6.1 - Measuring Distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_dht11.html">6.2 - Temperature - Humidity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_mpu6050.html">6.3 - 6-axis Motion Tracking</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.4 - IR Remote Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_rfid.html">6.5 - Radio Frequency Identification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../piperproject/for_piper.html">For Piper Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../component/what_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder Euler Kit for Raspberry Pi Pico</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="for_arduino_user.html">For Arduino User</a></li>
+      <li class="breadcrumb-item active">6.4 - IR Remote Control</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cproject/ar_irremote.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="ir-remote-control">
+<span id="ar-irremote"></span><h1>6.4 - IR Remote Control<a class="headerlink" href="#ir-remote-control" title="Permalink to this heading">¶</a></h1>
+<p>In consumer electronics, remote controls are used to operate devices such as televisions and DVD players.
+In some cases, remote controls allow people to operate devices that are out of their reach, such as central air conditioners.</p>
+<p>IR Receiver is a component with photocell that is tuned to receive to infrared light.
+It is almost always used for remote control detection - every TV and DVD player has one of these in the front to receive for the IR signal from the clicker.
+Inside the remote control is a matching IR LED, which emits IR pulses to tell the TV to turn on, off or change channels.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../component/component_irrecv.html#cpn-irrecv"><span class="std std-ref">Infrared-Receiver</span></a></p></li>
+</ul>
+<p><strong>Schematic</strong></p>
+<p><img alt="sch_irrecv" src="../_images/sch_ir_remote_control.png" /></p>
+<p><strong>Wiring</strong></p>
+<p><img alt="wiring_irrecv" src="../_images/wiring_irrecv.png" /></p>
+<p><strong>Code</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><p>You can open the file <code class="docutils literal notranslate"><span class="pre">6.4_ir_remote_control.ino</span></code> under the path of <code class="docutils literal notranslate"><span class="pre">euler-kit/arduino/6.4_ir_remote_control</span></code>.</p></li>
+<li><p>Or copy this code into <strong>Arduino IDE</strong>.</p></li>
+<li><p>Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">IRremote</span></code> library is used here, you can install it from the <strong>Library Manager</strong>.</p>
+<img alt="../_images/lib_ir.png" src="../_images/lib_ir.png" />
+</li>
+</ul>
+</div>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/71f50561-d1ad-4d9e-9db2-8eb7727df0a4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe><p>The new remote control has a plastic piece at the end to isolate the battery inside. You need to pull out this plastic piece to power up the remote when you are using it.
+Once the program is running, when you press the remote control, the Serial Monitor will print out the key you pressed.</p>
+<p><strong>How it works?</strong></p>
+<p>This code is designed to work with an infrared (IR) remote control using the <code class="docutils literal notranslate"><span class="pre">IRremote</span></code> library. Here’s the breakdown:</p>
+<ol class="arabic">
+<li><p>Including the library and defining constants. First, the IRremote library is included, and the pin number for the IR receiver is defined as 2.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;IRremote.h&gt;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IR_RECEIVE_PIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">17</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Initializes serial communication at a baud rate of 9600. Initializes the IR receiver on the specified pin (<code class="docutils literal notranslate"><span class="pre">IR_RECEIVE_PIN</span></code>) and enables LED feedback (if applicable).</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">                                     </span><span class="c1">// Start serial communication at 9600 baud rate</span>
+<span class="w">    </span><span class="n">IrReceiver</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="n">IR_RECEIVE_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE_LED_FEEDBACK</span><span class="p">);</span><span class="w">  </span><span class="c1">// Start the IR receiver</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>The loop runs continuously to process incoming IR remote signals.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">IrReceiver</span><span class="p">.</span><span class="n">decode</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// Check if the IR receiver has received a signal</span>
+<span class="w">      </span><span class="kr">bool</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">      </span><span class="kr">String</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">decodeKeyValue</span><span class="p">(</span><span class="n">IrReceiver</span><span class="p">.</span><span class="n">decodedIRData</span><span class="p">.</span><span class="n">command</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;ERROR&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">key</span><span class="p">);</span><span class="w">  </span><span class="c1">// Print the readable command</span>
+<span class="w">        </span><span class="nf">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="n">IrReceiver</span><span class="p">.</span><span class="n">resume</span><span class="p">();</span><span class="w">  </span><span class="c1">// Prepare the IR receiver to receive the next signal</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Checks if an IR signal is received and successfully decoded.</p></li>
+<li><p>Decodes the IR command and stores it in <code class="docutils literal notranslate"><span class="pre">decodedValue</span></code> using a custom <code class="docutils literal notranslate"><span class="pre">decodeKeyValue()</span></code> function.</p></li>
+<li><p>Prints the decoded IR value to the serial monitor.</p></li>
+<li><p>Resumes IR signal reception for the next signal.</p></li>
+</ul>
+<br/></li>
+<li><p>Helper function to map received IR signals to corresponding keys</p>
+<a class="reference internal image-reference" href="../_images/ir_key.png"><img alt="../_images/ir_key.png" class="align-center" src="../_images/ir_key.png" style="width: 80%;" /></a>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="c1">// Function to map received IR signals to corresponding keys</span>
+<span class="kr">String</span><span class="w"> </span><span class="nf">decodeKeyValue</span><span class="p">(</span><span class="kr">long</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Each case corresponds to a specific IR command</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x16</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0xC</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x18</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x5E</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;3&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x8</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;4&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x1C</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;5&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x5A</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;6&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x42</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;7&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x52</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;8&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x4A</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;9&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x9</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;+&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x15</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x7</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;EQ&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0xD</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;U/SD&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x19</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;CYCLE&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x44</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;PLAY/PAUSE&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x43</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;FORWARD&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x40</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;BACKWARD&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x45</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;POWER&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x47</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;MUTE&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x46</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;MODE&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mh">0x0</span><span class="p">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;ERROR&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">default</span><span class="o">:</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;ERROR&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ar_mpu6050.html" class="btn btn-neutral float-left" title="6.3 - 6-axis Motion Tracking" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ar_rfid.html" class="btn btn-neutral float-right" title="6.5 - Radio Frequency Identification" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

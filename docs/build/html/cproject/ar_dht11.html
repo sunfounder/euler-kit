@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6.2 - Temperature - Humidity &mdash; SunFounder Euler Kit for Raspberry Pi Pico 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.3 - 6-axis Motion Tracking" href="ar_mpu6050.html" />
+    <link rel="prev" title="6.1 - Measuring Distance" href="ar_ultrasonic.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder Euler Kit for Raspberry Pi Pico
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download_the_code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bc_basic_circuit.html">Electronic Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyproject/for_micropython_user.html">For MicroPython User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espproject/for_esp8266_user.html">Play Pico with APP</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="for_arduino_user.html">For Arduino User</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/install_arduino_ide.html">1.1 Install Arduino IDE(Important)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/introduce_ide.html">1.2 Introduce of Arduino IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/install_pico.html">1.3 Setting Up the Raspberry Pi Pico (Important)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/add_libraries_ar.html">1.4 Install libraries (Important)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_led.html">2.1 - Hello, LED!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_led_bar.html">2.2 - Display the Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_fade.html">2.3 - Fading LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_rgb.html">2.4 - Colorful Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_button.html">2.5 - Reading Button Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_tilt.html">2.6 - Tilt It！</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_slide.html">2.7 - Toggle Left and Right</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_micro.html">2.8 - Press Gently</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_reed.html">2.9 - Feel the Magnetism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pir.html">2.10 - Detect Human Movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pot.html">2.11 - Turn the Knob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_photoresistor.html">2.12 - Feel the Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_temp.html">2.13 - Thermometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_water.html">2.14 - Feel the Water Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_transistor.html">2.15 - Two Kinds of Transistors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_relay.html">2.16 - Control Another Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_ac_buz.html">3.1 - Beep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pa_buz.html">3.2 - Custom Tone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_neopixel.html">3.3 - RGB LED Strip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_lcd.html">3.4 - Liquid Crystal Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_motor.html">3.5 - Small Fan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pump.html">3.6 - Pumping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_servo.html">3.7 - Swinging Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_joystick.html">4.1 - Toggle the Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_keypad.html">4.2 - 4x4 Keypad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_mpr121.html">4.3 - Electrode Keyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_74hc595_led.html">5.1 -  Microchip - 74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_74hc595_7seg.html">5.2 - Number Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_74hc595_4dig.html">5.3 - Time Counter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_74hc595_matrix.html">5.4 - 8x8 Pixel Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_ultrasonic.html">6.1 - Measuring Distance</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.2 - Temperature - Humidity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_mpu6050.html">6.3 - 6-axis Motion Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_irremote.html">6.4 - IR Remote Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_rfid.html">6.5 - Radio Frequency Identification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../piperproject/for_piper.html">For Piper Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../component/what_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder Euler Kit for Raspberry Pi Pico</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="for_arduino_user.html">For Arduino User</a></li>
+      <li class="breadcrumb-item active">6.2 - Temperature - Humidity</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cproject/ar_dht11.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="temperature-humidity">
+<span id="ar-dht11"></span><h1>6.2 - Temperature - Humidity<a class="headerlink" href="#temperature-humidity" title="Permalink to this heading">¶</a></h1>
+<p>Humidity and temperature are closely related from the physical quantity itself to the actual people’s life.
+The temperature and humidity of human environment will directly affect the thermoregulatory function and heat transfer effect of human body.
+It will further affect the thinking activity and mental state, thus affecting the efficiency of our study and work.</p>
+<p>Temperature is one of the seven basic physical quantities in the International System of Units, which is used to measure the degree of hot and cold of an object.
+Celsius is one of the more widely used temperature scales in the world, expressed by the symbol “℃”.</p>
+<p>Humidity is the concentration of water vapor present in the air.
+The relative humidity of air is commonly used in life and is expressed in %RH. Relative humidity is closely related to temperature.
+For a certain volume of sealed gas, the higher the temperature, the lower the relative humidity, and the lower the temperature, the higher the relative humidity.</p>
+<p><img alt="img_Dht11" src="../_images/Dht11.png" /></p>
+<p>A basic digital temperature and humidity sensor, the <strong>DHT11</strong>, is provided in this kit.
+It uses a capacitive humidity sensor and thermistor to measure the surrounding air and outputs a digital signal on the data pins (no analog input pins are required).</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../component/component_humiture.html#cpn-dht11"><span class="std std-ref">DHT11 Humiture Sensor</span></a></p></li>
+</ul>
+<p><strong>Schematic</strong></p>
+<p><img alt="sch_dht11" src="../_images/sch_dht11.png" /></p>
+<p><strong>Wiring</strong></p>
+<p><img alt="wiring_dht11" src="../_images/wiring_dht11.png" /></p>
+<p><strong>Code</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><p>You can open the file <code class="docutils literal notranslate"><span class="pre">6.2_dht11.ino</span></code> under the path of <code class="docutils literal notranslate"><span class="pre">euler-kit/arduino/6.2_dht11</span></code>.</p></li>
+<li><p>Or copy this code into <strong>Arduino IDE</strong>.</p></li>
+<li><p>Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">DHT</span> <span class="pre">sensor</span> <span class="pre">library</span></code> library is used here, you can install it from the <strong>Library Manager</strong>.</p>
+<img alt="../_images/lib_dht.png" src="../_images/lib_dht.png" />
+</li>
+</ul>
+</div>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/b9e96e99-59d4-48ca-b41f-c03577acfb8f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe><p>After the code is run, you will see the Serial Monitor continuously print out the temperature and humidity, and as the program runs steadily, these two values will become more and more accurate.</p>
+<p><strong>How it works?</strong></p>
+<ol class="arabic">
+<li><p>Inclusion of necessary libraries and definition of constants.
+This part of the code includes the DHT sensor library and defines the pin number and sensor type used in this project.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;DHT.h&gt;</span>
+<span class="cp">#define DHTPIN 16       </span><span class="c1">// Define the pin used to connect the sensor</span>
+<span class="cp">#define DHTTYPE DHT11  </span><span class="c1">// Define the sensor type</span>
+</pre></div>
+</div>
+</li>
+<li><p>Creation of DHT object.
+Here we create a DHT object using the defined pin number and sensor type.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="n">DHT</span><span class="w"> </span><span class="nf">dht</span><span class="p">(</span><span class="n">DHTPIN</span><span class="p">,</span><span class="w"> </span><span class="n">DHTTYPE</span><span class="p">);</span><span class="w">  </span><span class="c1">// Create a DHT object</span>
+</pre></div>
+</div>
+</li>
+<li><p>This function is executed once when the Arduino starts. We initialize the serial communication and the DHT sensor in this function.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s">&quot;DHT11 test!&quot;</span><span class="p">));</span>
+<span class="w">  </span><span class="n">dht</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span><span class="w">  </span><span class="c1">// Initialize the DHT sensor</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Main loop.
+The <code class="docutils literal notranslate"><span class="pre">loop()</span></code> function runs continuously after the setup function. Here, we read the humidity and temperature values, calculate the heat index, and print these values to the serial monitor.  If the sensor read fails (returns NaN), it prints an error message.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Heat_index" target="_blank">heat index</a> is a way to measure how hot it feels outside by combining the air temperature and the humidity. It is also called the “felt air temperature” or “apparent temperature”.</p>
+</div>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<span class="w">  </span><span class="kr">float</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dht</span><span class="p">.</span><span class="n">readHumidity</span><span class="p">();</span>
+<span class="w">  </span><span class="kr">float</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dht</span><span class="p">.</span><span class="nf">readTemperature</span><span class="p">();</span>
+<span class="w">  </span><span class="kr">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dht</span><span class="p">.</span><span class="nf">readTemperature</span><span class="p">(</span><span class="kr">true</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">isnan</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">isnan</span><span class="p">(</span><span class="n">f</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s">&quot;Failed to read from DHT sensor!&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="kr">float</span><span class="w"> </span><span class="n">hif</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dht</span><span class="p">.</span><span class="n">computeHeatIndex</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">);</span>
+<span class="w">  </span><span class="kr">float</span><span class="w"> </span><span class="n">hic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dht</span><span class="p">.</span><span class="n">computeHeatIndex</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="kr">false</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s">&quot;Humidity: &quot;</span><span class="p">));</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">h</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s">&quot;%  Temperature: &quot;</span><span class="p">));</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s">&quot;°C &quot;</span><span class="p">));</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s">&quot;°F  Heat index: &quot;</span><span class="p">));</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">hic</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s">&quot;°C &quot;</span><span class="p">));</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">hif</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s">&quot;°F&quot;</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ar_ultrasonic.html" class="btn btn-neutral float-left" title="6.1 - Measuring Distance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ar_mpu6050.html" class="btn btn-neutral float-right" title="6.3 - 6-axis Motion Tracking" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

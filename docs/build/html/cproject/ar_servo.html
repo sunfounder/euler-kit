@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.7 - Swinging Servo &mdash; SunFounder Euler Kit for Raspberry Pi Pico 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="https://ezblock.cc/readDocFile/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="https://ezblock.cc/readDocFile/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.1 - Toggle the Joystick" href="ar_joystick.html" />
+    <link rel="prev" title="3.6 - Pumping" href="ar_pump.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<nav id="nav-bar">
+  <ul class="nav-bar-items" id="nav-bar-items">
+    <li class="nav-bar-logo">
+      <a href="https://sunfounder.com">
+        <img class="logo-img" src="https://ezblock.cc/readDocFile/sunfounder_LOGO_160x@2x.png"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SunFounder Euler Kit for Raspberry Pi Pico
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_raspberry_pi_pico.html">Introduction to Raspberry Pi Pico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download_the_code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bc_basic_circuit.html">Electronic Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyproject/for_micropython_user.html">For MicroPython User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espproject/for_esp8266_user.html">Play Pico with APP</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="for_arduino_user.html">For Arduino User</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/install_arduino_ide.html">1.1 Install Arduino IDE(Important)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/introduce_ide.html">1.2 Introduce of Arduino IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/install_pico.html">1.3 Setting Up the Raspberry Pi Pico (Important)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arduino_start/add_libraries_ar.html">1.4 Install libraries (Important)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_led.html">2.1 - Hello, LED!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_led_bar.html">2.2 - Display the Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_fade.html">2.3 - Fading LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_rgb.html">2.4 - Colorful Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_button.html">2.5 - Reading Button Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_tilt.html">2.6 - Tilt It！</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_slide.html">2.7 - Toggle Left and Right</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_micro.html">2.8 - Press Gently</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_reed.html">2.9 - Feel the Magnetism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pir.html">2.10 - Detect Human Movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pot.html">2.11 - Turn the Knob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_photoresistor.html">2.12 - Feel the Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_temp.html">2.13 - Thermometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_water.html">2.14 - Feel the Water Level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_transistor.html">2.15 - Two Kinds of Transistors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_relay.html">2.16 - Control Another Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_ac_buz.html">3.1 - Beep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pa_buz.html">3.2 - Custom Tone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_neopixel.html">3.3 - RGB LED Strip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_lcd.html">3.4 - Liquid Crystal Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_motor.html">3.5 - Small Fan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_pump.html">3.6 - Pumping</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.7 - Swinging Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_joystick.html">4.1 - Toggle the Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_keypad.html">4.2 - 4x4 Keypad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_mpr121.html">4.3 - Electrode Keyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_74hc595_led.html">5.1 -  Microchip - 74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_74hc595_7seg.html">5.2 - Number Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_74hc595_4dig.html">5.3 - Time Counter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_74hc595_matrix.html">5.4 - 8x8 Pixel Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_ultrasonic.html">6.1 - Measuring Distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_dht11.html">6.2 - Temperature - Humidity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_mpu6050.html">6.3 - 6-axis Motion Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_irremote.html">6.4 - IR Remote Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_rfid.html">6.5 - Radio Frequency Identification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../piperproject/for_piper.html">For Piper Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../component/what_is_included_in_this_kit.html">What is Included in This Kit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunFounder Euler Kit for Raspberry Pi Pico</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="for_arduino_user.html">For Arduino User</a></li>
+      <li class="breadcrumb-item active">3.7 - Swinging Servo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cproject/ar_servo.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hello, welcome to the SunFounder Raspberry Pi &amp; Arduino &amp; ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.</p>
+<p><strong>Why Join?</strong></p>
+<ul class="simple">
+<li><p><strong>Expert Support</strong>: Solve post-sale issues and technical challenges with help from our community and team.</p></li>
+<li><p><strong>Learn &amp; Share</strong>: Exchange tips and tutorials to enhance your skills.</p></li>
+<li><p><strong>Exclusive Previews</strong>: Get early access to new product announcements and sneak peeks.</p></li>
+<li><p><strong>Special Discounts</strong>: Enjoy exclusive discounts on our newest products.</p></li>
+<li><p><strong>Festive Promotions and Giveaways</strong>: Take part in giveaways and holiday promotions.</p></li>
+</ul>
+<p>👉 Ready to explore and create with us? Click [<a href="https://bit.ly/raphaelkit" target="_blank">here</a>] and join today!</p>
+</div>
+<section id="swinging-servo">
+<span id="ar-servo"></span><h1>3.7 - Swinging Servo<a class="headerlink" href="#swinging-servo" title="Permalink to this heading">¶</a></h1>
+<p>In this kit, in addition to LED and passive buzzer, there is also a device controlled by PWM signal, Servo.</p>
+<p>Servo is a position (angle) servo device, which is suitable for those control systems that require constant angle changes and can be maintained. It has been widely used in high-end remote control toys, such as airplanes, submarine models, and remote control robots.</p>
+<p>Now, try to make the servo sway!</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../component/component_servo.html#cpn-servo"><span class="std std-ref">Servo</span></a></p></li>
+</ul>
+<p><strong>Schematic</strong></p>
+<p><img alt="sch_servo" src="../_images/sch_swinging_servo.png" /></p>
+<p><strong>Wiring</strong></p>
+<p><img alt="wiring_servo" src="../_images/wiring_swing_servo.png" /></p>
+<ul class="simple">
+<li><p>Orange wire is signal and connected to GP15.</p></li>
+<li><p>Red wire is VCC and connected to VBUS(5V).</p></li>
+<li><p>Brown wire is GND and connected to GND.</p></li>
+</ul>
+<p><strong>Code</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You can open the file <code class="docutils literal notranslate"><span class="pre">3.7_swinging_servo.ino</span></code> under the path of <code class="docutils literal notranslate"><span class="pre">euler-kit/arduino/3.7_swinging_servo</span></code>.</p></li>
+<li><p>Or copy this code into <strong>Arduino IDE</strong>.</p></li>
+<li><p>Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.</p></li>
+</ul>
+</div>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/d52a67be-be6b-4cbf-b411-810160f56928/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe><p>When the program is running, we can see the Servo Arm swinging back and forth from 0° to 180°.</p>
+<p><strong>How it works?</strong></p>
+<p>By calling the library <code class="docutils literal notranslate"><span class="pre">Servo.h</span></code>, you can drive the servo easily.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Servo.h&gt;</span>
+</pre></div>
+</div>
+<p><strong>Library Functions：</strong></p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="nf">Servo</span>
+</pre></div>
+</div>
+<p>Create <strong>Servo</strong> object to control a servo.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">uint8_t</span><span class="w"> </span><span class="nf">attach</span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="n">pin</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Turn a pin into a servo driver. Calls pinMode. Returns 0 on failure.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nf">detach</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Release a pin from servo driving.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Set the angle of the servo in degrees, 0 to 180.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">int</span><span class="w"> </span><span class="nf">read</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Return that value set with the last write().</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">bool</span><span class="w"> </span><span class="nf">attached</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Return 1 if the servo is currently attached.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ar_pump.html" class="btn btn-neutral float-left" title="3.6 - Pumping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ar_joystick.html" class="btn btn-neutral float-right" title="4.1 - Toggle the Joystick" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, SunFounder.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
