@@ -87,7 +87,7 @@ Pico's Pins
         - 5 volts power
         - A source of 5 V power taken from your Pico’s micro USB port, and used to power hardware which needs more than 3.3 V.
 
-The best place to find everything you need to get started with your Raspberry Pi Pico is `here <https://www.raspberrypi.org/documentation/pico/getting-started/>`_
+The best place to find everything you need to get started with your Raspberry Pi Pico is `here <https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html>`_
 
 Or you can click on the links below: 
 
