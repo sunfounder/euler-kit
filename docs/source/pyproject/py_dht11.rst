@@ -60,17 +60,27 @@ It uses a capacitive humidity sensor and thermistor to measure the surrounding a
 
 .. code-block:: python
 
-    from machine import Pin, I2C
+    from machine import Pin
     import utime as time
     from dht import DHT11
-
-    pin = Pin(16, Pin.OUT, Pin.PULL_DOWN)
+    
+    # Initialize the pin for the DHT11 sensor as an input
+    pin = Pin(16, Pin.IN)
+    
+    # Create a DHT11 sensor object
     sensor = DHT11(pin)
-
+    
     while True:
+        # Measure temperature and humidity
         sensor.measure()
+        
+        # Print the measured temperature and humidity values
         print("Temperature: {}, Humidity: {}".format(sensor.temperature, sensor.humidity))
+        
+        # Wait for 1 second before the next measurement
         time.sleep(1)
+
+
 
 After the code is run, you will see the Shell continuously print out the temperature and humidity, and as the program runs steadily, these two values will become more and more accurate.
 
@@ -86,7 +96,10 @@ Initialize the ``DHT11`` object. This device only needs a digital input to be us
 
 .. code-block:: python
 
-    pin = Pin(16, Pin.OUT, Pin.PULL_DOWN)
+    # Initialize the pin for the DHT11 sensor as an input
+    pin = Pin(16, Pin.IN)
+    
+    # Create a DHT11 sensor object
     sensor = DHT11(pin)
 
 Use ``sensor.measure()`` to read the current temperature and humidity, which will be stored in ``sensor.temperature``, ``sensor.humidity``.
@@ -96,6 +109,11 @@ Finally the DHT11 sampling rate is 1HZ, a ``time.sleep(1)`` is needed in the loo
 .. code-block:: python
 
     while True:
+        # Measure temperature and humidity
         sensor.measure()
+        
+        # Print the measured temperature and humidity values
         print("Temperature: {}, Humidity: {}".format(sensor.temperature, sensor.humidity))
+        
+        # Wait for 1 second before the next measurement
         time.sleep(1)
