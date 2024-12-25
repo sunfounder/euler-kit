@@ -34,9 +34,14 @@ release = '1.0'
 # ones.
 extensions = [
     'sphinx.ext.autosectionlabel',
-    'sphinx_copybutton'
+    'sphinx_copybutton',
+    'sphinx_rtd_theme',
 ]
 
+# -- sphinx_rtd_theme Theme options -----------------------------------------------------
+html_theme_options = {
+    'flyout_display': 'attached'
+}
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
